@@ -23,7 +23,7 @@
 \usepackage{natbib}% for bibliography sorting/compressing
 %\usepackage{amsmath}
 %\usepackage{endnotes}
-\usepackage{graphics}
+\usepackage{graphicx}
 
 %%%%%%%%%%% Put your definitions here
 \usepackage[utf8]{inputenc}
@@ -71,7 +71,7 @@
 \author[E]{\fnms{Rik} \snm{Van de Walle}},
 \author[F]{\fnms{Joaquim} \snm{Gabarró Vallés}}
 
-\runningauthor{T. Steiner, A. Brousseau, R. Troncy, R. Verborgh, R. Van de Walle, J. Gabarró}
+\runningauthor{T. Steiner, A. Brousseau, R. Troncy, R. Verborgh, et al.}
 
 \address[A]{Google Germany GmbH, ABC-Str. 19, 20354 Hamburg, Germany,\\
 E-mail: tomac@google.com}
@@ -87,11 +87,7 @@ E-mail: rik.vandewalle@ugent.be}
 E-mail: gabarro@lsi.upc.edu}
 
 \begin{abstract}
-\begin{comment}
-The Twitter Trends feature allows for a global or local view on ``what's happening in my world right now" from a tweet authors' point of view. In this paper, we show the possibility to complete the functionality provided by Twitter Trends via having a closer look at the other side: the tweet readers' point of view. While Twitter Trends works by analyzing the frequency of terms and their velocity of appearance in tweets being authored, our approach is based on the popularity of extracted named entities (in the sense of Linked Data) in tweets being read. Our experimentation architecture uses a client-side browser extension to harvest and dissect tweets from users' timelines, search result pages, or profile pages. Named entities are extracted via several third-party Natural Language Processing (NLP) Web services in parallel, and are then reported to a Web analytics framework, which is used to store, analyze, and compute trends by pivoting the reported named entities by Web analytics data, e.g., users' geographic locations.
-\end{comment}
-In recent years, social media mining has become an essential tool for marketers, traders, and researchers. The information people share publicly on social networks harbors tremendous amounts of valuable social data. Social networks today are very much ``walled gardens'', excellently illustrated by David Simonds' cartoon~(\autoref{fig:DavidSimonds}~\cite{DavidSimonds}).
-
+Lorem ipsum
 \end{abstract}
 
 \begin{keyword}
@@ -102,17 +98,28 @@ In recent years, social media mining has become an essential tool for marketers,
 
 %%%%%%%%%%% The article body starts:
 
-\section{Introduction}
+\section{Introduction} \label{sec:introduction}
+In recent years, social media mining has become an essential tool for marketers, traders, and researchers.
+The information people share publicly on social networks harbors tremendous amounts of valuable social data.
+Social networks today are very much ``walled gardens'', excellently illustrated by a cartoon by David Simonds~(\autoref{fig:DavidSimonds}).
+This network isolatedness reflects on how social media mining is done today.
+Common literature either focuses on just one network~\cite{russell201121}, or treats networks in separate chapters~\cite{russell2011mining}.
 
-% I DON'T WORK
-\begin{comment}
+Typically social media mining happens based on either the search APIs provided by the social networks, or so-called ``fire hose'' streaming APIs.
+The main difference is that in the prior case terms like the name of a brand or company are \emph{proactively} searched for, whereas in the latter case the mining system \emph{reactively} acts upon the occurrence of terms.
+
+\section{Implementation} \label{sec:implementation}
+
+\section{Related Work} \label{sec:relatedwork}
+
+\section{Future Work and Conclusion} \label{sec:futureworkandconclusion}
+
 \begin{figure}
 \centering
 \includegraphics[width=1.0\linewidth]{./resources/davidsimonds.png}
-\caption{Social networks as walled gardens.}
+\caption{Social networks as walled gardens.~\cite{DavidSimonds}}
 \label{fig:DavidSimonds}
 \end{figure}
-\end{comment}
 
 %%%%%%%%%%% The bibliography starts:
 \bibliographystyle{abbrv}
