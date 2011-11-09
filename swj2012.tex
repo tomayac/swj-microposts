@@ -102,11 +102,20 @@ Lorem ipsum
 In recent years, social media mining has become an essential tool for marketers, traders, and researchers.
 The information people share publicly on social networks harbors tremendous amounts of valuable social data.
 Social networks today are very much ``walled gardens'', excellently illustrated by a cartoon by David Simonds~(\autoref{fig:DavidSimonds}).
-This network isolatedness reflects on how social media mining is done today.
-Common literature either focuses on just one network~\cite{russell201121}, or treats networks in separate chapters~\cite{russell2011mining}.
+This network isolatedness reflects on how social media mining is done nowadays.
+Common literature typically either focuses on just one network~\cite{russell201121}, or treats the different networks separately~\cite{russell2011mining}.
+Social media mining happens based on either keyword-based search APIs, or so-called ``fire hose'' realtime streaming APIs, both provided by the social networks themselves.
+The main difference is that in the prior case terms like the name of a brand or company are \emph{proactively} searched for, whereas in the latter case the social media mining system \emph{reactively} acts upon the occurrence of such terms.
 
-Typically social media mining happens based on either the search APIs provided by the social networks, or so-called ``fire hose'' streaming APIs.
-The main difference is that in the prior case terms like the name of a brand or company are \emph{proactively} searched for, whereas in the latter case the mining system \emph{reactively} acts upon the occurrence of terms.
+In this paper, we consider the two popular social networks Facebook\footnote{\url{http://facebook.com/}} and Twitter\footnote{\url{http://twitter.com/}}.
+Traditionally, Twitter is very open with their API, as since the beginning of the platform, API-based Twitter clients have played a strategic role for the company.
+Twitter provides developers with the Twitter Streaming API~\cite{TwitterStreamingAPI}, which allows high-throughput near-realtime access to various subsets of public and protected Twitter data.
+Facebook has no such public ``fire hose'' API, however, via its Graph API~\cite{FacebookRealtimeAPI} supports realtime updates to enable applications to subscribe to a limited set of changes in data from Facebook.
+Whenever a subscribed change occurs, Facebook notifies subscribers with a list of changes.
+This imbalance of API openness has an impact on publications around social networks.
+While at the \textit{World Wide Web Conference 2011} alone three Twitter papers based on the Twitter API were published~\cite{Romero:2011:DMI:1963405.1963503, Meeder:2011:WKY:1963405.1963479, Wu:2011:SWT:1963405.1963504}, publications on Facebook typically focus on privacy issues~(e.g.,~\cite{liu:settings}), or Facebook's sociological impact~(e.g.,~\cite{JCC4:JCC4367}), without making use of the Facebook API.
+
+What to the best of our knowledge all publications have in common is their focus on the author side, i.e., it is very well researched what people \emph{produce} on social networks, however, not so much what people \emph{consume}.
 
 \section{Implementation} \label{sec:implementation}
 
