@@ -32,6 +32,9 @@
 \usepackage[pdftex,urlcolor=black,colorlinks=true,linkcolor=black,citecolor=black]{hyperref}
 \def\sectionautorefname{Section}
 \def\subsectionautorefname{Subsection}
+% todo macro
+\usepackage{color}
+\newcommand{\todo}[1]{\noindent\textcolor{red}{{\bf \{TODO}: #1{\bf \}}}}
 
 %% Define a new 'smallurl' style for the package that will use a smaller font.
 \makeatletter
@@ -54,12 +57,12 @@
 \begin{frontmatter}
 
 \pretitle{What'chu talkin' about, Willis?}
-\title{A Comparison of Conversation Topics\\on Facebook and Twitter}
+\title{A Comparison of Topics People read about on Facebook and on Twitter}
 %\subtitle{}
 
 %\footnote{\url{http://en.wikipedia.org/wiki/Diff'rent\_Strokes\#Later\_appearances\_of\_the\_characters}}
 
-\runningtitle{A Comparison of Conversation Topics on Facebook and Twitter}
+\runningtitle{A Comparison of Topics People read about on Facebook and on Twitter}
 
 %\review{}{}{}
 
@@ -87,11 +90,11 @@ E-mail: rik.vandewalle@ugent.be}
 E-mail: gabarro@lsi.upc.edu}
 
 \begin{abstract}
-Lorem ipsum
+\todo{Write abstract}
 \end{abstract}
 
 \begin{keyword}
- \sep
+\todo{List keywords}
 \end{keyword}
 
 \end{frontmatter}
@@ -115,13 +118,14 @@ Whenever a subscribed change occurs, Facebook notifies subscribers with a list o
 This imbalance of API openness has an impact on publications around social networks.
 While at the \textit{World Wide Web Conference 2011} alone three Twitter papers based on the Twitter API were published~\cite{Romero:2011:DMI:1963405.1963503, Meeder:2011:WKY:1963405.1963479, Wu:2011:SWT:1963405.1963504}, publications on Facebook typically focus on privacy issues~(e.g.,~\cite{liu:settings}), or Facebook's sociological impact~(e.g.,~\cite{JCC4:JCC4367}), without making use of the Facebook API.
 
-What to the best of our knowledge all publications have in common is their focus on the author side, i.e., it is very well researched what people \emph{produce} on social networks, however, not so much what people \emph{consume}.
+What to the best of our knowledge all publications so far have in common is their focus on the author side, i.e., it is very well researched what people \emph{produce} on social networks -- and especially on Twitter -- however, not so much what people \emph{consume}.
+This is especially true across social networks.
+As far as we can tell, no study has compared \emph{reader} behavior on different social networks before.
+In this work, we compare topics people read about on Facebook and on Twitter and classify those topics in order to provide an overall comparison.
+We therefore have implemented two similar browser extensions, one for Twitter, one for Facebook, that enrich the user experience on those social networks and by means of a named entity disambiguation tool determine the topics that people see on their timelines.
+By focusing exclusively on content people see when navigating to either \url{http://twitter.com} or \url{http://facebook.com}, we assume people indeed read that content, especially as both social network sites require users to actively click a link ``$\mathit{n}$ new stories since your last visit'' or ``$\mathit{n}$ new tweets'' respectively rather than auto-updating the timeline.
 
-\section{Implementation} \label{sec:implementation}
-
-\section{Related Work} \label{sec:relatedwork}
-
-\section{Future Work and Conclusion} \label{sec:futureworkandconclusion}
+The remainder of this paper is structured as follows: \todo{Outline paper structure}
 
 \begin{figure}
 \centering
@@ -129,6 +133,26 @@ What to the best of our knowledge all publications have in common is their focus
 \caption{Social networks as walled gardens.~\cite{DavidSimonds}}
 \label{fig:DavidSimonds}
 \end{figure}
+
+\section{Implementation} \label{sec:implementation}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\linewidth]{./resources/twitterswarmnlpstats.png}
+\caption{\textit{Seven day active users} development for the Twitter Swarm NLP browser extension.}
+\label{fig:twitterswarmnlpstats}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\linewidth]{./resources/facebookswarmnlpstats.png}
+\caption{\textit{Seven day active users} development for the Facebook Swarm NLP browser extension.}
+\label{fig:facebookswarmnlpstats}
+\end{figure}
+
+\section{Related Work} \label{sec:relatedwork}
+
+\section{Future Work and Conclusion} \label{sec:futureworkandconclusion}
 
 %%%%%%%%%%% The bibliography starts:
 \bibliographystyle{abbrv}
