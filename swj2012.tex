@@ -32,6 +32,12 @@
 \usepackage[pdftex,urlcolor=black,colorlinks=true,linkcolor=black,citecolor=black]{hyperref}
 \def\sectionautorefname{Section}
 \def\subsectionautorefname{Subsection}
+% bullet numbers
+\usepackage{tkz-graph}
+\usetikzlibrary{matrix,arrows,decorations.pathmorphing,shapes}
+\newcommand{\dobulletnumber}[1]{\node[circle,text=white,fill=gray,anchor=west,inner sep=1pt] {\sffamily #1}}
+\newcommand{\bulletnumber}[1]{\tikz[baseline=-2.5,overlay]\dobulletnumber{#1};}
+\newcommand{\bulletref}[1]{\tikz[baseline=-2.5]\dobulletnumber{\fontsize{8}{8}\selectfont#1};}
 % todo macro
 \usepackage{color}
 \newcommand{\todo}[1]{\noindent\textcolor{red}{{\bf \{TODO}: #1{\bf \}}}}
@@ -57,12 +63,12 @@
 \begin{frontmatter}
 
 \pretitle{What'chu talkin' about, Willis?}
-\title{A Comparison of Topics People read about on Facebook and on Twitter}
+\title{A Comparison of Topics People read about on Facebook and on Twitter and where}
 %\subtitle{}
 
 %\footnote{\url{http://en.wikipedia.org/wiki/Diff'rent\_Strokes\#Later\_appearances\_of\_the\_characters}}
 
-\runningtitle{A Comparison of Topics People read about on Facebook and on Twitter}
+\runningtitle{A Comparison of Topics People read about on Facebook and on Twitter and where}
 
 %\review{}{}{}
 
@@ -126,7 +132,25 @@ In this work, we compare topics people read about on Facebook and on Twitter and
 We therefore have implemented two similar browser extensions, one for Twitter, one for Facebook, that enrich the user experience on those social networks and by means of a named entity disambiguation tool determine the topics that people see on their timelines.
 By focusing exclusively on content people see when navigating to either \url{http://twitter.com} or \url{http://facebook.com}, we assume people indeed read that content, especially as both social network sites require users to actively click a link ``$\mathit{n}$ new stories since your last visit'' or ``$\mathit{n}$ new tweets'' respectively rather than auto-updating the timeline.
 
-The remainder of this paper is structured as follows: \todo{Outline paper structure}
+\subsection{Paper Objective and Structure}
+In this paper, we \textbf{will not}:
+\begin{itemize}%[topsep=-.5em, partopsep=0pt, itemsep=0pt]
+	\item perform analyses based on hashtags, term frequency, or trends;
+	\item perform analyses based on geotagged microposts;
+	\item work with huge amounts of microposts from ``fire hose'' APIs;
+	\item focus on the micropost author side.
+\end{itemize}
+On the contrary, we \textbf{will}:
+\begin{itemize}%[topsep=-.5em, partopsep=0pt, itemsep=0pt]
+	\item perform analyses based on disambiguated named entities;
+	\item perform analyses based on IP-based reader location detection;
+	\item work with a manageable amount of microposts read by a random population of social network users;
+	\item focus on the micropost reader side,
+\end{itemize}
+which is why we strive for a paradigm shift that promises new insights for tasks like brand analysis, opinion research.
+
+\todo{Describe paper structure.}
+
 
 \begin{figure}
 \centering
@@ -169,6 +193,9 @@ In the period from March 1 to November 8, for Facebook Swarm NLP, overall 858 un
 \caption{Location of users of the Facebook Swarm NLP browser extension (Mar. 1 -- Nov. 8).}
 \label{fig:facebooklocation}
 \end{figure}
+
+\section{Discussion}
+% Talk about what network to use for what purpose, talk about brand analysis etc.
 
 \section{Related Work} \label{sec:relatedwork}
 
