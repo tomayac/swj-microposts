@@ -1,0 +1,510 @@
+# ----------------------------------------
+# Facebook Swarm NLP
+# Top Events
+# 20110501-20111112
+# ----------------------------------------
+
+Event Action	Total Events	Unique Events	Event Value	Avg. Value
+http://dbpedia.org/resource/Facebook	"5,638"	"1,814"	0	0.00
+// http://dbpedia.org/resource/List_of_minor_characters_in_the_Teen_Titans_animated_series	"5,152"	"1,085"	0	0.00
+http://dbpedia.org/resource/Birthday	"3,939"	792	0	0.00
+http://dbpedia.org/resource/Allah	"2,716"	770	0	0.00
+// http://dbpedia.org/resource/Tak_Province	"2,601"	471	0	0.00
+// http://dbpedia.org/resource/French_conjugation	"2,115"	321	0	0.00
+http://dbpedia.org/resource/Love	"1,797"	630	0	0.00
+// http://dbpedia.org/resource/Tight_end	"1,553"	493	0	0.00
+// http://dbpedia.org/resource/International_System_of_Units	"1,264"	457	0	0.00
+http://dbpedia.org/resource/United_States	"1,251"	508	0	0.00
+http://dbpedia.org/resource/Twitter	"1,109"	473	0	0.00
+http://dbpedia.org/resource/God	"1,027"	426	0	0.00
+// http://dbpedia.org/resource/charset-error	"1,017"	403	0	0.00
+http://dbpedia.org/resource/Disc_jockey	984	363	0	0.00
+http://dbpedia.org/resource/North_America	931	342	0	0.00
+http://dbpedia.org/resource/United_Nations	904	379	0	0.00
+http://dbpedia.org/resource/Google	872	419	0	0.00
+http://dbpedia.org/resource/World	849	400	0	0.00
+// http://dbpedia.org/resource/Spanish_pronouns	828	304	0	0.00
+http://dbpedia.org/resource/YouTube	788	307	0	0.00
+http://dbpedia.org/resource/Ramadan	748	242	0	0.00
+http://dbpedia.org/resource/India	676	235	0	0.00
+http://dbpedia.org/resource/Fuck	643	240	0	0.00
+// http://dbpedia.org/resource/Feliz_(song)	622	233	0	0.00
+http://dbpedia.org/resource/Television	597	284	0	0.00
+http://dbpedia.org/resource/London	590	245	0	0.00
+// http://dbpedia.org/resource/Hectare	558	162	0	0.00
+http://dbpedia.org/resource/LOL	550	117	0	0.00
+http://dbpedia.org/resource/SMS	549	235	0	0.00
+// http://dbpedia.org/resource/Dej	545	132	0	0.00
+http://dbpedia.org/resource/Japan	544	199	0	0.00
+// http://dbpedia.org/resource/Merit_(Buddhism)	537	152	0	0.00
+// http://dbpedia.org/resource/Nous	517	110	0	0.00
+// http://dbpedia.org/resource/Ska	512	97	0	0.00
+http://dbpedia.org/resource/Friendship	505	184	0	0.00
+// http://dbpedia.org/resource/Deutsche_Eishockey_Liga	504	218	0	0.00
+// http://dbpedia.org/resource/Haha_%28entertainer%29	481	198	0	0.00
+http://dbpedia.org/resource/Justin_Bieber	475	201	0	0.00
+http://dbpedia.org/resource/Muslim	472	180	0	0.00
+http://dbpedia.org/resource/Internet	462	193	0	0.00
+http://dbpedia.org/resource/IPhone	443	232	0	0.00
+http://dbpedia.org/resource/Shit	435	153	0	0.00
+http://dbpedia.org/resource/Knockout	425	143	0	0.00
+// http://dbpedia.org/resource/Till	423	93	0	0.00
+http://dbpedia.org/resource/Paris	420	172	0	0.00
+http://dbpedia.org/resource/Islam	414	192	0	0.00
+// http://dbpedia.org/resource/Abnormal_end	399	154	0	0.00
+http://dbpedia.org/resource/Muhammad	398	146	0	0.00
+http://dbpedia.org/resource/Girl	396	171	0	0.00
+http://dbpedia.org/resource/Lord	394	129	0	0.00
+// http://dbpedia.org/resource/Kami	393	75	0	0.00
+http://dbpedia.org/resource/Time	388	178	0	0.00
+http://dbpedia.org/resource/Friends	385	155	0	0.00
+// http://dbpedia.org/resource/Ale	377	88	0	0.00
+// http://dbpedia.org/resource/Love_It	372	153	0	0.00
+// http://dbpedia.org/resource/?:	364	121	0	0.00
+http://dbpedia.org/resource/CityVille	362	149	0	0.00
+http://dbpedia.org/resource/England	362	155	0	0.00
+// http://dbpedia.org/resource/Freunde	361	156	0	0.00
+http://dbpedia.org/resource/Virginia	355	131	0	0.00
+http://dbpedia.org/resource/Berlin	354	148	0	0.00
+http://dbpedia.org/resource/Sayyid	353	102	0	0.00
+// http://dbpedia.org/resource/Vill	350	73	0	0.00
+// http://dbpedia.org/resource/3-Deoxy-D-manno-oct-2-ulosonic_acid	348	114	0	0.00
+http://dbpedia.org/resource/Jesus	344	160	0	0.00
+http://dbpedia.org/resource/United_Kingdom	339	139	0	0.00
+http://dbpedia.org/resource/Skype	333	136	0	0.00
+http://dbpedia.org/resource/Graphics_software	331	83	0	0.00
+// http://dbpedia.org/resource/London,_Midland_and_Scottish_Railway"	331	61	0	0.00
+http://dbpedia.org/resource/Malaysia	330	93	0	0.00
+http://dbpedia.org/resource/Germany	324	124	0	0.00
+http://dbpedia.org/resource/Man	320	116	0	0.00
+http://dbpedia.org/resource/Vienna	320	153	0	0.00
+http://dbpedia.org/resource/Gens	314	37	0	0.00
+http://dbpedia.org/resource/Lionel_Messi	313	100	0	0.00
+http://dbpedia.org/resource/Halloween	312	85	0	0.00
+// http://dbpedia.org/resource/Como	311	145	0	0.00
+http://dbpedia.org/resource/Madrid	310	142	0	0.00
+http://dbpedia.org/resource/Imam	308	102	0	0.00
+http://dbpedia.org/resource/Luck	306	157	0	0.00
+// http://dbpedia.org/resource/Hahaha_(film)	304	135	0	0.00
+// http://dbpedia.org/resource/Yule	303	59	0	0.00
+http://dbpedia.org/resource/DVD	301	142	0	0.00
+http://dbpedia.org/resource/Munich	283	112	0	0.00
+// http://dbpedia.org/resource/Gracias	281	128	0	0.00
+http://dbpedia.org/resource/Laptop	281	49	0	0.00
+http://dbpedia.org/resource/MTV	281	129	0	0.00
+// http://dbpedia.org/resource/Te_Quiero	279	116	0	0.00
+http://dbpedia.org/resource/Eid_ul-Fitr	277	58	0	0.00
+http://dbpedia.org/resource/FC_Barcelona	277	87	0	0.00
+http://dbpedia.org/resource/Indonesia	275	98	0	0.00
+http://dbpedia.org/resource/Entourage_(TV_series)	272	76	0	0.00
+http://dbpedia.org/resource/Ali	269	125	0	0.00
+http://dbpedia.org/resource/Barcelona	266	133	0	0.00
+http://dbpedia.org/resource/Moon	261	103	0	0.00
+// http://dbpedia.org/resource/Help_me	260	129	0	0.00
+http://dbpedia.org/resource/Music_video	255	102	0	0.00
+// http://dbpedia.org/resource/Dan_(rank)	254	87	0	0.00
+http://dbpedia.org/resource/Inna	254	70	0	0.00
+http://dbpedia.org/resource/Iran	253	102	0	0.00
+http://dbpedia.org/resource/Compact_Disc	252	125	0	0.00
+http://dbpedia.org/resource/Life	251	118	0	0.00
+// http://dbpedia.org/resource/Mange	243	65	0	0.00
+// http://dbpedia.org/resource/Schütze	243	126	0	0.00
+http://dbpedia.org/resource/Tutti	243	97	0	0.00
+http://dbpedia.org/resource/Bild	242	96	0	0.00
+// http://dbpedia.org/resource/ALGO	241	87	0	0.00
+http://dbpedia.org/resource/IPad	240	141	0	0.00
+http://dbpedia.org/resource/M!_Countdown	238	15	0	0.00
+http://dbpedia.org/resource/Oslo	238	78	0	0.00
+http://dbpedia.org/resource/Watching	237	87	0	0.00
+http://dbpedia.org/resource/Game	236	131	0	0.00
+// http://dbpedia.org/resource/Binary_prefix	235	95	0	0.00
+http://dbpedia.org/resource/New_York	235	106	0	0.00
+http://dbpedia.org/resource/Real_Madrid_C.F.	235	118	0	0.00
+// http://dbpedia.org/resource/Vi	233	84	0	0.00
+http://dbpedia.org/resource/France	231	117	0	0.00
+http://dbpedia.org/resource/Manchester_United_F.C.	231	98	0	0.00
+// http://dbpedia.org/resource/Huhu_beetle	229	103	0	0.00
+// http://dbpedia.org/resource/Mario	226	75	0	0.00
+http://dbpedia.org/resource/Philippines	224	95	0	0.00
+http://dbpedia.org/resource/Shawn_Hernandez	223	82	0	0.00
+http://dbpedia.org/resource/ITunes	222	101	0	0.00
+http://dbpedia.org/resource/Thailand	222	104	0	0.00
+// http://dbpedia.org/resource/Time_(disambiguation)	222	84	0	0.00
+http://dbpedia.org/resource/Android_(operating_system)	221	76	0	0.00
+http://dbpedia.org/resource/Happiness	221	84	0	0.00
+http://dbpedia.org/resource/Xbox	219	82	0	0.00
+// http://dbpedia.org/resource/Feel_%28Robbie_Williams_song%29	216	94	0	0.00
+// http://dbpedia.org/resource/Van	215	40	0	0.00
+http://dbpedia.org/resource/Mario_Maurer	213	37	0	0.00
+http://dbpedia.org/resource/Anno_Domini	212	75	0	0.00
+// http://dbpedia.org/resource/University_of_Economics,_Prague"	212	92	0	0.00
+// http://dbpedia.org/resource/Bude	211	63	0	0.00
+// http://dbpedia.org/resource/Race_and_ethnicity_in_the_United_States_Census	211	92	0	0.00
+http://dbpedia.org/resource/Family	210	62	0	0.00
+http://dbpedia.org/resource/Future	210	103	0	0.00
+http://dbpedia.org/resource/Harry_Potter	210	80	0	0.00
+http://dbpedia.org/resource/Sleep	210	89	0	0.00
+http://dbpedia.org/resource/Very_Important_Person	208	99	0	0.00
+// http://dbpedia.org/resource/Var_(department)	207	44	0	0.00
+http://dbpedia.org/resource/FIFA	206	70	0	0.00
+// http://dbpedia.org/resource/Em_(typography)	205	79	0	0.00
+http://dbpedia.org/resource/Truth	201	91	0	0.00
+// http://dbpedia.org/resource/Cuando_River	198	91	0	0.00
+// http://dbpedia.org/resource/General_Electric	196	82	0	0.00
+// http://dbpedia.org/resource/Help	195	107	0	0.00
+// http://dbpedia.org/resource/Heute	194	86	0	0.00
+http://dbpedia.org/resource/Hip_hop	194	66	0	0.00
+http://dbpedia.org/resource/Fête	193	25	0	0.00
+http://dbpedia.org/resource/Weekend	192	76	0	0.00
+http://dbpedia.org/resource/Boy	191	88	0	0.00
+http://dbpedia.org/resource/Hemma	191	49	0	0.00
+http://dbpedia.org/resource/Mexico	191	85	0	0.00
+http://dbpedia.org/resource/Taeyeon	191	81	0	0.00
+http://dbpedia.org/resource/Eid_Mubarak	190	63	0	0.00
+http://dbpedia.org/resource/Stockholm	190	68	0	0.00
+http://dbpedia.org/resource/Lady_Gaga	188	110	0	0.00
+// http://dbpedia.org/resource/Ton	188	46	0	0.00
+http://dbpedia.org/resource/English_language	185	84	0	0.00
+// http://dbpedia.org/resource/Bonjour_(software)	184	29	0	0.00
+// http://dbpedia.org/resource/Ur	183	79	0	0.00
+http://dbpedia.org/resource/Chelsea_F.C.	182	61	0	0.00
+http://dbpedia.org/resource/Gothenburg	182	54	0	0.00
+// http://dbpedia.org/resource/Hay	182	88	0	0.00
+// http://dbpedia.org/resource/List_of_French_words_and_phrases_used_by_English_speakers	182	25	0	0.00
+http://dbpedia.org/resource/Milan	182	74	0	0.00
+http://dbpedia.org/resource/Need	181	84	0	0.00
+http://dbpedia.org/resource/Sky	181	82	0	0.00
+http://dbpedia.org/resource/Selena_Gomez	180	76	0	0.00
+http://dbpedia.org/resource/Standard_Hindi	180	66	0	0.00
+http://dbpedia.org/resource/Cancer	179	87	0	0.00
+http://dbpedia.org/resource/Photograph	179	68	0	0.00
+http://dbpedia.org/resource/Party	178	57	0	0.00
+http://dbpedia.org/resource/Retirement_home	178	14	0	0.00
+// http://dbpedia.org/resource/Kim_(Korean_name)	176	62	0	0.00
+// http://dbpedia.org/resource/Kom_Monastery	176	48	0	0.00
+http://dbpedia.org/resource/Austria	175	103	0	0.00
+// http://dbpedia.org/resource/Akçe	174	56	0	0.00
+http://dbpedia.org/resource/Amy_Winehouse	174	68	0	0.00
+http://dbpedia.org/resource/Hell	174	70	0	0.00
+http://dbpedia.org/resource/Music	174	87	0	0.00
+http://dbpedia.org/resource/Pun	174	64	0	0.00
+http://dbpedia.org/resource/Celcom	173	56	0	0.00
+http://dbpedia.org/resource/Israel	172	87	0	0.00
+http://dbpedia.org/resource/Music_Bank_(TV_series)	172	15	0	0.00
+"http://dbpedia.org/resource/Nike,_Inc."	171	55	0	0.00
+http://dbpedia.org/resource/Woman	171	84	0	0.00
+http://dbpedia.org/resource/Visa_Inc.	170	49	0	0.00
+http://dbpedia.org/resource/Europe	168	87	0	0.00
+// http://dbpedia.org/resource/THX	168	94	0	0.00
+http://dbpedia.org/resource/Feria	167	18	0	0.00
+// http://dbpedia.org/resource/Juli_(band)	167	66	0	0.00
+http://dbpedia.org/resource/Mother	167	84	0	0.00
+http://dbpedia.org/resource/Bless_you	166	58	0	0.00
+http://dbpedia.org/resource/Heart	166	62	0	0.00
+http://dbpedia.org/resource/Video	166	75	0	0.00
+http://dbpedia.org/resource/De_La_Soul	165	56	0	0.00
+http://dbpedia.org/resource/Ice_cream	164	61	0	0.00
+http://dbpedia.org/resource/Eastern_Time_Zone	163	67	0	0.00
+======
+http://dbpedia.org/resource/Arsenal_F.C.	162	77	0	0.00
+http://dbpedia.org/resource/Common_Era	162	70	0	0.00
+http://dbpedia.org/resource/Jungfrau	162	45	0	0.00
+http://dbpedia.org/resource/Want	162	72	0	0.00
+http://dbpedia.org/resource/Duit	161	82	0	0.00
+http://dbpedia.org/resource/The_New_York_Times	161	74	0	0.00
+http://dbpedia.org/resource/Cat	160	40	0	0.00
+http://dbpedia.org/resource/Hewlett-Packard	160	83	0	0.00
+http://dbpedia.org/resource/Sale	160	66	0	0.00
+http://dbpedia.org/resource/Pega	159	59	0	0.00
+http://dbpedia.org/resource/Die_Welt	158	72	0	0.00
+http://dbpedia.org/resource/Eure	158	70	0	0.00
+http://dbpedia.org/resource/Massachusetts_Institute_of_Technology	158	52	0	0.00
+http://dbpedia.org/resource/Anda_(Heilongjiang)	156	57	0	0.00
+http://dbpedia.org/resource/Heino_Eller	155	51	0	0.00
+http://dbpedia.org/resource/IPod	155	81	0	0.00
+http://dbpedia.org/resource/Rihanna	155	77	0	0.00
+http://dbpedia.org/resource/Sun	155	80	0	0.00
+http://dbpedia.org/resource/Dubstep	154	36	0	0.00
+http://dbpedia.org/resource/Italy	154	74	0	0.00
+http://dbpedia.org/resource/Mumbai	154	74	0	0.00
+http://dbpedia.org/resource/Soybean	154	75	0	0.00
+http://dbpedia.org/resource/Kiss	153	59	0	0.00
+http://dbpedia.org/resource/Adam	152	61	0	0.00
+http://dbpedia.org/resource/Alhamdulillah	152	82	0	0.00
+http://dbpedia.org/resource/Association_football	152	76	0	0.00
+http://dbpedia.org/resource/Facebook_features	151	84	0	0.00
+http://dbpedia.org/resource/Mii	151	63	0	0.00
+http://dbpedia.org/resource/Brazil	149	69	0	0.00
+http://dbpedia.org/resource/European_Union	149	81	0	0.00
+http://dbpedia.org/resource/JAG_(TV_series)	149	48	0	0.00
+http://dbpedia.org/resource/Time_(magazine)	149	74	0	0.00
+http://dbpedia.org/resource/Midsummer	148	21	0	0.00
+http://dbpedia.org/resource/Song	148	66	0	0.00
+http://dbpedia.org/resource/BMW	147	72	0	0.00
+http://dbpedia.org/resource/Glossary_of_Islam	146	73	0	0.00
+http://dbpedia.org/resource/Singapore	146	63	0	0.00
+http://dbpedia.org/resource/Texas	145	42	0	0.00
+http://dbpedia.org/resource/Tour_de_France	145	28	0	0.00
+http://dbpedia.org/resource/Question	144	74	0	0.00
+http://dbpedia.org/resource/Online_and_offline	143	74	0	0.00
+http://dbpedia.org/resource/Rain_(disambiguation)	143	39	0	0.00
+http://dbpedia.org/resource/Mind	142	50	0	0.00
+http://dbpedia.org/resource/Sin	142	69	0	0.00
+http://dbpedia.org/resource/Argentina	141	56	0	0.00
+http://dbpedia.org/resource/Extended_play	141	62	0	0.00
+http://dbpedia.org/resource/Jako	140	49	0	0.00
+http://dbpedia.org/resource/Windows_XP	140	72	0	0.00
+http://dbpedia.org/resource/NASA	139	38	0	0.00
+http://dbpedia.org/resource/Ozzy_Osbourne	139	36	0	0.00
+http://dbpedia.org/resource/The_Road	139	54	0	0.00
+http://dbpedia.org/resource/Bangkok	138	49	0	0.00
+http://dbpedia.org/resource/Earth	138	67	0	0.00
+http://dbpedia.org/resource/The_River	138	18	0	0.00
+http://dbpedia.org/resource/A_Little_Bit	136	50	0	0.00
+http://dbpedia.org/resource/A.C._Milan	136	54	0	0.00
+http://dbpedia.org/resource/David_Guetta	136	57	0	0.00
+http://dbpedia.org/resource/Di_%28ethnic_group%29	136	75	0	0.00
+http://dbpedia.org/resource/Du_bist	136	49	0	0.00
+http://dbpedia.org/resource/ER_(TV_series)	136	45	0	0.00
+http://dbpedia.org/resource/Status_quo	136	57	0	0.00
+http://dbpedia.org/resource/Batam	135	21	0	0.00
+http://dbpedia.org/resource/Transformers:_Dark_of_the_Moon	135	47	0	0.00
+http://dbpedia.org/resource/Wat	135	30	0	0.00
+http://dbpedia.org/resource/Play_(activity)	134	53	0	0.00
+http://dbpedia.org/resource/Samsung_Group	133	75	0	0.00
+http://dbpedia.org/resource/Apple_Inc.	132	87	0	0.00
+http://dbpedia.org/resource/Artificial_intelligence	132	44	0	0.00
+http://dbpedia.org/resource/Bachelor_of_Arts	132	75	0	0.00
+http://dbpedia.org/resource/Christian	132	57	0	0.00
+http://dbpedia.org/resource/Hamburg	132	64	0	0.00
+http://dbpedia.org/resource/Mobile_phone	132	59	0	0.00
+http://dbpedia.org/resource/Pet	132	44	0	0.00
+http://dbpedia.org/resource/Shahid_Kapoor	132	9	0	0.00
+http://dbpedia.org/resource/New_York_City	131	71	0	0.00
+http://dbpedia.org/resource/River_(disambiguation)	131	17	0	0.00
+http://dbpedia.org/resource/Weather	131	59	0	0.00
+http://dbpedia.org/resource/Kata	130	49	0	0.00
+http://dbpedia.org/resource/Sony	130	67	0	0.00
+http://dbpedia.org/resource/The_Nice	129	39	0	0.00
+http://dbpedia.org/resource/Australia	128	87	0	0.00
+http://dbpedia.org/resource/CBS	128	49	0	0.00
+http://dbpedia.org/resource/Egypt	128	55	0	0.00
+http://dbpedia.org/resource/Manchester	128	52	0	0.00
+"http://dbpedia.org/resource/New_York,_Lincolnshire"	128	55	0	0.00
+http://dbpedia.org/resource/Tokyo	128	43	0	0.00
+http://dbpedia.org/resource/Wi-Fi	128	60	0	0.00
+http://dbpedia.org/resource/A_Good_Day	127	43	0	0.00
+http://dbpedia.org/resource/Cristiano_Ronaldo	127	44	0	0.00
+http://dbpedia.org/resource/Nokia	127	48	0	0.00
+http://dbpedia.org/resource/Kolis	126	22	0	0.00
+http://dbpedia.org/resource/Prague	126	53	0	0.00
+http://dbpedia.org/resource/MSN	125	69	0	0.00
+http://dbpedia.org/resource/Qee	125	54	0	0.00
+http://dbpedia.org/resource/Yoona	125	59	0	0.00
+http://dbpedia.org/resource/Blood	124	42	0	0.00
+http://dbpedia.org/resource/Nederlandse_Omroep_Stichting	124	67	0	0.00
+http://dbpedia.org/resource/Seohyun	124	53	0	0.00
+http://dbpedia.org/resource/Lied	123	50	0	0.00
+http://dbpedia.org/resource/Lil_Wayne	123	46	0	0.00
+http://dbpedia.org/resource/Liquefied_natural_gas	123	51	0	0.00
+http://dbpedia.org/resource/Male	123	41	0	0.00
+http://dbpedia.org/resource/Thought	123	53	0	0.00
+http://dbpedia.org/resource/Xalam	123	36	0	0.00
+http://dbpedia.org/resource/Sofia	122	53	0	0.00
+http://dbpedia.org/resource/World_Wrestling_Entertainment	122	57	0	0.00
+http://dbpedia.org/resource/Christmas	121	44	0	0.00
+http://dbpedia.org/resource/International_Friendship_Day	121	24	0	0.00
+http://dbpedia.org/resource/People_%281964_song%29	121	47	0	0.00
+http://dbpedia.org/resource/Angry_Birds	120	53	0	0.00
+http://dbpedia.org/resource/Indian_Standard_Time	120	48	0	0.00
+http://dbpedia.org/resource/Solo_(music)	120	51	0	0.00
+http://dbpedia.org/resource/Die_Zeit	119	45	0	0.00
+http://dbpedia.org/resource/FC_Bayern_Munich	119	28	0	0.00
+http://dbpedia.org/resource/Money	119	41	0	0.00
+http://dbpedia.org/resource/Peace_be_upon_him_(Islam)	119	71	0	0.00
+http://dbpedia.org/resource/Rhodos	119	37	0	0.00
+http://dbpedia.org/resource/Bar_(establishment)	118	28	0	0.00
+http://dbpedia.org/resource/Batman	118	39	0	0.00
+http://dbpedia.org/resource/Cluster_headache	118	43	0	0.00
+"http://dbpedia.org/resource/Cut,_copy,_and_paste"	118	66	0	0.00
+http://dbpedia.org/resource/Swimming	118	49	0	0.00
+http://dbpedia.org/resource/Vole	118	21	0	0.00
+http://dbpedia.org/resource/Film	117	65	0	0.00
+http://dbpedia.org/resource/How_I_Met_Your_Mother	117	37	0	0.00
+http://dbpedia.org/resource/Leipzig	117	52	0	0.00
+http://dbpedia.org/resource/LG_Corp.	117	59	0	0.00
+http://dbpedia.org/resource/Tout	117	29	0	0.00
+http://dbpedia.org/resource/Pizza	116	56	0	0.00
+http://dbpedia.org/resource/Bob_Dylan	115	7	0	0.00
+http://dbpedia.org/resource/Deutsches_Institut_für_Normung	115	31	0	0.00
+http://dbpedia.org/resource/Dog	115	39	0	0.00
+http://dbpedia.org/resource/Harry_Potter_and_the_Deathly_Hallows	115	40	0	0.00
+http://dbpedia.org/resource/Michael_Jackson	115	66	0	0.00
+http://dbpedia.org/resource/Microsoft	115	69	0	0.00
+http://dbpedia.org/resource/UEFA_Champions_League	115	46	0	0.00
+http://dbpedia.org/resource/Vise	115	22	0	0.00
+http://dbpedia.org/resource/China	114	64	0	0.00
+http://dbpedia.org/resource/Depeche_Mode	114	24	0	0.00
+http://dbpedia.org/resource/Happy_Birthday_to_You	114	75	0	0.00
+http://dbpedia.org/resource/Saudi_Arabia	114	56	0	0.00
+http://dbpedia.org/resource/Wiz_Khalifa	114	27	0	0.00
+http://dbpedia.org/resource/Asia	113	68	0	0.00
+http://dbpedia.org/resource/Ay	113	46	0	0.00
+http://dbpedia.org/resource/Eye	113	65	0	0.00
+http://dbpedia.org/resource/Penis	113	14	0	0.00
+http://dbpedia.org/resource/Backslash	112	33	0	0.00
+http://dbpedia.org/resource/Feeling	112	62	0	0.00
+http://dbpedia.org/resource/Jamaica	112	26	0	0.00
+http://dbpedia.org/resource/Po_(river)	112	48	0	0.00
+http://dbpedia.org/resource/Salah	112	66	0	0.00
+http://dbpedia.org/resource/Dieu	111	49	0	0.00
+http://dbpedia.org/resource/LAHAT	111	44	0	0.00
+http://dbpedia.org/resource/Liseberg	111	28	0	0.00
+http://dbpedia.org/resource/Redditch	111	21	0	0.00
+http://dbpedia.org/resource/Alcatel-Lucent	110	20	0	0.00
+http://dbpedia.org/resource/Eminem	110	42	0	0.00
+http://dbpedia.org/resource/LP_record	110	30	0	0.00
+http://dbpedia.org/resource/El_Salvador	109	43	0	0.00
+http://dbpedia.org/resource/Proč	109	32	0	0.00
+http://dbpedia.org/resource/Teenager_Liebe	109	48	0	0.00
+http://dbpedia.org/resource/Terima_Kasih	109	47	0	0.00
+http://dbpedia.org/resource/I_Swear	108	56	0	0.00
+http://dbpedia.org/resource/Professional_wrestling_throws	108	40	0	0.00
+http://dbpedia.org/resource/Test_cricket	108	42	0	0.00
+http://dbpedia.org/resource/BlackBerry	107	45	0	0.00
+http://dbpedia.org/resource/Milana	107	12	0	0.00
+http://dbpedia.org/resource/Du_hast	106	48	0	0.00
+http://dbpedia.org/resource/Jérémy_Menez	106	5	0	0.00
+http://dbpedia.org/resource/Avant	105	27	0	0.00
+http://dbpedia.org/resource/Bad_(economics)	105	47	0	0.00
+http://dbpedia.org/resource/Hari	105	66	0	0.00
+http://dbpedia.org/resource/Silvio_Berlusconi	105	43	0	0.00
+http://dbpedia.org/resource/Boldog	104	12	0	0.00
+http://dbpedia.org/resource/Hadith	104	46	0	0.00
+http://dbpedia.org/resource/Red_Bull	104	40	0	0.00
+http://dbpedia.org/resource/Spanish_profanity	104	52	0	0.00
+http://dbpedia.org/resource/Spiel	104	62	0	0.00
+http://dbpedia.org/resource/True_%28Spandau_Ballet_song%29	104	43	0	0.00
+http://dbpedia.org/resource/Barack_Obama	103	64	0	0.00
+http://dbpedia.org/resource/Blaise_Matuidi	103	5	0	0.00
+http://dbpedia.org/resource/Elle_(magazine)	103	51	0	0.00
+http://dbpedia.org/resource/Fan_%28person%29	103	57	0	0.00
+http://dbpedia.org/resource/Lost_(TV_series)	103	32	0	0.00
+http://dbpedia.org/resource/Unidentified_flying_object	103	30	0	0.00
+http://dbpedia.org/resource/Belgium	102	31	0	0.00
+"http://dbpedia.org/resource/Esto,_Florida"	102	47	0	0.00
+"http://dbpedia.org/resource/Eunice,_Louisiana"	102	29	0	0.00
+http://dbpedia.org/resource/L	102	56	0	0.00
+http://dbpedia.org/resource/Soprano	102	8	0	0.00
+http://dbpedia.org/resource/Ultraviolet	102	51	0	0.00
+http://dbpedia.org/resource/A.S._Roma	101	54	0	0.00
+http://dbpedia.org/resource/Albert_Einstein	101	43	0	0.00
+http://dbpedia.org/resource/American_Motorcyclist_Association	101	37	0	0.00
+http://dbpedia.org/resource/Do_I	101	33	0	0.00
+http://dbpedia.org/resource/Los_Angeles	101	45	0	0.00
+http://dbpedia.org/resource/Online_chat	101	46	0	0.00
+http://dbpedia.org/resource/Wembley_Stadium_(1923)	101	24	0	0.00
+http://dbpedia.org/resource/Flickr	100	38	0	0.00
+http://dbpedia.org/resource/Frankfurt	100	47	0	0.00
+http://dbpedia.org/resource/Pakistan	100	46	0	0.00
+http://dbpedia.org/resource/Turkey	100	44	0	0.00
+http://dbpedia.org/resource/Beach	99	16	0	0.00
+http://dbpedia.org/resource/Rainforest	99	5	0	0.00
+http://dbpedia.org/resource/Team_Sky	99	5	0	0.00
+http://dbpedia.org/resource/The_Real	99	49	0	0.00
+http://dbpedia.org/resource/Watch	99	44	0	0.00
+http://dbpedia.org/resource/Wii	99	35	0	0.00
+http://dbpedia.org/resource/Hyperbolic_function	98	47	0	0.00
+http://dbpedia.org/resource/Talk_radio	98	32	0	0.00
+http://dbpedia.org/resource/Book	97	34	0	0.00
+http://dbpedia.org/resource/Boutique	97	11	0	0.00
+http://dbpedia.org/resource/Devil	97	41	0	0.00
+http://dbpedia.org/resource/Dua	97	36	0	0.00
+http://dbpedia.org/resource/Ibadah	97	54	0	0.00
+http://dbpedia.org/resource/Ibiza	97	41	0	0.00
+http://dbpedia.org/resource/Red	97	46	0	0.00
+http://dbpedia.org/resource/Tauro_F.C.	97	35	0	0.00
+http://dbpedia.org/resource/Trollhättan	97	31	0	0.00
+http://dbpedia.org/resource/Volt	97	21	0	0.00
+http://dbpedia.org/resource/Wass	97	10	0	0.00
+http://dbpedia.org/resource/D8_road_(Croatia)	96	31	0	0.00
+http://dbpedia.org/resource/Face_(disambiguation)	96	43	0	0.00
+http://dbpedia.org/resource/Hala_Madrid	96	24	0	0.00
+http://dbpedia.org/resource/HBO	96	39	0	0.00
+http://dbpedia.org/resource/La_Vie	96	8	0	0.00
+http://dbpedia.org/resource/Montag_(musician)	96	47	0	0.00
+http://dbpedia.org/resource/Universal_Serial_Bus	96	46	0	0.00
+http://dbpedia.org/resource/Wicket-keeper	96	12	0	0.00
+http://dbpedia.org/resource/Ceiba_pentandra	95	11	0	0.00
+http://dbpedia.org/resource/Hug	95	43	0	0.00
+"http://dbpedia.org/resource/Las_Vegas,_Nevada"	95	58	0	0.00
+http://dbpedia.org/resource/Listen_%28song%29	95	39	0	0.00
+http://dbpedia.org/resource/Nicki_Minaj	95	34	0	0.00
+http://dbpedia.org/resource/Sonntag	95	53	0	0.00
+http://dbpedia.org/resource/Argent	94	4	0	0.00
+http://dbpedia.org/resource/Danas	94	31	0	0.00
+http://dbpedia.org/resource/Mina_(singer)	94	26	0	0.00
+http://dbpedia.org/resource/Prophet	94	42	0	0.00
+http://dbpedia.org/resource/Social_network	94	54	0	0.00
+http://dbpedia.org/resource/The_Wall	94	52	0	0.00
+http://dbpedia.org/resource/Black	93	41	0	0.00
+http://dbpedia.org/resource/Blue	93	37	0	0.00
+http://dbpedia.org/resource/KDE	93	24	0	0.00
+http://dbpedia.org/resource/Nintendo	93	44	0	0.00
+http://dbpedia.org/resource/Aufs	92	50	0	0.00
+http://dbpedia.org/resource/Aviso	92	27	0	0.00
+http://dbpedia.org/resource/Basketball	92	51	0	0.00
+http://dbpedia.org/resource/Ben_Mahmoud	92	4	0	0.00
+http://dbpedia.org/resource/Canada	92	51	0	0.00
+http://dbpedia.org/resource/Concert	92	45	0	0.00
+http://dbpedia.org/resource/Gucci	92	32	0	0.00
+http://dbpedia.org/resource/KFC	92	45	0	0.00
+http://dbpedia.org/resource/Military_Cross	92	50	0	0.00
+http://dbpedia.org/resource/Remix	92	33	0	0.00
+http://dbpedia.org/resource/Sweden	92	32	0	0.00
+http://dbpedia.org/resource/Africa	91	47	0	0.00
+http://dbpedia.org/resource/Aid	91	9	0	0.00
+http://dbpedia.org/resource/Captain_America	91	39	0	0.00
+http://dbpedia.org/resource/Cologne	91	50	0	0.00
+http://dbpedia.org/resource/Female	91	22	0	0.00
+http://dbpedia.org/resource/Jakarta	91	48	0	0.00
+http://dbpedia.org/resource/Melbourne	91	61	0	0.00
+http://dbpedia.org/resource/Mir	91	31	0	0.00
+http://dbpedia.org/resource/Stitchbird	91	37	0	0.00
+http://dbpedia.org/resource/Afghanistan	90	37	0	0.00
+http://dbpedia.org/resource/Spain	90	43	0	0.00
+http://dbpedia.org/resource/Blog	89	43	0	0.00
+http://dbpedia.org/resource/Juventus_F.C.	89	24	0	0.00
+http://dbpedia.org/resource/Licht	89	32	0	0.00
+http://dbpedia.org/resource/Radio_7	89	34	0	0.00
+http://dbpedia.org/resource/Training	89	23	0	0.00
+http://dbpedia.org/resource/Blessing	88	40	0	0.00
+http://dbpedia.org/resource/House_of_Este	88	51	0	0.00
+http://dbpedia.org/resource/Vietnam	88	37	0	0.00
+http://dbpedia.org/resource/Italian_profanity	87	47	0	0.00
+http://dbpedia.org/resource/Los_Angeles_class_submarine	87	4	0	0.00
+http://dbpedia.org/resource/Purchasing_power_parity	87	29	0	0.00
+http://dbpedia.org/resource/San_Francisco	87	41	0	0.00
+http://dbpedia.org/resource/Seoul	87	35	0	0.00
+http://dbpedia.org/resource/Tears	87	30	0	0.00
+http://dbpedia.org/resource/.NET_Framework	86	13	0	0.00
+http://dbpedia.org/resource/Fakt	86	37	0	0.00
+http://dbpedia.org/resource/Lisa_Simpson	86	34	0	0.00
+http://dbpedia.org/resource/MGMT	86	26	0	0.00
+http://dbpedia.org/resource/MTV_Roadies	86	22	0	0.00
+http://dbpedia.org/resource/Reason	86	28	0	0.00
+http://dbpedia.org/resource/Seinen_manga	86	40	0	0.00
+http://dbpedia.org/resource/Telefon	86	36	0	0.00
+http://dbpedia.org/resource/Bateau	85	2	0	0.00
+http://dbpedia.org/resource/European_Southern_Observatory	85	54	0	0.00
+http://dbpedia.org/resource/Jessica_Simpson	85	32	0	0.00
+http://dbpedia.org/resource/List_of_sports_attendance_figures	85	33	0	0.00
+http://dbpedia.org/resource/Wind	85	33	0	0.00
+http://dbpedia.org/resource/COPIA	84	45	0	0.00
+http://dbpedia.org/resource/Fan_(surname)	84	22	0	0.00
+http://dbpedia.org/resource/Forgiveness	84	32	0	0.00
+http://dbpedia.org/resource/ICQ	84	20	0	0.00
+http://dbpedia.org/resource/Life_(magazine)	84	35	0	0.00
+http://dbpedia.org/resource/T	84	46	0	0.00
+	"316,910"	"136,196"	0	0.00
+
