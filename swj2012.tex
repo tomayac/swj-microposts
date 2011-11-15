@@ -29,9 +29,25 @@
 \usepackage[utf8]{inputenc}
 \usepackage[hyphens]{url}
 \usepackage{verbatim} 
-\usepackage[pdftex,urlcolor=black,colorlinks=true,linkcolor=black,citecolor=black]{hyperref}
+\usepackage[pdftex,urlcolor=black,colorlinks=true,linkcolor=black,citecolor=black,draft]{hyperref}
 \def\sectionautorefname{Section}
 \def\subsectionautorefname{Subsection}
+\usepackage{listings}
+\usepackage{textcomp}
+\lstset{
+        basicstyle=\ttfamily\scriptsize,
+        upquote=true,
+        showspaces=false,
+        showstringspaces=false,
+        showtabs=false,
+        tabsize=2,
+        frame=none,
+        breaklines,
+        numbers=none,
+        framexleftmargin=2mm,
+        xleftmargin=2mm,
+}
+
 % bullet numbers
 \usepackage{tkz-graph}
 \usetikzlibrary{matrix,arrows,decorations.pathmorphing,shapes}
@@ -133,7 +149,7 @@ What to the best of our knowledge all publications so far have in common is thei
 This is especially true across social networks.
 As far as we can tell, no study has compared \emph{reader} behavior on \emph{different} social networks before.
 In this work, we thus compare topics people read about on Facebook and on Twitter, and classify those topics in order to provide an overall comparison. 
-We therefore have implemented two similar browser extensions, one for Twitter, one for Facebook. 
+We therefore have implemented two similar browser extensions: Twitter Swarm NLP\footnote{\url{http://bit.ly/twitterswarmnlp}} and Facebook Swarm NLP\footnote{\url{http://bit.ly/facebookswarmnlp}}. 
 On the one hand, these extensions enrich the user experience on those two social networks, and by means of named entity disambiguation tools determine the topics that people see and read about on their timelines.
 We combine this knowledge with additional anonymous data that we know about social network users.
 In consequence, on the other hand, the extensions gather anonymous visitor information via a common Web analytics tool.
@@ -170,6 +186,89 @@ which is why we strive for a paradigm shift that promises new insights for tasks
 \end{figure}
 
 \section{Implementation} \label{sec:implementation}
+\subsection{Structuring Unstructured Data}    \label{sec:services}
+Sir Tim Berners-Lee has introduced Linked Data in a W3C Design Issue~\cite{TimBL:LinkedData}, where he defines the four rules for Linked~Data:
+\begin{enumerate}
+\item Use URIs as names for things.
+\item Use HTTP URIs so that people can look up those names.
+\item When someone looks up a URI, provide useful information, using the standards (RDF*, SPARQL).
+\item Include links to other URIs, so that they can discover more things.
+\end{enumerate}
+In order to represent extracted named entities from microposts in an unambiguous way, we apply the first and the second Linked Data principle by representing disambiguated named entities with HTTP URIs.
+We outsource this task to third party named entity disambiguation Web services, namely OpenCalais~\cite{OpenCalais}, Zemanta~\cite{Zemanta}, DBpedia Spotlight~\cite{Spotlight}, and AlchemyAPI~\cite{AlchemyApi}.
+These APIs take a text fragment as input, perform named entity extraction and disambiguation on it, and then link the extracted entities back into the Linking Open Data (LOD) cloud~\cite{LODcloud}.
+We use these APIs in parallel, and by combining their results aim at the emergence effect in the sense of Aristotle: ``\emph{[\ldots] the totality is not, as it were, a mere heap, but the whole is something besides the parts [\ldots]}''\footnote{Aristotle, Metaphysics, Book H 1045a 8-10.}. 
+
+\subsection{Combining Results from different APIs}                     \label{sec:consolidation-nlp}
+We have implemented a wrapper API for the four named entity disambiguation APIs introduced in~\autoref{sec:services}.
+While the original calls to each particular API are all HTTP \texttt{POST}-based, we have implemented the wrapper API \texttt{GET}-based, which given limited micropost lengths is not an issue.
+It returns results in \texttt{application/json} format.
+While the underlying APIs return entities with their types and/or subtypes, names, relevance, and URIs that link into the LOD cloud in different formats, the wrapper API abstracts away the different output formats and returns a common JSON object structure instead.
+The output in JSON form for an exemplary micropost can be seen in~\autoref{lst:nlpjson}.
+
+\begin{lstlisting}[caption={Named entity disambiguation wrapper API output in JSON form for the micropost \textit{``Tom has the LaTeX, BibTeX, LaTeX, LaTeX blues...''}.},label={lst:nlpjson}]
+[
+    {
+        "name": "LaTeX",
+        "relevance": 0.2500259280204773,
+        "uris": [
+            {
+                "uri": "http://dbpedia.org/resource/LaTeX",
+                "source": "spotlight"
+            }
+        ],
+        "source": "spotlight"
+    },
+    {
+        "name": "BibTeX",
+        "relevance": 0.5101502607741356,
+        "uris": [
+            {
+                "uri": "http://rdf.freebase.com/ns/en/bibtex",
+                "source": "zemanta"
+            },
+            {
+                "uri": "http://dbpedia.org/resource/BibTeX",
+                "source": "zemanta"
+            }
+        ],
+        "source": "zemanta,spotlight"
+    },
+    {
+        "name": "blues",
+        "relevance": 0.831137,
+        "uris": [
+            {
+                "uri": "http://rdf.freebase.com/ns/en/blues",
+                "source": "zemanta"
+            },
+            {
+                "uri": "http://dbpedia.org/resource/Blues",
+                 "source": "zemanta"
+            }
+        ],
+        "source": "zemanta"
+    }    
+]
+\end{lstlisting}
+
+\subsection{Manipulating Web Pages with Browser Extensions}
+Our approach is based on browser extensions.
+Browser extensions are small software programs written in a combination of HTML, JavaScript, and CSS.
+For this paper, we focus on extensions based on so-called content scripts.
+Content scripts are JavaScript programs that run in the context of Web pages via dynamic code injection.
+By using the standard Document Object Model (DOM), they can read or modify details of the Web pages a user visits.
+The advantage of using browser extensions is that the concept is very powerful and generalizable at the same time.
+Powerful in the sense that it allows for significantly changing ones user experience with social networking platforms like Twitter or Facebook and simply add new features.
+Generalizable in the sense that the approach is expandable to more social networking platforms like MySpace~\cite{MySpace}, LinkedIn~\cite{LinkedIn}, Google+~\cite{GooglePlus}, etc. in the future.
+
+\subsection{Gathering Visitor Data with Web Analytics Software}
+In order to gather high-level information on Web page visitors apart from low-level log file statistics, so-called Web analytics software can used.
+Such software is typically implemented by adding an invisible snippet of JavaScript code on the to-be-tracked pages of a website.
+This code then collects visitor data through requests for a specific $\mathit{1} \times \mathit{1}$ transparent gif image, also called Web beacon, that is hosted on the Web analytics server.
+During these requests the page and user data is reported in the query part of the Web beacon's URL.
+In addition to that, the JavaScript snippet usually sets a first party cookie on visitors' computers in order to store anonymous information such as the timestamp of the current visit, whether the visitor is a new or returning visitor, and the referrer of the website that the visitor came from.
+Part of the shared visitor information is the IP address, which allows for IP-based geolocation.
 
 \begin{figure}
 \centering
