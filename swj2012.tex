@@ -63,12 +63,12 @@
 \begin{frontmatter}
 
 \pretitle{What'chu talkin' about, Willis?}
-\title{A Comparison of Topics People read about on Facebook and on Twitter and where}
+\title{A comparison of topics people read about on Facebook and Twitter, and where they are}
 %\subtitle{}
 
 %\footnote{\url{http://en.wikipedia.org/wiki/Diff'rent\_Strokes\#Later\_appearances\_of\_the\_characters}}
 
-\runningtitle{A Comparison of Topics People read about on Facebook and on Twitter and where}
+\runningtitle{A comparison of topics people read about on Facebook and Twitter, and where they are}
 
 %\review{}{}{}
 
@@ -108,49 +108,59 @@ E-mail: gabarro@lsi.upc.edu}
 %%%%%%%%%%% The article body starts:
 
 \section{Introduction} \label{sec:introduction}
+\subsection{On Social Media Mining}
 In recent years, social media mining has become an essential tool for marketers, traders, and researchers.
-The information people share publicly on social networks harbors tremendous amounts of valuable social data.
+The information people share publicly via so-called \emph{microposts} on social networks harbor tremendous amounts of valuable social data.
 Forbes have called the social graph \emph{crude oil} in a recent blog post~\cite{ForbesPost}.
 Social networks today are very much ``walled gardens'', excellently illustrated by a cartoon by David Simonds~(\autoref{fig:DavidSimonds}).
 This network isolatedness reflects on how social media mining is done nowadays.
-Common literature typically either focuses on just one network~\cite{russell201121}, or treats the different networks separately~\cite{russell2011mining}.
-Social media mining happens based on either keyword-based search APIs, or so-called ``fire hose'' realtime streaming APIs, both provided by the social networks themselves.
+Common literature typically either focuses on just one network~(e.g.,~\cite{russell201121}), or treats the different networks separately~(e.g.,~\cite{russell2011mining}).
+Social media mining happens based on either keyword-based search APIs, or so-called ``fire hose'' near-realtime streaming APIs, both provided by the social networks themselves.
 The main difference is that in the prior case terms like the name of a brand or company are \emph{proactively} searched for, whereas in the latter case the social media mining system \emph{reactively} acts upon the occurrence of such terms.
 
-In this paper, we consider the two popular social networks Facebook\footnote{\url{http://facebook.com/}} and Twitter\footnote{\url{http://twitter.com/}}.
-Traditionally, Twitter is very open with their API, as since the beginning of the platform, API-based Twitter clients have played a strategic role for the company.
-Twitter provides developers with the Twitter Streaming API~\cite{TwitterStreamingAPI}, which allows high-throughput near-realtime access to various subsets of public and protected Twitter data.
-Facebook has no such public ``fire hose'' API, however, via its Graph API~\cite{FacebookRealtimeAPI} supports realtime updates to enable applications to subscribe to a limited set of changes in data from Facebook.
+\subsection{Selection of Social Networks and APIs}
+In this paper, we consider the two popular social networks Facebook\footnote{\url{http://facebook.com/}} and Twitter\footnote{\url{http://twitter.com/}}, currently the two globally most important social networks~\cite{comScoreTwitter, comScoreFacebook}.
+Traditionally, Twitter is very open with their API, as since the beginning of the platform, API-based Twitter clients  play a strategic role for the company.
+Twitter provides developers with the Twitter Streaming API~\cite{TwitterStreamingAPI}, which allows for high-throughput near-realtime access to various subsets of public and protected Twitter data.
+Facebook has no such public ``fire hose'' API, however, via its Graph API~\cite{FacebookRealtimeAPI} supports near-realtime updates to enable applications to subscribe to a limited set of changes in data from Facebook.
 Whenever a subscribed change occurs, Facebook notifies subscribers with a list of changes.
-This imbalance of API openness has an impact on publications around social networks.
-While at the \textit{World Wide Web Conference 2011} alone three Twitter papers based on the Twitter API were published~\cite{Romero:2011:DMI:1963405.1963503, Meeder:2011:WKY:1963405.1963479, Wu:2011:SWT:1963405.1963504}, publications on Facebook typically focus on privacy issues~(e.g.,~\cite{liu:settings}), or Facebook's sociological impact~(e.g.,~\cite{JCC4:JCC4367}), without making use of the Facebook API.
+The obvious issue here is that in order to get a Twitter Streaming API-like experience, one had to subscribe to a high number of users, which is impossible.
+This imbalance of API openness has an impact on academic publications around mining social networks.
+While at the \textit{World Wide Web Conference 2011} alone three Twitter papers based on the Twitter API were published~\cite{Meeder:2011:WKY:1963405.1963479, Romero:2011:DMI:1963405.1963503, Wu:2011:SWT:1963405.1963504}, publications on Facebook typically focus on privacy issues~(e.g.,~\cite{liu:settings}), or Facebook's sociological impact~(e.g.,~\cite{JCC4:JCC4367}), without making use of the Facebook API.
 
-What to the best of our knowledge all publications so far have in common is their focus on the author side, i.e., it is very well researched what people \emph{produce} on social networks -- and especially on Twitter -- however, not so much what people \emph{consume}.
+\subsection{Positioning of our Work}
+What to the best of our knowledge all publications so far have in common is their focus on the author side, i.e., it is very well researched -- and especially on Twitter -- what people \emph{produce} on social networks, whom they follow or unfollow and why, what they tag, whom they put in what list, group, or circle; however, few to no focus has been given on what people \emph{consume}, at least no such study is publicly available.
 This is especially true across social networks.
-As far as we can tell, no study has compared \emph{reader} behavior on different social networks before.
-In this work, we compare topics people read about on Facebook and on Twitter and classify those topics in order to provide an overall comparison.
-We therefore have implemented two similar browser extensions, one for Twitter, one for Facebook, that enrich the user experience on those social networks and by means of a named entity disambiguation tool determine the topics that people see on their timelines.
-By focusing exclusively on content people see when navigating to either \url{http://twitter.com} or \url{http://facebook.com}, we assume people indeed read that content, especially as both social network sites require users to actively click a link ``$\mathit{n}$ new stories since your last visit'' or ``$\mathit{n}$ new tweets'' respectively rather than auto-updating the timeline.
+As far as we can tell, no study has compared \emph{reader} behavior on \emph{different} social networks before.
+In this work, we thus compare topics people read about on Facebook and on Twitter, and classify those topics in order to provide an overall comparison. 
+We therefore have implemented two similar browser extensions, one for Twitter, one for Facebook. 
+On the one hand, these extensions enrich the user experience on those two social networks, and by means of named entity disambiguation tools determine the topics that people see and read about on their timelines.
+We combine this knowledge with additional anonymous data that we know about social network users.
+In consequence, on the other hand, the extensions gather anonymous visitor information via a common Web analytics tool.
+
+\subsection{Focus on Desktop Versions}
+By focusing exclusively on content people see when directly navigating to the desktop versions of either \url{http://twitter.com} or \url{http://facebook.com} (and in consequence on purpose neglecting all activity via applications), we assume people indeed read that content, especially as both social network sites require users to actively click a link ``$\mathit{n}$ new stories'' (Facebook) or ``$\mathit{n}$ new tweets'' (Twitter) rather than auto-updating the timeline. Other approaches to determine whether a micropost has been read are limited to microposts with contained Web links and checking whether clicks on those links have occurred, however, automatic crawling and indexing of links adds hard to detect noise. We argue that our approach has a higher precision, however, less recall.
 
 \subsection{Paper Objective and Structure}
-In this paper, we \textbf{will not}:
-\begin{itemize}%[topsep=-.5em, partopsep=0pt, itemsep=0pt]
-	\item perform analyses based on hashtags, term frequency, or trends;
-	\item perform analyses based on geotagged microposts;
-	\item work with huge amounts of microposts from ``fire hose'' APIs;
-	\item focus on the micropost author side.
-\end{itemize}
-On the contrary, we \textbf{will}:
+We outline or paper objectives and non-objectives implicitly, where  each objective has a corresponding non-objective in the two lists below.
+
+\noindent In this paper, we \textbf{will}:
 \begin{itemize}%[topsep=-.5em, partopsep=0pt, itemsep=0pt]
 	\item perform analyses based on disambiguated named entities;
 	\item perform analyses based on IP-based reader location detection;
 	\item work with a manageable amount of microposts read by a random population of social network users;
-	\item focus on the micropost reader side,
+	\item focus on the micropost reader side.
 \end{itemize}
-which is why we strive for a paradigm shift that promises new insights for tasks like brand analysis, opinion research.
+On the contrary, we \textbf{will not}:
+\begin{itemize}%[topsep=-.5em, partopsep=0pt, itemsep=0pt]
+	\item perform analyses based on hashtags, key term frequencies, or trends;
+	\item perform analyses based on geotagged microposts;
+	\item work with huge amounts of microposts from ``fire hose'' APIs;
+	\item focus on the micropost author side,
+\end{itemize}
+which is why we strive for a paradigm shift that promises new insights for tasks like brand analysis, opinion research, but also sociological questions.
 
 \todo{Describe paper structure.}
-
 
 \begin{figure}
 \centering
