@@ -127,7 +127,7 @@ E-mail: gabarro@lsi.upc.edu}
 \subsection{On Social Media Mining}
 In recent years, social media mining has become an essential tool for marketers, traders, and researchers.
 The information people share publicly via so-called \emph{microposts} on social networks harbor tremendous amounts of valuable social data.
-Forbes have called the social graph \emph{crude oil} in a recent blog post~\cite{ForbesPost}.
+Forbes has called the social graph \emph{crude oil} in a recent blog post~\cite{ForbesPost}.
 Social networks today are very much ``walled gardens'', excellently illustrated by a cartoon by David Simonds~(\autoref{fig:DavidSimonds}).
 This network isolatedness reflects on how social media mining is done nowadays.
 Common literature typically either focuses on just one network~(e.g.,~\cite{russell201121}), or treats the different networks separately~(e.g.,~\cite{russell2011mining}).
@@ -135,23 +135,23 @@ Social media mining happens based on either keyword-based search APIs, or so-cal
 The main difference is that in the prior case terms like the name of a brand or company are \emph{proactively} searched for, whereas in the latter case the social media mining system \emph{reactively} acts upon the occurrence of such terms.
 
 \subsection{Selection of Social Networks and APIs}
-In this paper, we consider the two popular social networks Facebook\footnote{\url{http://facebook.com/}} and Twitter\footnote{\url{http://twitter.com/}}, currently the two globally most important social networks~\cite{comScoreTwitter, comScoreFacebook}.
+In this paper, we consider the popular social networks Facebook\footnote{\url{http://facebook.com/}} and Twitter\footnote{\url{http://twitter.com/}}, currently the two globally most important social networks~\cite{comScoreTwitter, comScoreFacebook}.
 Traditionally, Twitter is very open with their API, as since the beginning of the platform, API-based Twitter clients  play a strategic role for the company.
 Twitter provides developers with the Twitter Streaming API~\cite{TwitterStreamingAPI}, which allows for high-throughput near-realtime access to various subsets of public and protected Twitter data.
 Facebook has no such public ``fire hose'' API, however, via its Graph API~\cite{FacebookRealtimeAPI} supports near-realtime updates to enable applications to subscribe to a limited set of changes in data from Facebook.
-Whenever a subscribed change occurs, Facebook notifies subscribers with a list of changes.
-The obvious issue here is that in order to get a Twitter Streaming API-like experience, one had to subscribe to a high number of users, which is impossible.
+Whenever such a change occurs, Facebook notifies subscribers with a list of changes.
+The obvious issue here is that, in order to get a Twitter Streaming API-like experience, one had to subscribe to a high number of users, which is impossible.
 This imbalance of API openness has an impact on academic publications around mining social networks.
 While at the \textit{World Wide Web Conference 2011} alone three Twitter papers based on the Twitter API were published~\cite{Meeder:2011:WKY:1963405.1963479, Romero:2011:DMI:1963405.1963503, Wu:2011:SWT:1963405.1963504}, publications on Facebook typically focus on privacy issues~(e.g.,~\cite{liu:settings}), or Facebook's sociological impact~(e.g.,~\cite{JCC4:JCC4367}), without making use of the Facebook API.
 
 \subsection{Positioning of our Work}
-What to the best of our knowledge all publications so far have in common is their focus on the author side, i.e., it is very well researched -- and especially on Twitter -- what people \emph{produce} on social networks, whom they follow or unfollow and why, what they tag, whom they put in what list, group, or circle; however, few to no focus has been given on what people \emph{consume}, at least no such study is publicly available.
-This is especially true across social networks.
+What, to the best of our knowledge, all publications so far have in common is their focus on the author side: it is very well researched what people \emph{produce} on social networks (especially Twitter), whom they follow or unfollow and why, what they tag, whom they put in what list, group, or circle. However, few to no focus has been given on what people \emph{consume} -- or at least no such study is publicly available.
+This is especially true \emph{across} social networks.
 As far as we can tell, no study has compared \emph{reader} behavior on \emph{different} social networks before.
 In this work, we thus compare topics people read about on Facebook and on Twitter, and classify those topics in order to provide an overall comparison. 
 We therefore have implemented two similar browser extensions: Twitter Swarm NLP\footnote{\url{http://bit.ly/twitterswarmnlp}} and Facebook Swarm NLP\footnote{\url{http://bit.ly/facebookswarmnlp}}. 
-On the one hand, these extensions enrich the user experience on those two social networks, and by means of named entity disambiguation tools determine the topics that people see and read about on their timelines.
-We combine this knowledge with additional anonymous data that we know about social network users.
+On the one hand, these extensions enrich the user experience on those two social networks and on the other hand, they determine the topics that people see and read about on their timelines by means of named entity disambiguation.
+We combine this knowledge with additional anonymous data that we obtain about social network users.
 In consequence, on the other hand, the extensions gather anonymous visitor information via a common Web analytics tool.
 
 \subsection{Focus on Desktop Versions}
@@ -199,11 +199,11 @@ Sir Tim Berners-Lee has introduced Linked Data in a W3C Design Issue~\cite{TimBL
 In order to represent extracted named entities from microposts in an unambiguous way, we apply the first and the second Linked Data principle by representing disambiguated named entities with HTTP URIs.
 We outsource this task to third party named entity disambiguation Web services, namely OpenCalais~\cite{OpenCalais}, Zemanta~\cite{Zemanta}, DBpedia Spotlight~\cite{Spotlight}, and AlchemyAPI~\cite{AlchemyApi}.
 These APIs take a text fragment as input, perform named entity extraction and disambiguation on it, and then link the extracted entities back into the Linking Open Data (LOD) cloud~\cite{LODcloud}.
-We use these APIs in parallel, and by combining their results aim at the emergence effect in the sense of Aristotle: ``\emph{[\ldots] the totality is not, as it were, a mere heap, but the whole is something besides the parts [\ldots]}''\footnote{Aristotle, Metaphysics, Book H 1045a 8-10.}. 
+We use these APIs in parallel and, by combining their results, aim at the emergence effect in the sense of Aristotle: ``\emph{[\ldots] the totality is not, as it were, a mere heap, but the whole is something besides the parts [\ldots]}''\footnote{Aristotle, Metaphysics, Book H 1045a 8-10.}. 
 
 \subsection{Combining Results from different APIs}                     \label{sec:consolidation-nlp}
 We have implemented a wrapper API for the four named entity disambiguation APIs introduced in~\autoref{sec:services}.
-While the original calls to each particular API are all HTTP \texttt{POST}-based, we have implemented the wrapper API \texttt{GET}-based, which given limited micropost lengths is not an issue.
+While the original calls to each particular API are all HTTP \texttt{POST}-based, we have implemented the wrapper API \texttt{GET}-based, which is not an issue given limited micropost lengths.
 It returns results in \texttt{application/json} format.
 While the underlying APIs return entities with their types and/or subtypes, names, relevance, and URIs that link into the LOD cloud in different formats, the wrapper API abstracts away the different output formats and returns a common JSON object structure instead.
 The output in JSON form for an exemplary micropost can be seen in~\autoref{lst:nlpjson}.
