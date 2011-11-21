@@ -398,10 +398,32 @@ If we put these figures in contrast with the \emph{seven day active users} stati
 % http://dbpedia.org/resource/Celcom Malaysia
 
 \section{Related Work} \label{sec:relatedwork}
-% Commercial value of social data http://www.whatthetrend.com/week_in_review_20110617
-% Semantic annotation of microposts
-% Trend / popularity detection
-% Comparison to producer-focused approaches
+We report on related work separated into the fields of:
+\begin{itemize}
+\item \emph{semantic annotation of microposts}, which focuses on named entity detection and disambiguation;
+\item \emph{trend or popularity detection}, which is based on term frequencies;
+\item \emph{commercialization of social data}, which aims at monetization of gathered insights.
+\end{itemize}
+In addition to that, we also provide a \emph{comparison with micropost author-focused approaches} of our work.
+
+\subsection{Semantic Annotation of Microposts}
+Passant \textit{et al.} introduced a Semantic MicroBlogging (\textit{sic}) framework~(SMOB,~\cite{Passant2008}) that enables a \textit{distributed, open, and semantic} microblogging experience based on Semantic Web and Linked Data technologies by annotating microposts with common vocabularies such as FOAF or SIOC.
+SMOB relies on distributed autonomous hubs that communicate with each other to exchange microposts and subscriptions, which can also be cross-posted to Twitter.
+The authors suggest the use of meaningful hashtags such as \texttt{\#dbp:Eiffel\_Tower}, or \texttt{\#geo:Paris\_France}, in the style of RDF prefixes for DBpedia and GeoNames.
+
+In the Linked Open Social Signals project~(LOSS,~\cite{Mendes:LOSS}), Mendes \textit{et al.} investigate the representation of microposts as Linked Open Data and address the problem of information overload caused by the sheer amount of microposts (the authors call the opinions, observations, and suggestions contained in microposts ``social signals'', hence the project name).
+While the micropost community has come up with hashtags in order to categorize microposts.
+These hashtags are ambiguous and have to be explicitly added to the micropost by the author and due to length constraints are sometimes left out in favor of more text.
+The main goal of LOSS is thus to enable collective analysis of social signals for sense-making by using Linked Open Data principles in combination with realtime push models.
+
+\subsection{Trend or Popularity Detection}
+
+\subsection{Commercialization of Social Data}
+``What the Trend'' is a service that provides manually curated and annotated reports on Twitter top-trending topics.
+The service adds explanations to why tropics trend and data behind trending patterns.
+Primarily the information on ``What the Trend'' is user-generated, however, the service also sells curated yearly reports.
+
+\subsection{Comparison with Micropost Author-focused Approaches}
 
 \section{Future Work and Conclusion} \label{sec:futureworkandconclusion}
 
