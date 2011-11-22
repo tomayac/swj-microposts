@@ -24,6 +24,8 @@
 %\usepackage{amsmath}
 %\usepackage{endnotes}
 \usepackage{graphicx}
+\usepackage[lofdepth,lotdepth]{subfig}
+
 
 %%%%%%%%%%% Put your definitions here
 \usepackage[utf8]{inputenc}
@@ -392,6 +394,58 @@ If we put these figures in contrast with the \emph{seven day active users} stati
 
 % http://dbpedia.org/resource/Eid_Mubarak http://dbpedia.org/resource/Eid_ul-Fitr
 % http://dbpedia.org/resource/Celcom Malaysia
+
+\begin{figure*}
+  \centering
+    \subfloat[][Twitter]{
+      \includegraphics[width=0.3\textwidth]{./resources/twitterschema.png}
+      \label{fig:twitterschema}}
+    \qquad
+    \subfloat[][Facebook]{
+      \includegraphics[width=0.3\textwidth]{./resources/facebookschema.png}
+      \label{fig:facebookschema}}
+\caption{Type statistics filtered by \url{http://schema.org/}.}
+\label{fig:schema}
+\end{figure*}
+
+\begin{figure*}
+  \centering
+    \subfloat[][Twitter]{
+      \includegraphics[width=0.45\textwidth]{./resources/twitterdbo.png}
+      \label{fig:twitterdbo}}
+    \qquad
+    \subfloat[][Facebook]{
+      \includegraphics[width=0.45\textwidth]{./resources/facebookdbo.png}
+      \label{fig:facebookdbo}}
+\caption{Type statistics filtered by \url{http://dbpedia.org/ontology/}.}
+\label{fig:dbo}
+\end{figure*}
+
+\begin{figure*}
+  \centering
+    \subfloat[][Twitter]{
+      \includegraphics[width=0.45\textwidth]{./resources/twitterumbel.png}
+      \label{fig:twitterumbel}}
+    \qquad
+    \subfloat[][Facebook]{
+      \includegraphics[width=0.45\textwidth]{./resources/facebookumbel.png}
+      \label{fig:facebookumbel}}
+\caption{Type statistics filtered by \url{http://umbel.org/umbel/rc/}.}
+\label{fig:umbel}
+\end{figure*}
+
+\begin{figure*}
+  \centering
+    \subfloat[][Twitter]{
+      \includegraphics[width=0.45\textwidth]{./resources/twittertypes.png}
+      \label{fig:twittertypes}}
+    \qquad
+    \subfloat[][Facebook]{
+      \includegraphics[width=0.45\textwidth]{./resources/facebooktypes.png}
+      \label{fig:facebooktypes}}
+\caption{Type statistics unfiltered.}
+\label{fig:unfiltered}
+\end{figure*}
 
 \section{Related Work} \label{sec:relatedwork}
 We report on related work separated into the fields of:
