@@ -435,6 +435,26 @@ Twimpact \cite{twimpact} is a realtime Twitter data analysis company with specia
 Twimpact uses machine learning-based ranking techniques that do not rely on simple reader/follower counts, but rather include actual communication patterns, such as retweets. 
 
 \subsection{Comparison with Micropost Author-focused Approaches}
+With our focus on micropost readers rather than on micropost authors, we strive for a paradigm shift with important consequences.
+The first and most important consequence is the availability of only a limited set of micropost data, as illustrated by the Venn diagram in~\autoref{fig:vennreadunread}.
+Only a subset (of unknown size) of all microposts that get authored also ever gets read.
+Where the Twitter Streaming API offers up to 10\% coverage of all authored tweets, full access to the firehose with 100\% coverage of all authored tweets is handled through Twitter data providers~\cite{dataproviders}.
+For Facebook, no such publicly available option exists.
+For obvious reasons, there is no API from either of the networks for read microposts, which is why we came up with the idea to hook into the reading experience on social networks through browser extensions.
+The second consequence has to do with privacy issues.
+While aggregated public data, as made possible by accessing it via APIs, may feel like violating privacy~\cite{nyt}, it is still public data.
+However, the approach we took in this paper goes one step further by explicitly accessing a social network user's timeline, and reporting back named entities to a Web analytics service (the same that gets used already by Twitter). 
+It is important to note, however, that no connection is been made between a user's individual timeline and the person behind.
+We have stated all accessed data in the extension descriptions.
+The third consequence is the potential bias introduced by targeting one specific Web browser with the extensions.
+Ideally, we would target all major browsers, however, due to scalability reasons, currently we can only target one browser.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.4\linewidth]{./resources/vennreadunread.png}
+\caption{Only a subset (of unknown size) of all microposts that get authored also ever get read.}
+\label{fig:vennreadunread}
+\end{figure}
 
 \section{Future Work and Conclusion} \label{sec:futureworkandconclusion}
 
