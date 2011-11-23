@@ -333,30 +333,9 @@ If we put these figures in contrast with the \emph{seven day active users} stati
 \label{fig:topentities}
 \end{figure*}
 
-\begin{table}
-\begin{center}
-    \begin{tabular}{ | l | l |}
-    \hline
-	\textbf{Country} & \textbf{Visits} \\ \hline
-	Germany	& 2,280 \\ \hline
-	Thailand & 2,133 \\ \hline
-	Mexico & 1,586 \\ \hline
-	Czech Republic & 1,416 \\ \hline
-	United Kingdom & 1,100 \\ \hline
-	India & 1,047 \\ \hline
-	Australia & 854 \\ \hline
-	Indonesia	& 826 \\ \hline
-	Italy & 805 \\ \hline
-	United States & 742 \\
-    \hline
-    \end{tabular}
-\end{center}
-\caption{Top-10 locations of users of the Facebook Swarm NLP browser extension (May 1 -- Nov. 12).}
-\label{tab:facebooklocations}        
-\end{table}
-
-\begin{table}
-\begin{center}
+\begin{table*}
+  \centering
+  \subfloat[][Twitter Swarm NLP]{
     \begin{tabular}{ | l | l |}
     \hline
 	\textbf{Country} & \textbf{Visits} \\ \hline
@@ -371,11 +350,29 @@ If we put these figures in contrast with the \emph{seven day active users} stati
 	Thailand & 155 \\ \hline
 	Spain & 147 \\
     \hline
-    \end{tabular}
-\end{center}
-\caption{Top-10 locations of users of the Twitter Swarm NLP browser extension (May 1 -- Nov. 12).}
-\label{tab:twitterlocations}        
-\end{table}
+  \end{tabular}
+  \label{tab:twittertoplocations}}
+  \qquad
+  \subfloat[][Facebook Swarm NLP]{
+    \begin{tabular}{ | l | l |}
+    \hline
+	\textbf{Country} & \textbf{Visits} \\ \hline
+	Germany	& 2,280 \\ \hline
+	Thailand & 2,133 \\ \hline
+	Mexico & 1,586 \\ \hline
+	Czech Republic & 1,416 \\ \hline
+	United Kingdom & 1,100 \\ \hline
+	India & 1,047 \\ \hline
+	Australia & 854 \\ \hline
+	Indonesia	& 826 \\ \hline
+	Italy & 805 \\ \hline
+	United States & 742 \\
+    \hline
+  \end{tabular}
+  \label{tab:facebooktoplocations}}
+  \caption{Top-10 locations of users of the two browser extensions (May 1 -- Nov. 12).}
+  \label{tab:toplocations}
+\end{table*}
 
 \section{Discussion}
 % Talk about what network to use for what purpose, talk about brand analysis etc.
