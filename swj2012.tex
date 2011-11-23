@@ -144,7 +144,7 @@ We see our approach not as a replacement of traditional social media mining, mor
 %%%%%%%%%%% The article body starts:
 
 \section{Introduction} \label{sec:introduction}
-\subsection{On Social Media Mining}
+\subsection{On Traditional Social Media Mining}
 In recent years, social media mining has become an essential tool for marketers, traders, and researchers.
 The information people share publicly via so-called \emph{microposts} on social networks harbor tremendous amounts of valuable social data.
 Forbes has called the social graph \emph{crude oil} in a recent blog post~\cite{ForbesPost}:
@@ -152,38 +152,41 @@ Forbes has called the social graph \emph{crude oil} in a recent blog post~\cite{
 ``The point is, crude oil is crude. It is an unrefined and complex natural resource containing many riches. It takes time to figure out what to do with a new crude resource.''
 \end{quotation}
 Social networks today are very much seen as ``walled gardens'', excellently illustrated by a cartoon by David Simonds~(\autoref{fig:DavidSimonds}).
-This network isolatedness reflects on how social media mining is done nowadays.
-Common literature typically either focuses on just one network~(e.g.,~\cite{russell201121}), or treats the different networks separately~(e.g.,~\cite{russell2011mining}).
-Social media mining happens based on either keyword-based search APIs, or so-called ``fire hose'' near-realtime streaming APIs, both provided by the social networks themselves.
-The main difference is that in the prior case terms like the name of a brand or company are \emph{proactively} searched for, whereas in the latter case the social media mining system \emph{reactively} acts upon the occurrence of such terms.
+This network isolatedness reflects on how traditional social media mining is done nowadays.
+Common literature typically either focuses on just one network (e.g.,~\cite{russell201121}), or treats the different networks separately (e.g.,~\cite{russell2011mining}).
+Traditional social media mining happens (i) based on either keyword-based search APIs, and/or (ii) based on so-called ``fire hose'' near-realtime streaming APIs, which are provided by the social networks themselves.
+The main difference between (i) and (ii) is that in the prior case terms like the name of a brand or company are \emph{proactively} searched for, whereas in the latter case the social media mining system \emph{reactively} acts upon the occurrence of such terms.
 
 \subsection{Selection of Social Networks and APIs}
 In this paper, we consider the popular social networks Facebook~\cite{Facebook} and Twitter\cite{Twitter}, currently the two globally most important social networks~\cite{comScoreTwitter, comScoreFacebook}.
-Traditionally, Twitter is very open with their API, as since the beginning of the platform, API-based Twitter clients  play a strategic role for the company.
-Twitter provides developers with the Twitter Streaming API~\cite{TwitterStreamingAPI}, which allows for high-throughput near-realtime access to various subsets of public and protected Twitter data.
-Facebook has no such public ``fire hose'' API, however, via its Graph API~\cite{FacebookRealtimeAPI} supports near-realtime updates to enable applications to subscribe to a limited set of changes in data from Facebook.
+Traditionally, Twitter is very permissive with their API, as since the beginning of the platform, API-based Twitter clients play a strategic role for the company.
+Twitter provides developers with the Twitter Streaming API~\cite{TwitterStreamingAPI}, which allows for high-throughput near-realtime access to various subsets of public and protected Twitter data, at a coverage rate of 1\% (``sprinkler''), 10\% (``garden hose''), or 100\% (``fire hose'') of all Twitter traffic.
+Facebook has no such public ``fire hose'' streaming API, however, via its Graph API~\cite{FacebookRealtimeAPI} supports near-realtime updates to enable applications to subscribe to a limited set of changes in data from Facebook.
 Whenever such a change occurs, Facebook notifies subscribers with a list of changes.
 The obvious issue here is that, in order to get a Twitter Streaming API-like experience, one had to subscribe to a high number of users, which is impossible.
 This imbalance in data availability via the respective APIs has an impact on academic publications around mining social networks.
-While at the \textit{World Wide Web Conference 2011} alone three Twitter papers based on the Twitter API were published~\cite{Meeder:2011:WKY:1963405.1963479, Romero:2011:DMI:1963405.1963503, Wu:2011:SWT:1963405.1963504}, publications on Facebook typically focus on privacy issues~(e.g.,~\cite{liu:settings}), or Facebook's sociological impact~(e.g.,~\cite{JCC4:JCC4367}), without making use of the Facebook API.
+While at the \textit{World Wide Web Conference 2011 (WWW2011)} alone three Twitter papers based on the Twitter API were published~\cite{Meeder:2011:WKY:1963405.1963479, Romero:2011:DMI:1963405.1963503, Wu:2011:SWT:1963405.1963504}, publications on Facebook typically focus on privacy issues~(e.g.,~\cite{liu:settings}), or Facebook's sociological impact~(e.g.,~\cite{JCC4:JCC4367}), without making use of the Facebook API.
+WWW2011 had no publication on Facebook.
 
 \subsection{Positioning of our Work}
-What, to the best of our knowledge, all publications so far have in common is their focus on the author side: it is very well researched what people \emph{produce} on social networks (especially Twitter), whom they follow or unfollow and why, what they tag, whom they put in what list, group, or circle. However, few to no focus has been given on what people \emph{consume} -- or at least no such study is publicly available.
+What, to the best of our knowledge, all publications so far have in common is their focus on the author side: it is very well researched what people \emph{produce} on social networks (especially Twitter), whom they follow or unfollow and why, what they tag, whom they put in what list, group, or circle etc.
+However, few to no focus has been put on what people \emph{consume} -- or at least no such study is publicly available.
 This is especially true \emph{across} social networks.
-As far as we can tell, no study has compared \emph{reader} behavior on \emph{different} social networks before.
+As far as we can tell, no study has compared \emph{reader} behavior on \emph{different} social networks in parallel before.
 In this work, we thus compare topics people read about on Facebook and on Twitter, and classify those topics in order to provide an overall comparison. 
 We therefore have implemented two similar browser extensions: Twitter Swarm NLP\footnote{\url{http://bit.ly/twitterswarmnlp}} and Facebook Swarm NLP\footnote{\url{http://bit.ly/facebookswarmnlp}}. 
-On the one hand, these extensions enrich the user experience on those two social networks and on the other hand, they determine the topics that people see and read about on their timelines by means of named entity disambiguation.
-We combine this knowledge with additional anonymous data that we obtain about social network users.
-In consequence, on the other hand, the extensions gather anonymous visitor information via a common Web analytics tool.
+On the one hand, these extensions enrich the user experience on those two social networks, and on the other hand, they determine the topics that people see and read about on their timelines by means of named entity disambiguation.
+We combine this knowledge with additional anonymous data that we obtain about social network users through a Web analytics software.
 
-\subsection{Focus on Desktop Versions}
-By focusing exclusively on content people see when directly navigating to the desktop versions of either \url{http://twitter.com} or \url{http://facebook.com} (and in consequence on purpose neglecting all activity via applications), we assume people indeed read that content, especially as both social network sites require users to actively click a link ``$\mathit{n}$ new stories'' (Facebook) or ``$\mathit{n}$ new tweets'' (Twitter) rather than auto-updating the timeline.
+\subsection{Focus on Desktop Versions of Social Networking Sites}
+The two implemented browser extensions require a desktop browser in order to work.
+Whenever a user visits a social networking site, in the concrete case Twitter or Facebook, the particular extension gets activated.
+By focusing exclusively on content people see when directly navigating to the desktop versions of either \url{http://twitter.com} or \url{http://facebook.com} (and in consequence on purpose neglecting all activity via applications on both desktop and mobile devices), we assume people indeed read that content, especially as both social networking sites require users to manually click a link ``$\mathit{n}$ new stories'' (Facebook) or ``$\mathit{n}$ new tweets'' (Twitter) rather than auto-updating the timeline.
 Other approaches to determine whether a micropost has been read are limited to microposts with contained Web links and checking whether clicks on those links have occurred, however, automatic crawling and indexing of links adds hard to detect noise.
-We argue that our approach has a higher precision, however, less recall.
+We therefore argue that our approach has a higher precision, however, less recall.
 
 \subsection{Paper Objective and Structure}
-We outline or paper objectives and non-objectives implicitly, where  each objective has a corresponding non-objective in the two lists below.
+We outline or paper objectives and non-objectives explicitly, where  each objective has a corresponding non-objective in the two lists below.
 
 \noindent In this paper, we \textbf{will}:
 \begin{itemize}%[topsep=-.5em, partopsep=0pt, itemsep=0pt]
@@ -524,8 +527,11 @@ While aggregated public data, as made possible by accessing it via APIs, may fee
 However, the approach we took in this paper goes one step further by explicitly accessing a social network user's timeline, and reporting back named entities to a Web analytics service (the same that gets used already by Twitter). 
 It is important to note, however, that no connection is been made between a user's individual timeline and the person behind.
 We have stated all accessed data in the extension descriptions.
-The third consequence is the potential bias introduced by targeting specific Web browsers with the extensions. 
-For now, we have focused on the Google Chrome browser due to its native Chrome Web Store that guarantees optimal exposure of the extensions in a centralized way.
+The third consequence is the potential bias introduced by targeting specific Web browsers with the extensions and the willful neglect of desktop and mobile applications. 
+With regards to specific Web browsers, for now, we have focused on the Google Chrome browser due to its native Chrome Web Store that guarantees optimal exposure of the extensions in a centralized way.
+Concerning desktop and mobile applications, there is definitely some, albeit unmeasurable, bias.
+However, unofficial statistics from Twitstat~\cite{twitstat} suggest that the desktop Web version of Twitter is still the means for the majority of its users to access the social network.
+For Facebook, official usage statistics~\cite{facebookstats} state that from more than 800 million active users more than 350 million currently access Facebook through their mobile devices, which still means that the majority use Facebook via the desktop Web version.
 
 \begin{figure}
 \centering
