@@ -34,6 +34,8 @@
 \usepackage[pdftex,urlcolor=black,colorlinks=true,linkcolor=black,citecolor=black,draft]{hyperref}
 \def\sectionautorefname{Section}
 \def\subsectionautorefname{Subsection}
+\def\tabularautorefname{Table}
+\def\tableautorefname{Table}
 \usepackage{listings}
 \usepackage{textcomp}
 \lstset{
@@ -127,9 +129,11 @@ With the ever-growing influence of social networks, social media mining as well 
 \subsection{On Social Media Mining}
 In recent years, social media mining has become an essential tool for marketers, traders, and researchers.
 The information people share publicly via so-called \emph{microposts} on social networks harbor tremendous amounts of valuable social data.
-Forbes has called the social graph \emph{crude oil} in a recent blog post~\cite{ForbesPost}.
-% add explanation
-Social networks today are very much ``walled gardens'', excellently illustrated by a cartoon by David Simonds~(\autoref{fig:DavidSimonds}).
+Forbes has called the social graph \emph{crude oil} in a recent blog post~\cite{ForbesPost}:
+\begin{quotation}
+``The point is, crude oil is crude. It is an unrefined and complex natural resource containing many riches. It takes time to figure out what to do with a new crude resource.''
+\end{quotation}
+Social networks today are very much seen as ``walled gardens'', excellently illustrated by a cartoon by David Simonds~(\autoref{fig:DavidSimonds}).
 This network isolatedness reflects on how social media mining is done nowadays.
 Common literature typically either focuses on just one network~(e.g.,~\cite{russell201121}), or treats the different networks separately~(e.g.,~\cite{russell2011mining}).
 Social media mining happens based on either keyword-based search APIs, or so-called ``fire hose'' near-realtime streaming APIs, both provided by the social networks themselves.
@@ -137,14 +141,12 @@ The main difference is that in the prior case terms like the name of a brand or 
 
 \subsection{Selection of Social Networks and APIs}
 In this paper, we consider the popular social networks Facebook~\cite{Facebook} and Twitter\cite{Twitter}, currently the two globally most important social networks~\cite{comScoreTwitter, comScoreFacebook}.
-% convert to cites, not footnotes
 Traditionally, Twitter is very open with their API, as since the beginning of the platform, API-based Twitter clients  play a strategic role for the company.
 Twitter provides developers with the Twitter Streaming API~\cite{TwitterStreamingAPI}, which allows for high-throughput near-realtime access to various subsets of public and protected Twitter data.
 Facebook has no such public ``fire hose'' API, however, via its Graph API~\cite{FacebookRealtimeAPI} supports near-realtime updates to enable applications to subscribe to a limited set of changes in data from Facebook.
 Whenever such a change occurs, Facebook notifies subscribers with a list of changes.
 The obvious issue here is that, in order to get a Twitter Streaming API-like experience, one had to subscribe to a high number of users, which is impossible.
-This imbalance of API openness has an impact on academic publications around mining social networks.
-% explain open
+This imbalance in data availability via the respective APIs has an impact on academic publications around mining social networks.
 While at the \textit{World Wide Web Conference 2011} alone three Twitter papers based on the Twitter API were published~\cite{Meeder:2011:WKY:1963405.1963479, Romero:2011:DMI:1963405.1963503, Wu:2011:SWT:1963405.1963504}, publications on Facebook typically focus on privacy issues~(e.g.,~\cite{liu:settings}), or Facebook's sociological impact~(e.g.,~\cite{JCC4:JCC4367}), without making use of the Facebook API.
 
 \subsection{Positioning of our Work}
@@ -186,8 +188,7 @@ which is why we strive for a paradigm shift that promises new insights for tasks
 \begin{figure}
 \centering
 \includegraphics[width=1.0\linewidth]{./resources/davidsimonds.png}
-\caption{Social networks as walled gardens.~\cite{DavidSimonds}}
-% add more explanation
+\caption{Social networks are seen as walled gardens due to their (by design) lock-in effects.~\cite{DavidSimonds}}
 \label{fig:DavidSimonds}
 \end{figure}
 
@@ -259,11 +260,10 @@ The output in JSON form for an exemplary micropost can be seen in~\autoref{lst:n
 \end{lstlisting}
 
 \subsection{Manipulating Web Pages with Browser Extensions}
-% inject negative associations, replace
 Our approach is based on browser extensions.
 Browser extensions are small software programs written in a combination of HTML, JavaScript, and CSS.
 For this paper, we focus on extensions based on so-called content scripts.
-Content scripts are JavaScript programs that run in the context of Web pages via dynamic code injection.
+Content scripts are JavaScript programs that run in the context of Web pages via dynamic code insertion.
 By using the standard Document Object Model (DOM), they can read or modify details of the Web pages a user visits.
 The advantage of using browser extensions is that the concept is very powerful and generalizable at the same time.
 Powerful in the sense that it allows for significantly changing one's user experience with social networking platforms like Twitter or Facebook and simply add new features.
@@ -289,7 +289,6 @@ Part of the shared visitor information is the IP address, which allows for IP-ba
 \caption{\textit{Seven day active users} development for the two browser extensions.}
 \label{fig:swarmnlpstats}
 \end{figure}
-% fix negative spike
 
 \section{Experiment Setup and User Demographics} \label{sec:userdemographics}
 \subsection{Experiment Setup}
@@ -298,10 +297,10 @@ Part of the shared visitor information is the IP address, which allows for IP-ba
 \subsection{User Demographics}
 We have released the two browser extensions independently from each other on the Chrome Web Store.
 The extension descriptions contain full disclosure on the collected data and on the usage of a Web analytics tool.
-As the extensions inject a Web analytics tracking snippet, exact user localization is possible based on the users' current physical location, i.e., completely independent from the origin location users might have registered with Twitter or Facebook.
-A graphical overview of user locations can be seen in~\autoref{fig:twitterlocation} and~\autoref{fig:facebooklocation}.
-% fix autorefs
-\autoref{tab:facebooklocations} and \autoref{tab:twitterlocations} show the distribution of the top-10 locations of users of the extensions.
+As the extensions inserts a Web analytics tracking snippet, exact user localization is possible based on the users' current physical location, i.e., completely independent from the origin location users might have registered with Twitter or Facebook.
+A graphical overview of user locations can be seen in~\autoref{fig:twitterlocations} and~\autoref{fig:facebooklocations}.
+\autoref{tab:twitterlocations} and \autoref{tab:facebooklocations} show the distribution of the top-10 locations of users of the extensions.
+% RUBEN: Please fix autorefs
 The complete statistics can be found online\footnote{\url{https://github.com/tomayac/swj-microposts/tree/master/stats}}.
 
 In the period from March~1 to November~8, for Facebook Swarm NLP, overall 858~unique Facebook users accessed the extension at least 10~times, in comparison to overall 86 unique Twitter Swarm NLP users.
@@ -311,11 +310,11 @@ If we put these figures in contrast with the \emph{seven day active users} stati
   \centering
     \subfloat[][Twitter Swarm NLP]{
       \includegraphics[width=0.45\textwidth]{./resources/twitterlocation.png}
-      \label{fig:twitterlocation}}
+      \label{fig:twitterlocations}}
     \qquad
     \subfloat[][Facebook Swarm NLP]{
       \includegraphics[width=0.45\textwidth]{./resources/facebooklocation.png}
-      \label{fig:facebooklocation}}
+      \label{fig:facebooklocations}}
 \caption{Location of users of the two browser extensions (May 1 -- Nov. 12).}
 \label{fig:location}
 \end{figure}
@@ -329,10 +328,9 @@ If we put these figures in contrast with the \emph{seven day active users} stati
     \subfloat[][Facebook. Source:~\cite{comScoreFacebook}.]{
       \includegraphics[width=0.45\textwidth]{./resources/facebookglobalmarkets.jpg}
       \label{fig:facebookglobalmarkets}}
-\caption{Global Markets Reach.}
+\caption{Global markets reach by percent of unique online visitors.}
 \label{fig:globalmarkets}
 \end{figure}
-% add clearer explanations
 
 \begin{figure*}
   \centering
@@ -365,7 +363,7 @@ If we put these figures in contrast with the \emph{seven day active users} stati
 	Spain & 147 \\
     \hline
   \end{tabular}
-  \label{tab:twittertoplocations}}
+  \label{tab:twitterlocations}}
   \qquad
   \subfloat[][Facebook Swarm NLP]{
     \begin{tabular}{ | l | l |}
@@ -383,7 +381,7 @@ If we put these figures in contrast with the \emph{seven day active users} stati
 	United States & 742 \\
     \hline
   \end{tabular}
-  \label{tab:facebooktoplocations}}
+  \label{tab:facebooklocations}}
   \caption{Top-10 locations of users of the two browser extensions (May 1 -- Nov. 12).}
   \label{tab:toplocations}
 \end{table*}
@@ -418,11 +416,11 @@ If we put these figures in contrast with the \emph{seven day active users} stati
 \begin{figure*}
   \centering
     \subfloat[][Twitter]{
-      \includegraphics[width=0.45\textwidth]{./resources/twitterdbo.png}
+      \includegraphics[width=0.46\textwidth]{./resources/twitterdbo.png}
       \label{fig:twitterdbo}}
     \qquad
     \subfloat[][Facebook]{
-      \includegraphics[width=0.45\textwidth]{./resources/facebookdbo.png}
+      \includegraphics[width=0.4\textwidth]{./resources/facebookdbo.png}
       \label{fig:facebookdbo}}
 \caption{Type statistics filtered by \url{http://dbpedia.org/ontology/}.}
 \label{fig:dbo}
@@ -431,11 +429,11 @@ If we put these figures in contrast with the \emph{seven day active users} stati
 \begin{figure*}
   \centering
     \subfloat[][Twitter]{
-      \includegraphics[width=0.45\textwidth]{./resources/twitterumbel.png}
+      \includegraphics[width=0.46\textwidth]{./resources/twitterumbel.png}
       \label{fig:twitterumbel}}
     \qquad
     \subfloat[][Facebook]{
-      \includegraphics[width=0.45\textwidth]{./resources/facebookumbel.png}
+      \includegraphics[width=0.4\textwidth]{./resources/facebookumbel.png}
       \label{fig:facebookumbel}}
 \caption{Type statistics filtered by \url{http://umbel.org/umbel/rc/}.}
 \label{fig:umbel}
@@ -467,7 +465,7 @@ In addition to that, we also provide a \emph{comparison with micropost author-fo
 \subsection{Semantic Annotation of Microposts}
 Passant \textit{et al.} introduced a Semantic MicroBlogging (\textit{sic}) framework~(SMOB,~\cite{Passant2008}) that enables a \textit{distributed, open, and semantic} microblogging experience based on Semantic Web and Linked Data technologies by annotating microposts with common vocabularies such as FOAF or SIOC.
 SMOB relies on distributed autonomous hubs that communicate with each other to exchange microposts and subscriptions, which can also be cross-posted to Twitter.
-% add explanation of hashtags
+Hashtags, words or phrases preceded by the '\#' symbol, have been popularized on Twitter as a way for users to organize and search messages~\cite{hashtag}.
 The authors suggest the use of meaningful hashtags such as \texttt{\#dbp:Eiffel\_Tower}, or \texttt{\#geo:Paris\_France}, in the style of RDF prefixes for DBpedia and GeoNames.
 
 In the Linked Open Social Signals project~(LOSS,~\cite{Mendes:LOSS}), Mendes \textit{et al.} investigate the representation of microposts as Linked Open Data and address the problem of information overload caused by the sheer amount of microposts (the authors call the opinions, observations, and suggestions contained in microposts ``social signals'', hence the project name).
@@ -508,17 +506,15 @@ While aggregated public data, as made possible by accessing it via APIs, may fee
 However, the approach we took in this paper goes one step further by explicitly accessing a social network user's timeline, and reporting back named entities to a Web analytics service (the same that gets used already by Twitter). 
 It is important to note, however, that no connection is been made between a user's individual timeline and the person behind.
 We have stated all accessed data in the extension descriptions.
-The third consequence is the potential bias introduced by targeting one specific Web browser with the extensions.
-Ideally, we would target all major browsers, however, due to scalability reasons, currently we can only target one browser.
-% say we used chrome because it is famous 
+The third consequence is the potential bias introduced by targeting specific Web browsers with the extensions. 
+For now, we have focused on the Google Chrome browser due to its native Chrome Web Store that guarantees optimal exposure of the extensions in a centralized way.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.4\linewidth]{./resources/vennreadunread.png}
-\caption{Only a subset (of unknown size) of all microposts that get authored also ever get read.}
+\includegraphics[width=0.6\linewidth]{./resources/vennreadunread.png}
+\caption{Only a subset (of unknown size) of all microposts that get authored also ever get read. In turn, we can track a small subset of all read microposts with our extensions.}
 \label{fig:vennreadunread}
 \end{figure}
-% add read microposts captured by the extensions
 
 \section{Future Work and Conclusion} \label{sec:futureworkandconclusion}
 % expand experiment to more browsers
