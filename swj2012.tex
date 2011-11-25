@@ -496,7 +496,18 @@ Music plays a significant role on Facebook, reflected by the presence of disc jo
 With regards to reader interest, there is a tendency towards reading about the United States, or North America in general.
 
 \subsection{Segmentation by RDF Type}
-
+One of the advantages of using DBpedia URIs to represent named entities in an unambiguous way is that the Linked Data knowledge from DBpedia can be leveraged.
+Therefore, we have retrieved the RDF type (\texttt{rdf:type}, \url{http://www.w3.org/1999/02/22-rdf-syntax-ns\#type}) information for the top-500 named entities for both networks.
+Unlike the main DBpedia OWL type (\texttt{dbpedia-owl:type}, \url{http://dbpedia.org/ontology/type}), the \texttt{rdf:type} can have multiple values, for example a company can be both a company, and an organization.
+Type specifications can come from different namespaces, like \texttt{dbpedia-owl} \url{http://dbpedia.org/ontology/}, \texttt{yago} \url{http://dbpedia.org/class/yago/}, or \texttt{umbel} \url{http://umbel.org/umbel/rc/}
+\autoref{fig:unfiltered} shows an unlabeled chart of type distributions of the top-500 named entities with the main purpose of illustrating the long tail of type specifications. 
+The biggest number of type specifications comes from the \texttt{dbpedia-owl} namespace and is shown in \autoref{fig:dbo} for both social networks, again covering the top-500 named entities.
+Second comes the \texttt{umbel} namespace, which is shown in \autoref{fig:umbel}.
+A recent addition is the \texttt{schema} namespace \url{http://schema.org/} around the common schema effort of the big search engines Google, Yahoo, and Microsoft~\cite{schemaorg}.
+Overall coverage of \texttt{schema} is still sparse on DBpedia, nevertheless the results can be seen in \autoref{fig:schema}.
+The granularity of the underlying ontologies is different.
+For example, where \texttt{schema} just has ``Place'', \texttt{umbel} differentiates between ``Location'' and ``Populated Place''.
+Applying a loose ontology mapping, the top-3 types on both social networks are Place, Organization, Person for \texttt{schema} and \texttt{dbpedia-owl}, and Place, Organization, Business for \texttt{umbel}.
 
 \subsection{Events from recent History}
 
