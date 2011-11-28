@@ -444,7 +444,7 @@ If we put these figures in contrast to the \emph{seven~day~active users} statist
 In this Section, we delve into the collected data, which ranges over more than six months.
 We cover the period from May~1 to November~12, 2011.
 It is to be noted that our data is \emph{not} statistically significant, however, shows promising trends and potential direction for future research.
-If in the following we present results, those are to be taken with a grain of salt, however, common sense suggests that they are correct, also as the experiments were conducted over more than six months, which reduces the risk of short-term spikes.
+If in the following we present results, those are to be taken with a grain of salt, however, common sense suggests that they are correct. The experiments were conducted over more than six months, which reduces the risk of short-term spikes.
 
 \subsection{Raw Statistics}
 First, we present some raw statistics on both social networking sites.
@@ -460,7 +460,7 @@ Looking at the numbers, where we have 76.7\% unique named entities for Twitter a
 We need to note, however, that Facebook microposts are generated at a lot lower frequency than Twitter microposts, and that Twitter microposts are limited to 140 characters, which may have an impact on both precision and recall of the named entity disambiguation process.
 The average duration of a visit on Facebook according to our statistics is 01:06:07 against 00:28:12 on Twitter, which implies that Twitter users spend less than half the time than Facebook users on their social networking site.
 Again, our data is at this point \emph{not} statistically significant, especially as we had the interesting phenomenon of almost more than ten times as many absolute distinct Facebook users than Twitter users, however, seven~day~active user statistics show only about double the number of Facebook users (see \autoref{sec:userdemographics}).
-Further research is necessary that takes the following disruptive factors into account:
+Further research is necessary that takes the following factors into account:
 \begin{itemize}
 \item Micropost length and effect on recall and precision of named entity disambiguation.
 \cite{nerd} by Rizzo \textit{et al.} provides first results in this direction.
@@ -469,6 +469,8 @@ This stands in an interesting contrast to the number of absolute distinct number
 \item Stability of the experiment participants over time.
 The key point of our approach was that participants were unaware that they were contributing to an experiment.
 We were surprised that so many Facebook users participated, albeit for a short period of time, whereas so few Twitter users participated, however, in the majority during the whole time.
+\item Increase reach through focusing on more browser platforms.
+Currently we have limited ourselves to one browser platform, however, the approach is generalizable and can be applied to all browser platforms that support extensions or plugins.
 \end{itemize}
 
 \subsection{Ranking of Named Entities}
@@ -510,6 +512,7 @@ For example, where \texttt{schema} just has ``Place'', \texttt{umbel} differenti
 Applying a loose ontology mapping, the top-3 types on both social networks are Place, Organization, Person for \texttt{schema} and \texttt{dbpedia-owl}, and Place, Organization, Business for \texttt{umbel}.
 
 \subsection{Events from recent History}
+In this Subsection, we present some events from recent history, and show how using our approach, new insights or trends can be revealed.
 
 \subsection{Facebook Reader Perception of the 2011 Norway Attacks}
 On July 22, a mass shooting took place on the island of Utøya in Norway, preceded by a car bomb explosion in Oslo\footnote{2011 Norway attacks \url{http://en.wikipedia.org/wiki/2011_Norway_attacks}}.
@@ -522,6 +525,9 @@ It is interesting to note how Norwegian readers got detailed information on the 
 Traditional media companies more and more harvest social networking sites for authentic coverage of events.
 For Utøya, this is documented, e.g., in the case of survivor Adrian Pracon (@AdrianPracon on Twitter) in a tweet from Sky News producer @fimackiesky\footnote{Sky News contact Utøya survivor \url{https://twitter.com/\#!/AdrianPracon/status/94573763500326912}}.
 While Facebook has terminated terrorist Anders Behring Breivik's profile, the Internet already has conserved a copy\footnote{Copy of the terrorist's Facebook profile \url{http://publicintelligence.net/mirror-of-ut{\o}ya-gunman-anders-behring-breiviks-facebook-page-and-photo-gallery/}}. 
+
+\textbf{Revealed insight:}
+traditional news media still play the most important role in informing people, albeit the news item itself is shared via social networks. 
 
 \begin{table}
     \begin{tabular}{ | l | l |}
@@ -543,6 +549,16 @@ While Facebook has terminated terrorist Anders Behring Breivik's profile, the In
 The Arab Spring is a revolutionary wave of demonstrations and protests occurring in the Arab world\footnote{Arab Spring \url{http://en.wikipedia.org/wiki/Arab\_Spring}}.
 We compared sub continent geolocations of readers of microposts on the countries of Egypt, Libya, and Syria on both Facebook and Twitter.
 The results for both social networks can be found in \autoref{tab:arabspring}.
+First, it is interesting to note the sequence of the countries.
+On Twitter, it is Libya, Egypt, and Syria, whereas on Facebook it is Egypt, Libya, and Syria. 
+Reader sub continent geolocation distribution is different as well.
+Where on Facebook the Western European region is most interested in the three countries, on Twitter it is the Northern African region.
+From Twitter users in Northern Africa, Egypt was the most read about country, in contrast to the among global Twitter users winning Libya.
+Overall the Arab Spring was almost equally represented on both social networks, albeit our numbers are only sufficient for trend analysis.
+Both social networks play an important role for the organization of the protests and the distribution of eyewitness statements.
+
+\textbf{Revealed insight:}
+comparing reader geolocations to distinguish geographic centers of interest can be especially useful to detect local social networking preferences.
 
 \begin{table*}
   \centering
@@ -571,13 +587,35 @@ The results for both social networks can be found in \autoref{tab:arabspring}.
   \label{tab:arabspring}
 \end{table*}
 
+\subsubsection{Brand Popularity on City Level on Facebook}
+Celcom Axiata Berhad, DBA Celcom, is the oldest mobile telecommunications company in Malaysia\footnote{Celcom \url{http://en.wikipedia.org/wiki/Celcom}}.
+We show the brand's popularity based on named entity occurrences pivoted by cities of readers interested in micropost mentioning the company.
+\autoref{tab:celcom} shows the top-5 cities where people read about Celcom.
+This allows for targeted brand awareness campaigns in cities where the brand has a low popularity, potentially based on additional sentiment analysis.
+
+\textbf{Revealed insight:}
+City level analysis allows for fine-grained details of, e.g., brand popularity over time.
+
+\begin{table*}
+    \begin{tabular}{ | l | l | l | l | l | l | l |}
+    \hline
+	& \textbf{Total} & \textbf{Shah Alam} & \textbf{Kuching} & \textbf{Kuala Lumpur} & \textbf{Keningau} & \textbf{Kulim}\\ \hline
+\textbf{db:Celcom} & 173 & 47 & 34 & 18 & 16 & 16\\
+    \hline
+  \end{tabular}
+  \caption{Popularity of the Celcom brand on city level (May~1 -- November~12).}
+  \label{tab:celcom}  
+\end{table*}
+
 \subsubsection{LOLcats vs. LOLdogs on Facebook}
 One of the more popular Internet phenomena is the sharing of cute cat and dog photos\footnote{LOLcats and LOLdogs \url{http://en.wikipedia.org/wiki/LOLcat}}.
 On November 23, the well-known link shortening service bitly published term popularity-based statistics to test the hypothesis that ``kittens really rule the Internet''.
 According to their results, dogs clearly outperform cats among all \emph{produced} links on microposts.
 With our approach, we were able to confront bitly's results with the \emph{consumed} microposts around cats and dogs on Facebook.
 \autoref{tab:kittens} clearly shows that among readers, cats indeed haz rule the Internetz.
-For the sake of completeness, we had not enough data from Twitter.
+
+\textbf{Revealed insight:}
+the importance of the differences between the producer and the consumer side gets evident.
 
 \begin{table}
     \begin{tabular}{ | l | l | l |}
@@ -590,7 +628,7 @@ For the sake of completeness, we had not enough data from Twitter.
 	db:Chihuahua\_(dog) & 9 & 1\\
     \hline
   \end{tabular}
-  \caption{Reader popularity of cats and dogs among Facebook Swarm NLP users (May 1 -- November 24).}
+  \caption{Reader popularity of cats and dogs among Facebook Swarm NLP users (May~1 -- November~24).}
   \label{tab:kittens}  
 \end{table}
 
@@ -616,10 +654,6 @@ For the sake of completeness, we had not enough data from Twitter.
   \caption{Raw statistics on absolute, total and unique number of occurrences of named entities (May~1 -- November~12).}
   \label{tab:raw}
 \end{table*}
-
-% Talk about what network to use for what purpose, talk about brand analysis, etc.
-% http://dbpedia.org/resource/Eid_Mubarak http://dbpedia.org/resource/Eid_ul-Fitr
-% http://dbpedia.org/resource/Celcom Malaysia
 
 \begin{figure*}
   \centering
@@ -740,8 +774,19 @@ For Facebook, official usage statistics~\cite{facebookstats} state that from mor
 \label{fig:vennreadunread}
 \end{figure}
 
-\section{Future Work and Conclusion} \label{sec:futureworkandconclusion}
-% expand experiment to more browsers
+\section{Conclusion} \label{sec:conclusion}
+Social networks play a crucial role for all sorts of serious and non-serious questions of life.
+This can go as far as regimes censoring social networks altogether, as it has happened in Egypt~\cite{censor}.
+While tech-savvy Internet users can circumvent censorship efforts, the general population is effectively cut off of social network communication.
+In order to help Egyptians share eyewitness statements about the happenings in their country again, a phone-based Speak-to-Tweet service that required no Internet connection at all was established~\cite{egypt}.
+Our approach can help prioritize such anti-censorship efforts by analyzing where reader interest is located geographically, and what social networks people use for their information needs.
+
+In this paper, we have presented a generalizable approach towoards the comparison of topics people read about on social networks.
+We have shown how named entity disambiguation combined with classic Web analytics can be applied to the social networks Facebook and Twitter.
+With concrete examples, we have highlighted how the approach of traditional social media mining can be completed and enriched with our reader-focused approach.
+We have compared both approaches and worked out the limitations and advantages of both.
+The main contribution of the paper is on the one hand the comparison of reader topics of two social networks and the classification of those topics, and on the other hand the paradigm shift contained in the approach itself.
+The approach being generalizable, future studies can cover and compare more social networks.
 
 \section*{Acknowledgments}
 We would like to thank Shaun Roach from AlchemyAPI, Andraž Tori from Zemanta, Pablo Mendes from DBpedia Spotlight, and Tom Tague from OpenCalais for their precious support and/or generous API quota allowances. 
