@@ -417,6 +417,71 @@ If we put these figures in contrast to the \emph{seven~day~active users} statist
 \label{fig:swarmnlpstats}
 \end{figure*}
 
+\section{Discussion} \label{sec:discussion}
+In this Section, we delve into the collected data, which ranges over more than six months.
+We cover the period from May~1 to November~12, 2011.
+It is to be noted that our data is \emph{not} statistically significant, however, shows promising trends and potential direction for future research.
+If in the following we present results, those are to be taken with a grain of salt.
+However, common sense suggests that they are correct.
+The experiments were conducted over more than six months, which reduces the risk of short-term spikes.
+
+\subsection{Raw Statistics}
+First, we present some raw statistics on both social networking sites.
+\autoref{tab:raw} shows the absolute, total and unique number of occurrences of named entities from microposts.
+Interesting here is especially the relation between unique named entities and total named entities.
+To clarify the difference between unique and total named entities, we consider the following examples:
+(i) one user~A during one social networking session reads two different microposts that contain one common named entity (e.g., two consecutive Facebook posts that talk about cats).
+In this case, we would track two total named entities, but only one unique named entity.
+In a second case (ii) if two users, user~A and user~B, during each one's social networking session read two different microposts that contain one common named entity, we would still track two total named entities, however, also two unique named entities.
+Short, a unique named entity is a named entity that during one social networking session of one user appears only once.
+The number of absolute named entities refers to the absolute distinct number of named entities that ever occurred during the experiments, independent from users and sessions.
+Looking at the numbers, where we have 76.7\% unique named entities for Twitter and 43.0\% unique named entities for Facebook, we can carefully derive that the reading experience per social networking session on Twitter is more versatile than on Facebook.
+We need to note, however, that Facebook microposts are generated at a lot lower frequency than Twitter microposts, and that Twitter microposts are limited to 140 characters, which may have an impact on both precision and recall of the named entity disambiguation process.
+The average duration of a visit on Facebook according to our statistics is 01:06:07 against 00:28:12 on Twitter, which implies that Twitter users spend less than half the time than Facebook users on their social networking site.
+Again, our data is at this point \emph{not} statistically significant, especially as we had the interesting phenomenon of almost more than ten times as many absolute distinct Facebook users than Twitter users.
+However, \emph{seven~day~active user} statistics show only about double the number of Facebook users (see \autoref{sec:userdemographics}).
+Further research is necessary that takes the following factors into account:
+\begin{description}
+\item[Micropost length and effect on recall and precision of named entity disambiguation.]
+\cite{nerd} by Rizzo \textit{et al.} provides first results in this direction.
+\item[Throughput of microposts per time unit (smaller than one day) and effect on versatility of unique named entities per social networking session.]
+This stands in an interesting contrast to the number of absolute distinct named entities, which is significantly higher on Facebook.
+\item[Steadiness of the group of experiment participants over time.]
+The key point of our approach was that participants were unaware that they were contributing to an experiment.
+We were surprised that so many Facebook users participated, albeit for a short period of time, whereas so few Twitter users participated, however, in the majority during the whole time.
+\item[Increase reach through focusing on more browser platforms.]
+Currently we have limited ourselves to one browser platform, however, the approach can be applied to all browser platforms that support extensions or plug-ins.
+\end{description}
+
+\begin{table*}
+  \centering
+  \subfloat[][Twitter]{
+    \begin{tabular}{ | l | l | l | l | l |}
+    \hline
+	\textbf{Absolute} & \textbf{Total} & \textbf{Unique} & \textbf{Unique / Total (\%)} & \textbf{Avg. Visit Length} \\ \hline
+	18,207 & 35,958 & 27,594 & 76.7\% & 00:28:12 \\
+    \hline
+  \end{tabular}
+  \label{tab:twitterraw}}
+  \qquad
+  \subfloat[][Facebook]{
+    \begin{tabular}{| l | l | l | l | l |}
+    \hline
+	\textbf{Absolute} & \textbf{Total} & \textbf{Unique} & \textbf{Unique / Total (\%)} & \textbf{Avg. Visit Length} \\ \hline
+	54,331 & 316,910 	& 136,196 & 43.0\% & 01:06:07 \\ 
+    \hline
+  \end{tabular}
+  \label{tab:facebookraw}}
+  \caption{Raw statistics on absolute, total and unique number of occurrences of named entities (May~1 -- November~12).}
+  \label{tab:raw}
+\end{table*}
+
+\subsection{Ranking of Named Entities}
+The core outcome of our experiments is a comparison of the named entities on the social networking sites Facebook and Twitter.
+From the absolute distinct number of 18,207 (Twitter) and 54,331 (Facebook) of named entities, we have manually cleaned the list of the top-200 named entities on each social network, removed false positives, and normalized the representing URIs to DBpedia URIs.
+In \autoref{fig:topentities}, we present the remaining list of top entities for each social network.
+Visually, the curves are very similar with five named entities occurring many times, and then a long tail of many named entities occurring few times.
+
 \begin{figure*}
   \centering
     \subfloat[][Twitter Swarm NLP]{
@@ -429,6 +494,9 @@ If we put these figures in contrast to the \emph{seven~day~active users} statist
 \caption{Top entities as reported by browser extension users (May~1 -- November~12).}
 \label{fig:topentities}
 \end{figure*}
+
+\autoref{fig:top10} zooms in on just the top-10 entities.
+Interesting to note is the top named entity on each social network, which is the particular social network name ``Twitter'' and ``Facebook'' itself. 
 
 \begin{figure*}
   \centering
@@ -443,60 +511,19 @@ If we put these figures in contrast to the \emph{seven~day~active users} statist
 \label{fig:top10}
 \end{figure*}
 
-\section{Discussion and Future Work}
-In this Section, we delve into the collected data, which ranges over more than six months.
-We cover the period from May~1 to November~12, 2011.
-It is to be noted that our data is \emph{not} statistically significant, however, shows promising trends and potential direction for future research.
-If in the following we present results, those are to be taken with a grain of salt, however, common sense suggests that they are correct. The experiments were conducted over more than six months, which reduces the risk of short-term spikes.
-
-\subsection{Raw Statistics}
-First, we present some raw statistics on both social networking sites.
-\autoref{tab:raw} shows the absolute, total and unique number of occurrences of named entities from microposts.
-Interesting here is especially the relation between unique named entities and total named entities.
-To clarify the difference between unique and total named entities, we consider the following examples:
-(i) one user~A during one social networking session reads two different microposts that contain one common named entity~E (e.g., two consecutive Facebook posts that talk about cats).
-In this case, we would track two total named entities, but only one unique named entity.
-In a second case (ii) if two users, user~A and user~B, during each one's social networking session read two different microposts that contain one common named entity~E, we would still track two total named entities, however, also two unique named entities.
-Short, a unique named entity is a named entity that during one social networking session of one user appears only once.
-The number of absolute named entities refers to the absolute distinct number of named entities that ever occurred during the experiments, independent from users and sessions.
-Looking at the numbers, where we have 76.7\% unique named entities for Twitter and 43.0\% unique named entities for Facebook, we can carefully derive that the reading experience per social networking session on Twitter is more versatile than on Facebook.
-We need to note, however, that Facebook microposts are generated at a lot lower frequency than Twitter microposts, and that Twitter microposts are limited to 140 characters, which may have an impact on both precision and recall of the named entity disambiguation process.
-The average duration of a visit on Facebook according to our statistics is 01:06:07 against 00:28:12 on Twitter, which implies that Twitter users spend less than half the time than Facebook users on their social networking site.
-Again, our data is at this point \emph{not} statistically significant, especially as we had the interesting phenomenon of almost more than ten times as many absolute distinct Facebook users than Twitter users, however, seven~day~active user statistics show only about double the number of Facebook users (see \autoref{sec:userdemographics}).
-Further research is necessary that takes the following factors into account:
-\begin{itemize}
-\item Micropost length and effect on recall and precision of named entity disambiguation.
-\cite{nerd} by Rizzo \textit{et al.} provides first results in this direction.
-\item Throughput of microposts per time unit (smaller than one day) and effect on versatility of named entities per social networking session.
-This stands in an interesting contrast to the number of absolute distinct number of named entities, that is significantly higher on Facebook.
-\item Stability of the experiment participants over time.
-The key point of our approach was that participants were unaware that they were contributing to an experiment.
-We were surprised that so many Facebook users participated, albeit for a short period of time, whereas so few Twitter users participated, however, in the majority during the whole time.
-\item Increase reach through focusing on more browser platforms.
-Currently we have limited ourselves to one browser platform, however, the approach is generalizable and can be applied to all browser platforms that support extensions or plugins.
-\end{itemize}
-
-\subsection{Ranking of Named Entities}
-The core outcome of our experiments is a comparison of the named entities on the social networking sites Facebook and Twitter.
-From the absolute distinct number of 18,207 (Twitter) and 54,331 (Facebook) of named entities, we have manually cleaned the list of the top-200 named entities on each social network, removed false positives, and normalized the representing URIs to DBpedia URIs.
-In \autoref{fig:topentities}, we present the remaining list of top entities for each social network.
-Visually, the curves are very similar with five named entities occurring many times, and then a long tail of many named entities occurring few times.
-\autoref{fig:top10} zooms in on just the top-10 entities.
-Interesting to note is the top named entity on each social network, which is the particular social network name ``Twitter'' and ``Facebook'' itself. 
-
 On Twitter, five out of the top-10 named entities are IT-related companies, namely ``Twitter'', ``Google'', ``Facebook'', ``Apple'', and ``Microsoft''.
-Two Apple products, the ``iPhone'' and the ``iPad'' mark the positions 7 and 8.
-``Search engine optimization'' (SEO) marks position 4, the ``United States'' of America are on 5, and position 10 is ``Allah''.
+Two Apple products, the ``iPhone'' and the ``iPad'' hold the positions 7 and 8.
+``Search engine optimization'' (SEO) holds position 4, the ``United States'' of America are on 5, and position 10 is held by ``Allah''.
 Interpreting these results, we can say that 8 out of the top-10 named entities on Twitter by reader interest are of technical nature.
 
 On Facebook, the second most read about named entity is ``birthday'' on position 2.
-Position 3 is marked by ``Allah'', who is followed by the (Christian) ``God'' on position 7.
+Position 3 is held by ``Allah'', who is followed by the (Christian) ``God'' on position 7.
 ``Love'' is on position 4.
-As the unique company ,``Twitter'' appears on position 6.
+As the sole company, ``Twitter'' appears on position 6.
 The ``United States'' of America and ``North America'' are on positions 5 and 9 respectively.
 The ``disc jockey'' (DJ) spins a hit single on position 8.
-Finally, the political organization ``United Nations'' marks position 10.
-If we interpret these results, Facebook is used most for personal matters like reading (social network) friends' birthday felicitations, reading about love, but also religious matters of Islamic and Christian nature.
+Finally, the political organization ``United Nations'' holds position 10.
+If we interpret the results, Facebook is used most for personal matters like reading social network friends' birthday felicitations, reading about love and relationships, but also religious matters of Islamic and Christian nature.
 Music plays a significant role on Facebook, reflected by the presence of disc jockey.
 With regards to reader interest, there is a tendency towards reading about the United States, or North America in general.
 
@@ -634,29 +661,6 @@ the importance of the differences between the producer and the consumer side get
   \caption{Reader popularity of cats and dogs among Facebook Swarm NLP users (May~1 -- November~24).}
   \label{tab:kittens}  
 \end{table}
-
-\begin{table*}
-  \centering
-  \subfloat[][Twitter]{
-    \begin{tabular}{ | l | l | l | l | l |}
-    \hline
-	\textbf{Absolute} & \textbf{Total} & \textbf{Unique} & \textbf{Unique / Total (\%)} & \textbf{Avg. Visit Length} \\ \hline
-	18,207 & 35,958 & 27,594 & 76.7\% & 00:28:12 \\
-    \hline
-  \end{tabular}
-  \label{tab:twitterraw}}
-  \qquad
-  \subfloat[][Facebook]{
-    \begin{tabular}{| l | l | l | l | l |}
-    \hline
-	\textbf{Absolute} & \textbf{Total} & \textbf{Unique} & \textbf{Unique / Total (\%)} & \textbf{Avg. Visit Length} \\ \hline
-	54,331 & 316,910 	& 136,196 & 43.0\% & 01:06:07 \\ 
-    \hline
-  \end{tabular}
-  \label{tab:facebookraw}}
-  \caption{Raw statistics on absolute, total and unique number of occurrences of named entities (May~1 -- November~12).}
-  \label{tab:raw}
-\end{table*}
 
 \begin{figure*}
   \centering
