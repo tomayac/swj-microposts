@@ -337,7 +337,7 @@ Accumulated click statistics on the announcement links are available via the lin
 The extension descriptions contain full disclosure on the collected data and on the usage of a Web analytics tool, however, do not include a concrete mention, apart from a vague remark on entity ranking, that we use the collected data for an experiment.
 In addition to that, the extension descriptions do not cross-reference each other, i.e., users are \emph{not} actively encouraged to install both extensions in order to guarantee maximum independence of the experiments.
 
-\subsection{User Demographics} \label{sec:userdemographics}
+\subsection{User Demographics}
 As the extensions insert a Web analytics tracking snippet, exact user localization is possible based on the users' current physical location, i.e., completely independent from the origin location users might have registered with Facebook or Twitter.
 A graphical overview of user locations as detected via IP-based geolocation can be seen in Figure~\autoref{fig:twitterlocations} and Figure~\autoref{fig:facebooklocations}.
 Table~\autoref{tab:twitterlocations} and Table~\autoref{tab:facebooklocations} show the distribution of the top-10 locations of users of the extensions in tabular form. 
@@ -511,6 +511,88 @@ Applying a loose ontology mapping, the top-3 types on both social networks are P
 
 \subsection{Events from recent History}
 
+\subsection{Facebook Reader Perception of the 2011 Norway Attacks}
+On July 22, a mass shooting took place on the island of Utøya in Norway, preceded by a car bomb explosion in Oslo\footnote{2011 Norway attacks \url{http://en.wikipedia.org/wiki/2011_Norway_attacks}}.
+We start our analysis with a deep-dive into the most read-about named entities in Norway on the day of the attacks and then manually filter the list for relevance to the event.
+\autoref{tab:norway} shows the top-6 ranking of named entities on July 22 on Facebook.
+The list is led by the two geographic entities of the city of ``Oslo'' and the country ``Norway''.
+Ranks 3 to 5 are taken by traditional news media: the popular newspaper ``Verdens Gang'', typically just referred to as VG, the Cable News Network ``CNN'' and the ``Norwegian Broadcasting Corporation'', known as NRK.
+The current Norwegian Prime Minister ``Jens Stoltenberg'' follows on rank 6.
+It is interesting to note how Norwegian readers got detailed information on the attacks through local media (VG and NRK), but also CNN.
+Traditional media companies more and more harvest social networking sites for authentic coverage of events.
+For Utøya, this is documented, e.g., in the case of survivor Adrian Pracon (@AdrianPracon on Twitter) in a tweet from Sky News producer @fimackiesky\footnote{Sky News contact Utøya survivor \url{https://twitter.com/\#!/AdrianPracon/status/94573763500326912}}.
+While Facebook has terminated terrorist Anders Behring Breivik's profile, the Internet already has conserved a copy\footnote{Copy of the terrorist's Facebook profile \url{http://publicintelligence.net/mirror-of-ut{\o}ya-gunman-anders-behring-breiviks-facebook-page-and-photo-gallery/}}. 
+
+\begin{table}
+    \begin{tabular}{ | l | l |}
+    \hline
+	\textbf{Named Entity} & \textbf{Total (in Norway)}\\ \hline
+	db:Oslo & 75\\
+	db:Norway & 57\\
+	db:Verdens\_Gang & 42\\
+	db:CNN & 19\\
+	db:Norwegian\_Broadcasting\_Corporation & 18\\
+	db:Jens\_Stoltenberg & 16\\
+    \hline
+  \end{tabular}
+  \caption{Reader perception on Facebook of the 2011 Norway attacks (July 22).}
+  \label{tab:norway}  
+\end{table}
+
+\subsubsection{Comparison of Reader Geolocations on Arab Spring}
+The Arab Spring is a revolutionary wave of demonstrations and protests occurring in the Arab world\footnote{Arab Spring \url{http://en.wikipedia.org/wiki/Arab\_Spring}}.
+We compared sub continent geolocations of readers of microposts on the countries of Egypt, Libya, and Syria on both Facebook and Twitter.
+The results for both social networks can be found in \autoref{tab:arabspring}.
+
+\begin{table*}
+  \centering
+  \subfloat[][Twitter]{
+    \begin{tabular}{ | l | l | l | l | l | l | l |}
+    \hline
+    & \textbf{Total} & \textbf{Northern Africa} & \textbf{Southern Europe} & \textbf{Northern Europe} & \textbf{Northern America} & \textbf{Australia and New Zealand}\\ \hline
+    \textbf{db:Libya} & 104 & 1 & 38 & 33 & 16 & 9\\
+    \textbf{db:Egypt} & 86 & 47 & 22 & 0 & 5 & 10\\
+    \textbf{db:Syria} & 69 & 17 & 5 & 8 & 15 & 12\\
+    \hline
+    \end{tabular}
+  \label{tab:twitterarabspring}}  
+  \qquad
+  \subfloat[][Facebook]{
+    \begin{tabular}{ | l | l | l | l | l | l | l |}
+    \hline
+	 & \textbf{Total} & \textbf{Western Europe} & \textbf{Northern Africa} & \textbf{Australia and New Zealand} & \textbf{Northern Europe} & \textbf{South-Eastern Asia}\\ \hline
+	\textbf{db:Egypt} & 128 & 41 & 47 & 11 & 13 & 3\\
+	\textbf{db:Libya} & 68 & 20 & 20 & 12 & 0 & 5\\
+	\textbf{db:Syria} & 61 & 23 & 9 & 15 & 1 & 5\\
+    \hline
+  \end{tabular}
+  \label{tab:facebookarabspring}}
+    \caption{Sub continent geolocations of reader interest of some of the Arab Spring key countries (May~1 -- November~12).}
+  \label{tab:arabspring}
+\end{table*}
+
+\subsubsection{LOLcats vs. LOLdogs on Facebook}
+One of the more popular Internet phenomena is the sharing of cute cat and dog photos\footnote{LOLcats and LOLdogs \url{http://en.wikipedia.org/wiki/LOLcat}}.
+On November 23, the well-known link shortening service bitly published term popularity-based statistics to test the hypothesis that ``kittens really rule the Internet''.
+According to their results, dogs clearly outperform cats among all \emph{produced} links on microposts.
+With our approach, we were able to confront bitly's results with the \emph{consumed} microposts around cats and dogs on Facebook.
+\autoref{tab:kittens} clearly shows that among readers, cats indeed haz rule the Internetz.
+For the sake of completeness, we had not enough data from Twitter.
+
+\begin{table}
+    \begin{tabular}{ | l | l | l |}
+    \hline
+	\textbf{Named Entity} & \textbf{Total} & \textbf{Unique} \\ \hline
+	db:Cat & 161 & 41\\
+	db:Dog & 122 & 43\\
+	db:Persian\_(cat) &29 &5\\
+	db:Kitten & 23 & 7\\
+	db:Chihuahua\_(dog) & 9 & 1\\
+    \hline
+  \end{tabular}
+  \caption{Reader popularity of cats and dogs among Facebook Swarm NLP users (May 1 -- November 24).}
+  \label{tab:kittens}  
+\end{table}
 
 \begin{table*}
   \centering
