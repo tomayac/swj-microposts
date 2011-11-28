@@ -123,7 +123,7 @@ In this paper, we propose a paradigm shift in order to find responses.
 Where traditional social media mining focuses exclusively on the producer side of microposts, we focus on the consumer side, that is, on the readers of microposts.
 Traditional social media mining retrieves its data through official Application Programming Interfaces (APIs).
 In contrast, our approach works through accessing its data directly from the social network users' timeline when they visit the social network via a Web browser.
-In comparison to social data retrieved via APIs, the retrieved social data retrieved via our approach is more sparse, however, we argue in the paper that it is of higher quality.
+In comparison to social data retrieved via APIs, the social data retrieved via our approach is more sparse, however, we argue in the paper that it is of higher quality.
 We have implemented browser extensions for the popular social networks Facebook and Twitter.
 These extensions perform named entity disambiguation on microposts and, via Web analytics software, enabled us to collect social data over the course of 6~months.
 In the first part of the paper, we present global statistics and a comparison of what topics people are interested in on the two examined social networks.
@@ -131,14 +131,14 @@ In the second part, using concrete examples from recent history, we show how add
 This allows for interesting new kinds of questions to be addressed.
 \textit{``Does an event~X cause more reader interest in country~A than in country~B?''};
 \textit{``Which continent cares most about a catastrophe~Y?''};
-\textit{``Do people in city~Z read about product~P?''};
+\textit{``Do people in city~Z read about product~P?''}.
 Finally, as our approach allows for cross-network social media mining, we can even propose answers for a question like the following:
 \textit{``Is my brand~B read more about in region~R on social network~A, or social network~B?''}.
-We see our approach not as a replacement of traditional social media mining, but more as an additional perspective that makes sense in some scenarios, some of which we present in this paper.
+We see our approach not as a replacement of traditional social media mining, but more as an additional perspective that makes sense in certain scenarios, some of which we present in this paper.
 \end{abstract}
 
 \begin{keyword}
-\todo{List keywords}
+Social media mining, named entity disambiguation, Web analytics
 \end{keyword}
 
 \end{frontmatter}
@@ -156,8 +156,15 @@ Forbes has called the social graph \emph{crude oil} in a recent blog post~\cite{
 Social networks today are very much seen as ``walled gardens'', excellently illustrated by a cartoon by David Simonds~(\autoref{fig:DavidSimonds}).
 This network isolatedness reflects on how traditional social media mining is done nowadays.
 Common literature typically either focuses on just one network (e.g.,~\cite{russell201121}), or treats the different networks separately (e.g.,~\cite{russell2011mining}).
-Traditional social media mining happens (i) based on either keyword-based search APIs, and/or (ii) based on so-called ``fire hose'' near-realtime streaming APIs, which are provided by the social networks themselves.
+Traditional social media mining happens (i) based on either term-based search APIs, and/or (ii) based on so-called ``fire hose'' near-realtime streaming APIs, which are both provided by the social networks themselves.
 The main difference between (i) and (ii) is that in the prior case terms like the name of a brand or company are \emph{proactively} searched for, whereas in the latter case the social media mining system \emph{reactively} acts upon the occurrence of such terms.
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\linewidth]{./resources/davidsimonds.png}
+\caption{David Simonds illustrates social networks as walled gardens due to their (by design) lock-in effects~\cite{DavidSimonds}.}
+\label{fig:DavidSimonds}
+\end{figure}
 
 \subsection{Selection of Social Networks and APIs}
 In this paper, we consider the popular social networks Facebook~\cite{Facebook} and Twitter\cite{Twitter}, currently the two globally most important social networks~\cite{comScoreTwitter, comScoreFacebook}.
@@ -166,8 +173,8 @@ Twitter provides developers with the Twitter Streaming API~\cite{TwitterStreamin
 Facebook has no such public ``fire hose'' streaming API, however, via its Graph API~\cite{FacebookRealtimeAPI} supports near-realtime updates to enable applications to subscribe to a limited set of changes in data from Facebook.
 Whenever such a change occurs, Facebook notifies subscribers with a list of changes.
 The obvious issue here is that, in order to get a Twitter Streaming API-like experience, one had to subscribe to a high number of users, which is impossible.
-This imbalance in data availability via the respective APIs has an impact on academic publications around mining social networks.
-While at the \textit{World Wide Web Conference 2011 (WWW2011)} alone three Twitter papers based on the Twitter API were published~\cite{Meeder:2011:WKY:1963405.1963479, Romero:2011:DMI:1963405.1963503, Wu:2011:SWT:1963405.1963504}, publications on Facebook typically focus on privacy issues~(e.g.,~\cite{liu:settings}), or Facebook's sociological impact~(e.g.,~\cite{JCC4:JCC4367}), without making use of the Facebook API.
+This imbalance in data availability via the respective APIs has an impact on academic publications around social network mining.
+While at the World Wide Web Conference 2011 (WWW2011) alone three Twitter papers based on the Twitter API were published~\cite{Meeder:2011:WKY:1963405.1963479, Romero:2011:DMI:1963405.1963503, Wu:2011:SWT:1963405.1963504}, publications on Facebook typically focus on privacy issues (e.g.,~\cite{liu:settings}), or Facebook's sociological impact (e.g.,~\cite{JCC4:JCC4367}), without making use of the Facebook API.
 WWW2011 had no publication on Facebook.
 
 \subsection{Positioning of our Work}
@@ -177,29 +184,31 @@ This is especially true \emph{across} social networks.
 As far as we can tell, no study has compared \emph{reader} behavior on \emph{different} social networks in parallel before.
 In this work, we thus compare topics people read about on Facebook and on Twitter, and classify those topics in order to provide an overall comparison. 
 We therefore have implemented two similar browser extensions: Twitter Swarm NLP\footnote{\url{http://bit.ly/twitterswarmnlp}} and Facebook Swarm NLP\footnote{\url{http://bit.ly/facebookswarmnlp}}. 
-On the one hand, these extensions enrich the user experience on those two social networks, and on the other hand, they determine the topics that people see and read about on their timelines by means of named entity disambiguation.
+On the one hand, these extensions enrich the user experience on the two social networks Facebook and Twitter, and on the other hand, they determine the topics that people see and read about on their timelines by means of named entity disambiguation.
 We combine this knowledge with additional anonymous data that we obtain about social network users through a Web analytics software.
 
 \subsection{Focus on Desktop Versions of Social Networking Sites}
 The two implemented browser extensions require a desktop browser in order to work.
 Whenever a user visits a social networking site, in the concrete case Facebook or Twitter, the particular extension gets activated.
-By focusing exclusively on content people see when directly navigating to the desktop versions of either \url{http://twitter.com} or \url{http://facebook.com} (and in consequence on purpose neglecting all activity via applications on both desktop and mobile devices), we assume people indeed read that content, especially as both social networking sites require users to manually click a link ``$\mathit{n}$ new stories'' (Facebook) or ``$\mathit{n}$ new tweets'' (Twitter) rather than auto-updating the timeline.
-Other approaches to determine whether a micropost has been read are limited to microposts with contained Web links and checking whether clicks on those links have occurred, however, automatic crawling and indexing of links adds hard to detect noise.
-We therefore argue that our approach has a higher precision, however, less recall.
+By focusing exclusively on content people see when directly navigating to the desktop versions of either \url{http://twitter.com} or \url{http://facebook.com} (and in consequence on purpose neglecting all activity via applications on both desktop and mobile devices), we assume people indeed read that content.
+Especially as both social networking sites require users to manually click a link ``$\mathit{n}$ new stories'' (Facebook) or ``$\mathit{n}$ new tweets'' (Twitter) rather than auto-updating the timeline.
+Other approaches to determine whether a micropost has been read are limited to microposts with contained Web links and checking whether clicks on those links have occurred.
+However, automatic crawling and indexing of links adds hard to detect noise.
+We therefore argue that our approach has a higher precision, at the cost of less recall.
 
 \subsection{Paper Objective and Structure}
 We outline or paper objectives and non-objectives explicitly, where  each objective has a corresponding non-objective in the two lists below.
 
 \noindent In this paper, we \textbf{will}:
-\begin{itemize}%[topsep=-.5em, partopsep=0pt, itemsep=0pt]
+\begin{itemize}
 	\item perform analyses based on disambiguated named entities;
 	\item perform analyses based on IP-based reader location detection;
 	\item work with a manageable amount of microposts read by a random population of social network users;
 	\item focus on the micropost reader side.
 \end{itemize}
 On the contrary, we \textbf{will not}:
-\begin{itemize}%[topsep=-.5em, partopsep=0pt, itemsep=0pt]
-	\item perform analyses based on hashtags, key term frequencies, or trends;
+\begin{itemize}
+	\item perform analyses based on hashtags, term frequencies, or trends;
 	\item perform analyses based on geotagged microposts;
 	\item work with huge amounts of microposts from ``fire hose'' APIs;
 	\item focus on the micropost author side,
@@ -208,23 +217,17 @@ which is why we strive for a paradigm shift that promises new insights for tasks
 
 \todo{Describe paper structure.}
 
-\begin{figure}
-\centering
-\includegraphics[width=1.0\linewidth]{./resources/davidsimonds.png}
-\caption{Social networks are seen as walled gardens due to their (by design) lock-in effects.~\cite{DavidSimonds}}
-\label{fig:DavidSimonds}
-\end{figure}
-
 \section{Implementation} \label{sec:implementation}
-We have implemented two browser extensions for the social networking sites Facebook and Twitter. These extensions were released for free on a Web store for browser extensions with the following description (slightly simplified for legibility):
+We have implemented two browser extensions for the social networking sites Facebook and Twitter.
+These extensions were released for free on a Web store for browser extensions with the following description (slightly simplified for legibility):
 \begin{quotation}
 This extension performs Named Entity Extraction (NEE) on the microposts you read and write on \{Twitter, Facebook\}.
-If you write: ``Had froyo for breakfast'', a named entity would be ``froyo''.
+If you write: ``Had froyo for breakfast'.', a named entity would be ``froyo''.
 In the sense of Linked~Data, we identify such named entities via a URI, for example \url{http://dbpedia.org/resource/Frozen_yogurt} in the concrete case.
 You can see the extracted entities highlighted in each status message (see~\autoref{fig:screenshots}).
 In addition to that, the extracted entities are then reported to a shared Web analytics account via some event tracking code magic that allows us to build a ranking of the most-talked-about entities.
 \end{quotation}
-The extensions were released for the Google Chrome browser, the Web Analytics software we used was Google Analytics.
+The extensions were released for the Google Chrome browser, the Web Analytics software that we used was Google Analytics.
 
 \begin{figure*}
   \centering
@@ -239,7 +242,7 @@ The extensions were released for the Google Chrome browser, the Web Analytics so
 \label{fig:screenshots}
 \end{figure*}
 
-\subsection{Structuring Unstructured Data}    \label{sec:services}
+\subsection{Structuring Unstructured Data} \label{sec:services}
 \textit{A priori} microposts are unstructured textual data.
 We apply so-called Linked~Data rules in order to convert this unstructured data into structured data.
 The process consists in a first step of named entity detection via Natural Language Processing (NLP), and in a second step of named entity disambiguation.
@@ -753,7 +756,7 @@ Twimpact uses machine learning-based ranking techniques that do not rely on simp
 With our focus on micropost readers rather than on micropost authors, we strive for a paradigm shift with important consequences.
 The first and most important consequence is the availability of only a limited set of micropost data, as illustrated by the Venn diagram in~\autoref{fig:vennreadunread}.
 Only a subset (of unknown size) of all microposts that get authored also ever gets read.
-Where the Twitter Streaming API offers up to 10\% coverage of all authored tweets, full access to the firehose with 100\% coverage of all authored tweets is handled through Twitter data providers~\cite{dataproviders}.
+Where the Twitter Streaming API offers up to 10\% coverage of all authored tweets, full access to the fire hose with 100\% coverage of all authored tweets is handled through Twitter data providers~\cite{dataproviders}.
 For Facebook, no such publicly available option exists.
 For obvious reasons, there is no API from either of the networks for read microposts, which is why we came up with the idea to hook into the reading experience on social networks through browser extensions.
 The second consequence has to do with privacy issues.
