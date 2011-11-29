@@ -58,6 +58,13 @@
 \usepackage{color}
 \newcommand{\todo}[1]{\noindent\textcolor{red}{{\bf \{TODO}: #1{\bf \}}}}
 
+% table captions
+\newcommand{\tablecaption}[1]{%
+  \\[1em]%
+  \refstepcounter{table}%
+  Table \arabic{table}: #1%
+}
+
 %% Define a new 'smallurl' style for the package that will use a smaller font.
 \makeatletter
 \def\url@smallurlstyle{%
@@ -399,9 +406,8 @@ The complete statistics can be found online\footnote{Complete statistics \url{ht
     \hline
   \end{tabular}
   \label{tab:facebooklocations}}
-  \\[1em]
-  \addtocounter{table}{1}
-  Table \arabic{table}: Top-10 locations of users of the two browser extensions (May~1 -- November~12).
+  \tablecaption{Top-10 locations of users of the two browser extensions (May~1 -- November~12).}
+  \label{tbl:locations}
 \end{table*}
 
 In the period from March~1 to November~8, for the Facebook Swarm NLP, overall \emph{858~unique Facebook users} accessed the extension at least 10~times, in comparison to overall \emph{86~unique Twitter users} for the Twitter Swarm NLP.
@@ -430,7 +436,7 @@ The experiments were conducted over more than six months, which reduces the risk
 
 \subsection{Raw Statistics}
 First, we present some raw statistics on both social networking sites.
-Table~2 show the absolute, total, and unique number of occurrences of named entities from microposts.
+\autoref{tbl:raw} shows the absolute, total, and unique number of occurrences of named entities from microposts.
 Interesting here is especially the relation between \emph{unique} named entities and \emph{total} named entities.
 To clarify the difference between unique and total named entities, we consider the following examples.
 In a~first case, one user during one social networking session reads two different microposts that contain one common named entity (e.g., two consecutive Facebook posts that talk about cats).
@@ -469,10 +475,8 @@ Currently we have limited ourselves to one browser platform, however, the approa
 	54,331 & 316,910 	& 136,196 & 43.0\% & 01:06:07 \\ 
     \hline
   \end{tabular}
-  \label{tab:raw}
-  \\[1em]
-  \addtocounter{table}{1}
-  Table \arabic{table}: Raw statistics on absolute, total and unique number of occurrences of named entities (May~1 -- November~12).
+  \tablecaption{Raw statistics on absolute, total and unique number of occurrences of named entities (May~1 -- November~12).}
+  \label{tbl:raw}
 \end{table*}
 
 \subsection{Ranking of Named Entities}
@@ -625,7 +629,7 @@ traditional news media still play the most important role in informing people, a
 	db:Jens\_Stoltenberg & 16\\
     \hline
   \end{tabular}
-  \caption{Reader perception on Facebook of the 2011 Norway attacks (July~22).}
+  \tablecaption{Reader perception on Facebook of the 2011 Norway attacks (July~22).}
   \label{tab:norway}  
 \end{table}
 
@@ -667,7 +671,7 @@ comparing reader geolocations to distinguish geographic centers of interest can 
     \hline
   \end{tabular}
   \label{tab:facebookarabspring}}
-    \caption{Sub continent geolocations of reader interest of some of the Arab Spring key countries (May~1 -- November~12).}
+    \tablecaption{Sub continent geolocations of reader interest of some of the Arab Spring key countries (May~1 -- November~12).}
   \label{tab:arabspring}
 \end{table*}
 
@@ -687,7 +691,7 @@ City level analyses allow for fine-grained details on, e.g., brand popularity ov
 \textbf{db:Celcom} & 173 & 47 & 34 & 18 & 16 & 16\\
     \hline
   \end{tabular}
-  \caption{Popularity of the Celcom brand on city level (May~1 -- November~12).}
+  \tablecaption{Popularity of the Celcom brand on city level (May~1 -- November~12).}
   \label{tab:celcom}  
 \end{table*}
 
@@ -712,7 +716,7 @@ the importance of the differences between the producer and the consumer side get
 	db:Chihuahua\_(dog) & 9 & 1\\
     \hline
   \end{tabular}
-  \caption{Reader popularity of cats and dogs on Facebook (May~1 -- November~24).}
+  \tablecaption{Reader popularity of cats and dogs on Facebook (May~1 -- November~24).}
   \label{tab:kittens}  
 \end{table}
 
