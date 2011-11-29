@@ -25,6 +25,7 @@
 %\usepackage{endnotes}
 \usepackage{graphicx}
 \usepackage[lofdepth,lotdepth]{subfig}
+\usepackage[activate=compatibility]{microtype}
 
 
 %%%%%%%%%%% Put your definitions here
@@ -50,14 +51,9 @@
         numbers=none,
         framexleftmargin=2mm,
         xleftmargin=2mm,
+        captionpos=b
 }
 
-% bullet numbers
-\usepackage{tkz-graph}
-\usetikzlibrary{matrix,arrows,decorations.pathmorphing,shapes}
-\newcommand{\dobulletnumber}[1]{\node[circle,text=white,fill=gray,anchor=west,inner sep=1pt] {\sffamily #1}}
-\newcommand{\bulletnumber}[1]{\tikz[baseline=-2.5,overlay]\dobulletnumber{#1};}
-\newcommand{\bulletref}[1]{\tikz[baseline=-2.5]\dobulletnumber{\fontsize{8}{8}\selectfont#1};}
 % todo macro
 \usepackage{color}
 \newcommand{\todo}[1]{\noindent\textcolor{red}{{\bf \{TODO}: #1{\bf \}}}}
@@ -86,6 +82,7 @@
 \title{A Comparison of Topics People read about on Facebook and on Twitter
 %crossed with Detection of Geolocations of Centers of Interest
 }
+%\title{A Consumer's Look on Facebook and Twitter -- What Do People Read and Where?}
 %\subtitle{}
 
 %\footnote{\url{http://en.wikipedia.org/wiki/Diff'rent\_Strokes\#Later\_appearances\_of\_the\_characters}}
@@ -151,6 +148,7 @@ In recent years, social media mining has become an essential tool for marketers,
 The information people share publicly via so-called \emph{microposts} on social networks harbor tremendous amounts of valuable social data.
 Forbes has called the social graph \emph{crude oil} in a recent blog post~\cite{ForbesPost}:
 \begin{quotation}
+\hspace{-.9em}\hyphenation{complex}
 ``The point is, crude oil is crude. It is an unrefined and complex natural resource containing many riches. It takes time to figure out what to do with a new crude resource.''
 \end{quotation}
 Social networks today are very much seen as ``walled gardens'', excellently illustrated by a cartoon by David Simonds~(\autoref{fig:DavidSimonds}).
@@ -161,32 +159,31 @@ The main difference between (i) and (ii) is that in the prior case terms like th
 
 \begin{figure}
 \centering
-\includegraphics[width=1.0\linewidth]{./resources/davidsimonds.png}
+\includegraphics[width=1.0\linewidth,trim=16px 17px 12px 15px,clip]{./resources/davidsimonds.jpg}
 \caption{David Simonds illustrates social networks as walled gardens due to their (by design) lock-in effects~\cite{DavidSimonds}.}
 \label{fig:DavidSimonds}
 \end{figure}
 
 \subsection{Selection of Social Networks and APIs}
-In this paper, we consider the popular social networks Facebook~\cite{Facebook} and Twitter\cite{Twitter}, currently the two globally most important social networks~\cite{comScoreTwitter, comScoreFacebook}.
-Traditionally, Twitter is very permissive with their API, as since the beginning of the platform, API-based Twitter clients play a strategic role for the company.
+In this paper, we consider the popular social networks Facebook~\cite{Facebook} and Twitter~\cite{Twitter}, currently the two globally most important social networks~\cite{comScoreTwitter, comScoreFacebook}.
+Traditionally, Twitter is very permissive with its API, as since the beginning of the platform, API-based Twitter clients play a strategic role for the company.
 Twitter provides developers with the Twitter Streaming API~\cite{TwitterStreamingAPI}, which allows for high-throughput near-realtime access to various subsets of public and protected Twitter data, at a coverage rate of 1\% (``sprinkler''), 10\% (``garden hose''), or 100\% (``fire hose'') of all Twitter traffic.
-Facebook has no such public ``fire hose'' streaming API, however, via its Graph API~\cite{FacebookRealtimeAPI} supports near-realtime updates to enable applications to subscribe to a limited set of changes in data from Facebook.
+Facebook has no such public ``fire hose'' streaming API but supports near-realtime updates via its Graph API~\cite{FacebookRealtimeAPI} to enable applications to subscribe to a limited set of changes in data.
 Whenever such a change occurs, Facebook notifies subscribers with a list of changes.
-The obvious issue here is that, in order to get a Twitter Streaming API-like experience, one had to subscribe to a high number of users, which is impossible.
-This imbalance in data availability via the respective APIs has an impact on academic publications around social network mining.
-While at the World Wide Web Conference 2011 (WWW2011) alone three Twitter papers based on the Twitter API were published~\cite{Meeder:2011:WKY:1963405.1963479, Romero:2011:DMI:1963405.1963503, Wu:2011:SWT:1963405.1963504}, publications on Facebook typically focus on privacy issues (e.g.,~\cite{liu:settings}), or Facebook's sociological impact (e.g.,~\cite{JCC4:JCC4367}), without making use of the Facebook API.
-WWW2011 had no publication on Facebook.
+The obvious issue here is that, in order to get a Twitter Streaming API-like experience, one has to subscribe to an impossibly high number of users.
+This imbalance in data availability via the respective APIs has an impact on academic publications on social network mining.
+While at the World Wide Web Conference 2011 (WWW2011) alone, three Twitter papers based on the Twitter API were published~\cite{Meeder:2011:WKY:1963405.1963479, Romero:2011:DMI:1963405.1963503, Wu:2011:SWT:1963405.1963504}, publications on Facebook typically focus on privacy issues (e.g.,~\cite{liu:settings}), or Facebook's sociological impact (e.g.,~\cite{JCC4:JCC4367}), without making use of the Facebook API.
 
 \begin{figure*}
   \centering
-    \subfloat[][Twitter~\cite{comScoreTwitter}.]{
-      \includegraphics[width=0.45\textwidth]{./resources/twitterglobalmarkets.jpg}
+    \subfloat[][Twitter covers at most one in five people per country~\cite{comScoreTwitter}.]{
+      \includegraphics[width=0.472\textwidth, trim=15px 40px 13px 30px, clip]{./resources/twitterglobalmarkets.jpg}
       \label{fig:twitterglobalmarkets}}
     \qquad
-    \subfloat[][Facebook~\cite{comScoreFacebook}.]{
-      \includegraphics[width=0.45\textwidth]{./resources/facebookglobalmarkets.jpg}
+    \subfloat[][Facebook covers the majority of people in several countries~\cite{comScoreFacebook}.]{
+      \includegraphics[width=0.458\textwidth, trim=18px 40px 10px 24px, clip]{./resources/facebookglobalmarkets.jpg}
       \label{fig:facebookglobalmarkets}}
-\caption{Global markets reach by percent of the complete online population.}
+\caption{As of the beginning of 2011, Twitter has a low global market reach compared to Facebook.}
 \label{fig:globalmarkets}
 \end{figure*}
 
@@ -198,19 +195,19 @@ As far as we can tell, no study has compared \emph{reader} behavior on \emph{dif
 In this work, we thus compare topics people read about on Facebook and on Twitter, and classify those topics in order to provide an overall comparison. 
 We therefore have implemented two similar browser extensions: Twitter Swarm NLP\footnote{Twitter Swarm NLP \url{http://bit.ly/twitterswarmnlp}} and Facebook Swarm NLP\footnote{Facebook Swarm NLP \url{http://bit.ly/facebookswarmnlp}}. 
 On the one hand, these extensions enrich the user experience on the two social networks Facebook and Twitter, and on the other hand, they determine the topics that people see and read about on their timelines by means of named entity disambiguation.
-We combine this knowledge with additional anonymous data that we obtain about social network users through a Web analytics software.
+We combine this knowledge with additional anonymous data that we obtain about social network users through Web analytics software.
 
-\subsection{Focus on Desktop Versions of Social Networking Sites}
+\subsection{Focus on Desktop Browser Versions}
 The two implemented browser extensions require a desktop browser in order to work.
 Whenever a user visits a social networking site, in the concrete case Facebook or Twitter, the particular extension gets activated.
-By focusing exclusively on content people see when directly navigating to the desktop versions of either \url{http://twitter.com} or \url{http://facebook.com} (and in consequence on purpose neglecting all activity via applications on both desktop and mobile devices), we assume people indeed read that content.
-Especially as both social networking sites require users to manually click a link ``$\mathit{n}$ new stories'' (Facebook) or ``$\mathit{n}$ new tweets'' (Twitter) rather than auto-updating the timeline.
+By focusing exclusively on content people see when directly navigating to the desktop versions of either \url{twitter.com} or \url{facebook.com} -- therefore on purpose neglecting all activity via applications on \emph{both} desktop and mobile devices -- we assume people indeed read that content.
+This is justified by each site's requirement to manually click a link ``$\mathit{n}$ new stories'' (Facebook) or ``$\mathit{n}$ new tweets'' (Twitter) rather than auto-updating the timeline.
 Other approaches to determine whether a micropost has been read are limited to microposts with contained Web links and checking whether clicks on those links have occurred.
 However, automatic crawling and indexing of links adds hard to detect noise.
 We therefore argue that our approach has a higher precision, at the cost of less recall.
 
 \subsection{Paper Objective and Structure}
-We outline or paper objectives and non-objectives explicitly, where  each objective has a corresponding non-objective in the two lists below.
+We outline our paper objectives and non-objectives explicitly, where  each objective has a corresponding non-objective in the two lists below.
 
 \noindent In this paper, we \textbf{will}:
 \begin{itemize}
@@ -231,34 +228,34 @@ which is why we strive for a paradigm shift that promises new insights for tasks
 \todo{Describe paper structure.}
 
 \section{Implementation} \label{sec:implementation}
-We have implemented two browser extensions for the social networking sites Facebook and Twitter.
-These extensions were released for free on a Web store for browser extensions with the following description (slightly simplified for legibility):
+We have implemented two browser extensions to cover the social networking sites Facebook and Twitter.
+These extensions were freely released on a Web store for browser extensions with the following description (slightly adapted):
 \begin{quotation}
 This extension performs Named Entity Extraction (NEE) on the microposts you read and write on \{Twitter, Facebook\}.
-If you write: ``Had froyo for breakfast'.', a named entity would be ``froyo''.
+If you write: ``Had froyo for breakfast.'', a named entity would be ``froyo''.
 In the sense of Linked~Data, we identify such named entities via a URI, for example \url{http://dbpedia.org/resource/Frozen_yogurt} in the concrete case.
-You can see the extracted entities highlighted in each status message (see~\autoref{fig:screenshots}).
-In addition to that, the extracted entities are then reported to a shared Web analytics account via some event tracking code magic that allows us to build a ranking of the most-talked-about entities.
+You can see the extracted entities highlighted in each status message \emph{(see \autoref{fig:screenshots})}.
+In addition to that, the extracted entities are then reported to a shared Web analytics account via event tracking code  that allows us to build a ranking of the most-talked-about entities.
 \end{quotation}
 The extensions were released for the Google Chrome browser, the Web Analytics software that we used was Google Analytics.
 
 \begin{figure*}
   \centering
     \subfloat[][Twitter Swarm NLP]{
-      \includegraphics[width=0.45\textwidth]{./resources/twitterswarmnlp.jpg}
+      \includegraphics[width=0.47\textwidth,trim=255px 50px 45px 60px,clip]{./resources/twitterswarmnlp.jpg}
       \label{fig:twitterswarmnlp}}
     \qquad
     \subfloat[][Facebook Swarm NLP]{
-      \includegraphics[width=0.39\textwidth]{./resources/facebookswarmnlp.jpg}
+      \includegraphics[width=0.45\textwidth,trim=165px 50px 70px 60px,clip]{./resources/facebookswarmnlp.jpg}
       \label{fig:facebookswarmnlp}}
-\caption{Screenshots of the two browser extensions in action.}
+\caption{The two browser extensions in action, showing named entity extraction.}
 \label{fig:screenshots}
 \end{figure*}
 
 \subsection{Structuring Unstructured Data} \label{sec:services}
-\textit{A priori} microposts are unstructured textual data.
+\textit{A priori}, microposts are unstructured textual data.
 We apply so-called Linked~Data rules in order to convert this unstructured data into structured data.
-In a first step, the process consists of named entity detection via Natural Language Processing (NLP), and in a second step, of named entity disambiguation.
+In a first step, the process consists of named entity detection via Natural Language Processing (NLP), and in a second step, named entity disambiguation.
 Sir Tim Berners-Lee has introduced Linked~Data in a W3C Design Issue~\cite{TimBL:LinkedData}, where he defines the four rules for Linked~Data as follows:
 \begin{enumerate}
 \item Use URIs as names for things.
@@ -272,9 +269,9 @@ These APIs take a text fragment as an input, perform named entity extraction and
 We use these APIs in parallel, and, by combining their results, aim at the emergence effect in the sense of Aristotle: \emph{``[\ldots] the totality is not, as it were, a mere heap, but the whole is something besides the parts [\ldots]''}\footnote{Aristotle, Metaphysics, Book H 1045a 8-10.}. 
 
 \subsection{Combining Results from different APIs} \label{sec:consolidation-nlp}
-We have implemented a wrapper API for the four named entity disambiguation APIs introduced in~\autoref{sec:services} that returns results in \texttt{application/json} format.
+We have implemented a wrapper API for the four named entity disambiguation APIs introduced in \autoref{sec:services} that returns results in \texttt{application/json} format.
 While the underlying APIs return entities with their types and/or subtypes, names, relevance, and links into the LOD cloud in different formats, the wrapper API abstracts away the different output formats and returns a common JSON object structure instead.
-The JSON output for the exemplary micropost \textit{``Tom has the LaTeX, BibTeX, LaTeX, LaTeX blues...''} can be seen in~\autoref{lst:nlpjson}.
+The JSON output for the exemplary micropost \textit{``Tom has the LaTeX, BibTeX, LaTeX, LaTeX blues...''} can be seen in \autoref{lst:nlpjson}.
 The more APIs agree on a disambiguated named entity, the higher the confidence that (i) the named entity was extracted correctly, and that (ii) the named entity was also disambiguated correctly.
 While  in the concrete example \textcircled{a}~``LaTeX'' and \textcircled{b}~``blues'' were both correctly extracted and disambiguated (\textcircled{a}~\url{http://dbpedia.org/resource/LaTeX} and \textcircled{b}~\url{http://dbpedia.org/resource/Blues}), the judgment is based on just one API result in both cases (\textcircled{a}~DBpedia Spotlight and \textcircled{b}~Zemanta),
 whereas \textcircled{c}~``BibTeX'' was correctly extracted and disambiguated (\textcircled{c}~\url{http://dbpedia.org/resource/BibTeX}) by two APIs at the same time (\textcircled{c}~Zemanta, DBpedia Spotlight).
@@ -330,31 +327,31 @@ In order to gather high-level information on Web page visitors (apart from low-l
 Such software is typically implemented by adding an invisible snippet of JavaScript code on the to-be-tracked pages of a website.
 This code then collects visitor data through requests for a specific $\mathit{1} \times \mathit{1}$ transparent GIF image, also called Web beacon, that is hosted on a Web analytics server.
 During these requests, the page and user data is reported in the query part of the Web beacon's URL.
-In addition to that, the JavaScript snippet usually sets a first party cookie on a visitor's computer in order to store anonymous information such as the timestamp of the current visit, whether the visitor is a new or returning visitor, and the referrer of the website that the visitor came from.
+In addition to that, the JavaScript snippet usually sets a first party cookie on a visitor's computer in order to store anonymous information such as the timestamp of the current visit, whether the visitor is a~new or returning visitor, and the referrer of the website that the visitor came from.
 Part of the shared visitor information is the IP address, which allows for IP-based geolocation.
 
 \section{Experiment Setup and User Demographics} \label{sec:userdemographics}
 \subsection{Experiment Setup}
-We have released the two browser extensions independently from each other for free on a Web store for browser extensions. 
+%We have released the two browser extensions independently from each other for free on a Web store for browser extensions. 
 We initially announced the availability of the extensions via Twitter, Facebook, and our personal blog.
-Accumulated click statistics for the announcement links are available via the link shortener service bitly\footnote{Click statistics \url{https://bitly.com/elP5OW+} (Facebook Swarm NLP) and \url{https://bitly.com/eBsjQu+} (Twitter Swarm NLP)}.
+Accumulated click statistics for the announcement links are available via the link shortener service bitly\footnote{Statistics: \url{https://bitly.com/elP5OW+} (Facebook Swarm NLP) and \url{https://bitly.com/eBsjQu+} (Twitter Swarm NLP)}.
 The extension descriptions contain full disclosure on the collected data and on the usage of a Web analytics tool, however, do not include a concrete mention (apart from a vague remark on entity ranking), that we use the collected data for an experiment.
 In addition to that, the extension descriptions do not cross-reference each other, i.e., users are \emph{not} actively encouraged to install both extensions in order to guarantee maximum independence of the experiments.
 
 \subsection{User Demographics} 
 As the extensions insert a Web analytics tracking snippet, exact user localization is possible based on the users' current physical location, i.e., completely independent from the origin location users might have registered with Facebook or Twitter, and not to be confused with geotagged microposts.
-A graphical overview of user locations as detected via IP-based geolocation can be seen in Figure~\autoref{fig:twitterlocations} and Figure~\autoref{fig:facebooklocations}.
-Table~\autoref{tab:twitterlocations} and Table~\autoref{tab:facebooklocations} show the distribution of the top-10 locations of users of the extensions in tabular form. 
+A graphical overview of user locations as detected via IP-based geolocation can be seen in Figures~\ref{fig:twitterlocations} and~\ref{fig:facebooklocations}.
+Tables~\ref{tab:twitterlocations} and~\ref{tab:facebooklocations} show the distribution of the top-10 locations of extension users. 
 The complete statistics can be found online\footnote{Complete statistics \url{https://github.com/tomayac/swj-microposts/tree/master/stats}}.
 
 \begin{figure*}
   \centering
     \subfloat[][Twitter Swarm NLP]{
-      \includegraphics[width=0.45\textwidth]{./resources/twitterlocation.png}
+      \includegraphics[width=0.47\textwidth, trim=190px 0px 5px 0px, clip]{./resources/twitterlocation.png}
       \label{fig:twitterlocations}}
-    \qquad
+    \quad
     \subfloat[][Facebook Swarm NLP]{
-      \includegraphics[width=0.45\textwidth]{./resources/facebooklocation.png}
+      \includegraphics[width=0.47\textwidth, trim=190px 0px 5px 0px, clip]{./resources/facebooklocation.png}
       \label{fig:facebooklocations}}
 \caption{Location of users of the two browser extensions (May~1 -- November~12).}
 \label{fig:location}
@@ -397,21 +394,22 @@ The complete statistics can be found online\footnote{Complete statistics \url{ht
     \hline
   \end{tabular}
   \label{tab:facebooklocations}}
-  \caption{\hspace{-2.5em}\makebox{Top-10 locations of users of the two browser extensions (May~1 -- November~12).}}
-  \label{tab:toplocations}
+  \\[1em]
+  \addtocounter{table}{1}
+  Table \arabic{table}: Top-10 locations of users of the two browser extensions (May~1 -- November~12).
 \end{table*}
 
-In the period from March~1 to November~8, for Facebook Swarm NLP, overall 858~\emph{unique Facebook users} accessed the extension at least 10~times, in comparison to overall 86~\emph{unique Twitter} users for Twitter Swarm NLP.
-If we put these figures in contrast to the \emph{seven~day~active users} statistics for the extensions (Figure~\autoref{fig:facebookswarmnlpstats} and Figure~\autoref{fig:twitterswarmnlpstats}), where Facebook Swarm NLP reached~135, and Twitter Swarm NLP~72 \emph{seven~day~active users} as of November~6, we can derive that overall relatively few Twitter users installed the extension and stayed with it for the whole time of the experiments, whereas overall relatively many Facebook users installed the extension, used it for a short while, and then uninstalled it.
+In the period from March~1 to November~8, for the Facebook Swarm NLP, overall \emph{858~unique Facebook users} accessed the extension at least 10~times, in comparison to overall \emph{86~unique Twitter users} for the Twitter Swarm NLP.
+If we put these figures in contrast to the \emph{seven~day~active users} statistics for the extensions (Figures~\ref{fig:facebookswarmnlpstats} and~\ref{fig:twitterswarmnlpstats}), where the Facebook Swarm NLP reached~135, and the Twitter Swarm NLP~72 \emph{seven~day~active users} as of November~6, we can derive that overall relatively few Twitter users installed the extension and stayed with it for the whole time of the experiments, whereas overall relatively many Facebook users installed the extension, used it for a short while, and then uninstalled it.
 
 \begin{figure*}
   \centering
     \subfloat[][Twitter Swarm NLP]{
-      \includegraphics[width=0.45\textwidth]{./resources/twitterswarmnlpstats.png}
+      \includegraphics[width=0.6\textwidth, trim=3px 2px 3px 20px, clip]{./resources/twitterswarmnlpstats.png}
       \label{fig:twitterswarmnlpstats}}
-    \qquad
+    \quad
     \subfloat[][Facebook Swarm NLP]{
-      \includegraphics[width=0.45\textwidth]{./resources/facebookswarmnlpstats.png}
+      \includegraphics[width=0.6\textwidth, trim=3px 2px 3px 20px, clip]{./resources/facebookswarmnlpstats.png}
       \label{fig:facebookswarmnlpstats}}
 \caption{\textit{Seven~day~active users} development for the two browser extensions (May~1 -- November~6).}
 \label{fig:swarmnlpstats}
@@ -420,33 +418,33 @@ If we put these figures in contrast to the \emph{seven~day~active users} statist
 \section{Discussion} \label{sec:discussion}
 In this Section, we delve into the collected data, which ranges over more than six months.
 We cover the period from May~1 to November~12, 2011.
-It is to be noted that our data is \emph{not} statistically significant, however, shows promising trends and potential direction for future research.
+It is to be noted that our data, while \emph{not} statistically significant, shows promising trends and potential direction for future research.
 If in the following we present results, those are to be taken with a grain of salt.
 However, common sense suggests that they are correct.
 The experiments were conducted over more than six months, which reduces the risk of short-term spikes.
 
 \subsection{Raw Statistics}
 First, we present some raw statistics on both social networking sites.
-\autoref{tab:raw} shows the absolute, total and unique number of occurrences of named entities from microposts.
-Interesting here is especially the relation between unique named entities and total named entities.
-To clarify the difference between unique and total named entities, we consider the following examples:
-(i) one user~A during one social networking session reads two different microposts that contain one common named entity (e.g., two consecutive Facebook posts that talk about cats).
-In this case, we would track two total named entities, but only one unique named entity.
-In a second case (ii) if two users, user~A and user~B, during each one's social networking session read two different microposts that contain one common named entity, we would still track two total named entities, however, also two unique named entities.
-Short, a unique named entity is a named entity that during one social networking session of one user appears only once.
+Table~2 show the absolute, total, and unique number of occurrences of named entities from microposts.
+Interesting here is especially the relation between \emph{unique} named entities and \emph{total} named entities.
+To clarify the difference between unique and total named entities, we consider the following examples.
+In a~first case, one user during one social networking session reads two different microposts that contain one common named entity (e.g., two consecutive Facebook posts that talk about cats).
+Here, we would track two total named entities, but only one unique named entity.
+In a second case, two different users during their social networking session read two different microposts that contain one common named entity. Here, we would still track two total named entities, however, also two unique named entities.
+In short, a unique named entity is a named entity that during one social networking session of one user appears only once.
 The number of absolute named entities refers to the absolute distinct number of named entities that ever occurred during the experiments, independent from users and sessions.
 Looking at the numbers, where we have 76.7\% unique named entities for Twitter and 43.0\% unique named entities for Facebook, we can carefully derive that the reading experience per social networking session on Twitter is more versatile than on Facebook.
 We need to note, however, that Facebook microposts are generated at a lot lower frequency than Twitter microposts, and that Twitter microposts are limited to 140 characters, which may have an impact on both precision and recall of the named entity disambiguation process.
-The average duration of a visit on Facebook according to our statistics is 01:06:07 against 00:28:12 on Twitter, which implies that Twitter users spend less than half the time than Facebook users on their social networking site.
+The average duration of a visit on Facebook according to our statistics is 66~min.\ against 28~min.\ on Twitter, which implies that Twitter users spend less than half the time than Facebook users on their social networking site.
 Again, our data is at this point \emph{not} statistically significant, especially as we had the interesting phenomenon of almost more than ten times as many absolute distinct Facebook users than Twitter users.
 However, \emph{seven~day~active user} statistics show only about double the number of Facebook users (see \autoref{sec:userdemographics}).
 Further research is necessary that takes the following factors into account:
 \begin{itemize}
 \item \emph{Micropost length and effect on recall and precision of named entity disambiguation.}
-\cite{nerd} by Rizzo \textit{et al.} provides first results in this direction.
+Rizzo \textit{et al.} provide first results in this direction~\cite{nerd}.
 \item \emph{Throughput of microposts per time unit (smaller than one day) and effect on versatility of unique named entities per social networking session.}
 This stands in an interesting contrast to the number of absolute distinct named entities, which is significantly higher on Facebook.
-\item ]emph{Steadiness of the group of experiment participants over time.}
+\item \emph{Steadiness of the group of experiment participants over time.}
 The key point of our approach was that participants were unaware that they were contributing to an experiment.
 We were surprised that so many Facebook users participated, albeit for a short period of time, whereas so few Twitter users participated, however, in the majority during the whole time.
 \item \emph{Increase reach through focusing on more browser platforms.}
@@ -455,25 +453,21 @@ Currently we have limited ourselves to one browser platform, however, the approa
 
 \begin{table*}
   \centering
-  \subfloat[][Twitter]{
-    \begin{tabular}{ | l | l | l | l | l |}
+    \begin{tabular}{|l | r | r | r | c | c |}
     \hline
+    \textbf{Network} &
 	\textbf{Absolute} & \textbf{Total} & \textbf{Unique} & \textbf{Unique / Total (\%)} & \textbf{Avg. Visit Length} \\ \hline
+	\textbf{Twitter} &
 	18,207 & 35,958 & 27,594 & 76.7\% & 00:28:12 \\
     \hline
-  \end{tabular}
-  \label{tab:twitterraw}}
-  \qquad
-  \subfloat[][Facebook]{
-    \begin{tabular}{| l | l | l | l | l |}
-    \hline
-	\textbf{Absolute} & \textbf{Total} & \textbf{Unique} & \textbf{Unique / Total (\%)} & \textbf{Avg. Visit Length} \\ \hline
+    \textbf{Facebook} &
 	54,331 & 316,910 	& 136,196 & 43.0\% & 01:06:07 \\ 
     \hline
   \end{tabular}
-  \label{tab:facebookraw}}
-  \caption{Raw statistics on absolute, total and unique number of occurrences of named entities (May~1 -- November~12).}
   \label{tab:raw}
+  \\[1em]
+  \addtocounter{table}{1}
+  Table \arabic{table}: Raw statistics on absolute, total and unique number of occurrences of named entities (May~1 -- November~12).
 \end{table*}
 
 \subsection{Ranking of Named Entities}
@@ -501,11 +495,11 @@ Interesting to note is the top named entity on each social network, which is the
 \begin{figure*}
   \centering
     \subfloat[][Twitter Swarm NLP]{
-      \includegraphics[width=0.45\textwidth]{./resources/twittertop10.png}
+      \includegraphics[width=0.45\textwidth, trim=2px 10px 2px 2px, clip]{./resources/twittertop10.png}
       \label{fig:twittertop10}}
     \qquad
     \subfloat[][Facebook Swarm NLP]{
-      \includegraphics[width=0.45\textwidth]{./resources/facebooktop10.png}
+      \includegraphics[width=0.45\textwidth, trim=2px 10px 2px 2px, clip]{./resources/facebooktop10.png}
       \label{fig:facebooktop10}}
 \caption{Top-10 entities as reported by browser extension users (May~1 -- November~12).}
 \label{fig:top10}
@@ -529,19 +523,19 @@ With regards to reader interest, there is a tendency towards reading about the U
 
 \subsection{Segmentation by RDF Type}
 One of the advantages of using DBpedia URIs to represent named entities in an unambiguous way is that the Linked˜Data knowledge from DBpedia can be leveraged.
-Therefore, we have retrieved the RDF type (\texttt{rdf:type}, \url{http://www.w3.org/1999/02/22-rdf-syntax-ns\#type}) information for the top-500 named entities for both networks.
-Unlike the main DBpedia OWL type (\texttt{dbpedia-owl:type}, \url{http://dbpedia.org/ontology/type}), the \texttt{rdf:type} can have multiple values, for example a company can be both a company, and an organization.
+Therefore, we have retrieved the RDF type (\texttt{rdf:type}) information for the top-500 named entities for both networks.
+Unlike the main DBpedia OWL type (\texttt{dbpedia-owl:type}), the \texttt{rdf:type} can have multiple values, for example a company can be both a company, and an organization.
 Type specifications can come from different namespaces, like \texttt{dbpedia-owl} (\url{http://dbpedia.org/ontology/}), \texttt{yago} (\url{http://dbpedia.org/class/yago/}), or \texttt{umbel} (\url{http://umbel.org/umbel/rc/}).
 \autoref{fig:unfiltered} shows an unlabeled chart of type distributions of the top-500 named entities with the main purpose of illustrating the long tail of type specifications. 
 
 \begin{figure*}
   \centering
     \subfloat[][Twitter]{
-      \includegraphics[width=0.45\textwidth]{./resources/twittertypes.png}
+      \includegraphics[width=0.45\textwidth, trim=2px 2px 2px 2px, clip]{./resources/twittertypes.png}
       \label{fig:twittertypes}}
     \qquad
     \subfloat[][Facebook]{
-      \includegraphics[width=0.45\textwidth]{./resources/facebooktypes.png}
+      \includegraphics[width=0.45\textwidth, trim=2px 2px 2px 2px, clip]{./resources/facebooktypes.png}
       \label{fig:facebooktypes}}
 \caption{Type statistics unfiltered (May~1 -- November~12).}
 \label{fig:unfiltered}
@@ -552,11 +546,11 @@ The biggest number of type specifications comes from the \texttt{dbpedia-owl} na
 \begin{figure*}
   \centering
     \subfloat[][Twitter]{
-      \includegraphics[width=0.46\textwidth]{./resources/twitterdbo.png}
+      \includegraphics[width=0.49\textwidth, trim=10px 5px 5px 5px, clip]{./resources/twitterdbo.png}
       \label{fig:twitterdbo}}
-    \qquad
+    \quad
     \subfloat[][Facebook]{
-      \includegraphics[width=0.4\textwidth]{./resources/facebookdbo.png}
+      \includegraphics[width=0.423\textwidth, trim=10px 5px 5px 5px, clip]{./resources/facebookdbo.png}
       \label{fig:facebookdbo}}
 \caption{Type statistics filtered by \url{http://dbpedia.org/ontology/} (May~1 -- November~12).}
 \label{fig:dbo}
@@ -567,11 +561,11 @@ Second comes the \texttt{umbel} namespace, which is shown in \autoref{fig:umbel}
 \begin{figure*}
   \centering
     \subfloat[][Twitter]{
-      \includegraphics[width=0.46\textwidth]{./resources/twitterumbel.png}
+      \includegraphics[width=0.49\textwidth, trim=10px 5px 5px 5px, clip]{./resources/twitterumbel.png}
       \label{fig:twitterumbel}}
     \qquad
     \subfloat[][Facebook]{
-      \includegraphics[width=0.4\textwidth]{./resources/facebookumbel.png}
+      \includegraphics[width=0.423\textwidth, trim=10px 5px 5px 5px, clip]{./resources/facebookumbel.png}
       \label{fig:facebookumbel}}
 \caption{Type statistics filtered by \url{http://umbel.org/umbel/rc/} (May~1 -- November~12).}
 \label{fig:umbel}
@@ -586,11 +580,11 @@ Applying a loose ontology mapping, the top-3 types on both social networks are P
 \begin{figure*}
   \centering
     \subfloat[][Twitter]{
-      \includegraphics[width=0.3\textwidth]{./resources/twitterschema.png}
+      \includegraphics[width=0.423\textwidth, trim=10px 5px 5px 5px, clip]{./resources/twitterschema.png}
       \label{fig:twitterschema}}
     \qquad
     \subfloat[][Facebook]{
-      \includegraphics[width=0.3\textwidth]{./resources/facebookschema.png}
+      \includegraphics[width=0.423\textwidth, trim=10px 5px 5px 5px, clip]{./resources/facebookschema.png}
       \label{fig:facebookschema}}
 \caption{Type statistics filtered by \url{http://schema.org/} (May~1 -- November~12).}
 \label{fig:schema}
@@ -599,7 +593,7 @@ Applying a loose ontology mapping, the top-3 types on both social networks are P
 \subsection{Events from recent History}
 In this Subsection, we present some events from recent history and show how, using our approach, new insights or trends can be revealed.
 
-\subsection{Facebook Reader Perception of the 2011 Norway Attacks}
+\subsubsection{Facebook Reader Perception of the 2011 Norway Attacks}
 On July 22, a mass shooting took place on the island of Utøya in Norway, preceded by a car bomb explosion in Oslo\footnote{2011 Norway attacks \url{http://en.wikipedia.org/wiki/2011_Norway_attacks}}.
 We start our analysis with a deep-dive into the most read about named entities in Norway on the day of the attacks and then manually filter the list for relevance to the event.
 \autoref{tab:norway} shows the resulting top-6 ranking of named entities on July 22 on Facebook.
@@ -761,7 +755,7 @@ Twimpact uses machine learning-based ranking techniques that do not rely on simp
 \subsection{Comparison with Micropost Author-focused Approaches}
 With our focus on micropost readers rather than on micropost authors, we strive for a paradigm shift with important consequences.
 
-The first and most important consequence is the availability of only a limited set of micropost data, as illustrated by the Venn diagram in~\autoref{fig:vennreadunread}.
+The first and most important consequence is the availability of only a limited set of micropost data, as illustrated by the Venn diagram in \autoref{fig:vennreadunread}.
 Only a subset (of unknown size) of all microposts that get authored also ever gets read, whereof in turn our approach covers an unknown fraction.
 Where the Twitter Streaming API offers up to 10\% coverage of all authored tweets, full access to the ``fire hose'' with 100\% coverage of all authored tweets is handled through Twitter data providers~\cite{dataproviders}.
 For Facebook, no such publicly available option exists.
