@@ -276,7 +276,7 @@ We outsource this task to third party named entity disambiguation Web services (
 These APIs take a text fragment as an input, perform named entity extraction and disambiguation on it, and then link the extracted named entities back into the Linking Open Data (LOD) cloud~\cite{LODcloud}.
 We use these APIs in parallel, and, by combining their results, aim at the emergence effect in the sense of Aristotle: \emph{``[\ldots] the totality is not, as it were, a mere heap, but the whole is something besides the parts [\ldots]''}\footnote{Aristotle, Metaphysics, Book H 1045a 8-10.}. 
 
-\subsection{Combining Results from different APIs} \label{sec:consolidation-nlp}
+\subsection{Combining Results from Different APIs} \label{sec:consolidation-nlp}
 We have implemented a wrapper API for the four named entity disambiguation APIs introduced in \autoref{sec:services} that returns results in JSON format.
 While the underlying APIs return entities with their types and/or subtypes, names, relevance, and links into the LOD cloud in different formats, the wrapper API abstracts away the different output formats and returns a common JSON object structure instead.
 The JSON output for the exemplary micropost \textit{``Tom has the LaTeX, BibTeX, LaTeX, LaTeX blues...''} can be seen in \autoref{lst:nlpjson}.
@@ -594,7 +594,7 @@ The granularity of the underlying ontologies is different.
 For example, where \texttt{schema} just has ``Place'', \texttt{umbel} differentiates between ``Location'' and ``Populated Place''.
 Applying a loose ontology mapping, the top-3 types on both social networks are Place, Organization, Person for \texttt{schema} and \texttt{dbpedia-owl}, and Place, Organization, Business for \texttt{umbel}.
 
-\subsection{Events from recent History}
+\subsection{Events from Recent History}
 In this Subsection, we present some events from recent history and show how, using our approach, new insights or trends can be revealed.
 
 \subsubsection{Facebook Reader Perception of the 2011 Norway Attacks}
