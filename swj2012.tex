@@ -58,6 +58,13 @@
 \usepackage{color}
 \newcommand{\todo}[1]{\noindent\textcolor{red}{{\bf \{TODO}: #1{\bf \}}}}
 
+% table captions
+\newcommand{\tablecaption}[1]{%
+  \\[1em]%
+  \refstepcounter{table}%
+  Table \arabic{table}: #1%
+}
+
 %% Define a new 'smallurl' style for the package that will use a smaller font.
 \makeatletter
 \def\url@smallurlstyle{%
@@ -270,15 +277,15 @@ These APIs take a text fragment as an input, perform named entity extraction and
 We use these APIs in parallel, and, by combining their results, aim at the emergence effect in the sense of Aristotle: \emph{``[\ldots] the totality is not, as it were, a mere heap, but the whole is something besides the parts [\ldots]''}\footnote{Aristotle, Metaphysics, Book H 1045a 8-10.}. 
 
 \subsection{Combining Results from different APIs} \label{sec:consolidation-nlp}
-We have implemented a wrapper API for the four named entity disambiguation APIs introduced in \autoref{sec:services} that returns results in \texttt{application/json} format.
+We have implemented a wrapper API for the four named entity disambiguation APIs introduced in \autoref{sec:services} that returns results in JSON format.
 While the underlying APIs return entities with their types and/or subtypes, names, relevance, and links into the LOD cloud in different formats, the wrapper API abstracts away the different output formats and returns a common JSON object structure instead.
 The JSON output for the exemplary micropost \textit{``Tom has the LaTeX, BibTeX, LaTeX, LaTeX blues...''} can be seen in \autoref{lst:nlpjson}.
-The more APIs agree on a disambiguated named entity, the higher the confidence that (i) the named entity was extracted correctly, and that (ii) the named entity was also disambiguated correctly.
-While  in the concrete example \textcircled{a}~``LaTeX'' and \textcircled{b}~``blues'' were both correctly extracted and disambiguated (\textcircled{a}~\url{http://dbpedia.org/resource/LaTeX} and \textcircled{b}~\url{http://dbpedia.org/resource/Blues}), the judgment is based on just one API result in both cases (\textcircled{a}~DBpedia Spotlight and \textcircled{b}~Zemanta),
-whereas \textcircled{c}~``BibTeX'' was correctly extracted and disambiguated (\textcircled{c}~\url{http://dbpedia.org/resource/BibTeX}) by two APIs at the same time (\textcircled{c}~Zemanta, DBpedia Spotlight).
-Hence, the confidence is higher in \textcircled{c} than in \textcircled{a} and \textcircled{b}.
+The more APIs agree on a disambiguated named entity, the higher the confidence that (i)~the named entity was extracted correctly, and (ii)~the named entity was also disambiguated correctly.
+While  in the concrete example ``LaTeX'' and ``blues'' were both correctly extracted and disambiguated (\url{http://dbpedia.org/resource/LaTeX} and \url{http://dbpedia.org/resource/Blues}), the judgment is\linebreak based on just one API result in both cases\linebreak (DBpedia Spotlight and Zemanta respectively),
+whereas ``BibTeX'' was correctly extracted and disambiguated (\url{http://dbpedia.org/resource/BibTeX}) by two APIs at the same time (both DBpedia Spotlight and Zemanta).
+Hence, the confidence is higher in the latter case.
 
-\begin{lstlisting}[caption={Named entity disambiguation wrapper API output in JSON format for the exemplary micropost \textit{``Tom has the LaTeX, BibTeX, LaTeX, LaTeX blues...''}.},label={lst:nlpjson}]
+\begin{lstlisting}[caption=Named entity disambiguation wrapper API output in JSON format for an exemplary micropost.,label={lst:nlpjson}]
 [
     {
         "name": "LaTeX",
@@ -289,8 +296,7 @@ Hence, the confidence is higher in \textcircled{c} than in \textcircled{a} and \
             }
         ],
         "source": "spotlight"
-    },
-    {
+    },{
         "name": "BibTeX",
         "uris": [
             {
@@ -299,8 +305,7 @@ Hence, the confidence is higher in \textcircled{c} than in \textcircled{a} and \
             }
         ],
         "source": "zemanta,spotlight"
-    },
-    {
+    },{
         "name": "blues",
         "uris": [
             {
@@ -397,9 +402,8 @@ The complete statistics can be found online\footnote{Complete statistics \url{ht
     \hline
   \end{tabular}
   \label{tab:facebooklocations}}
-  \\[1em]
-  \addtocounter{table}{1}
-  Table \arabic{table}: Top-10 locations of users of the two browser extensions (May~1 -- November~12).
+  \tablecaption{Top-10 locations of users of the two browser extensions (May~1 -- November~12).}
+  \label{tbl:locations}
 \end{table*}
 
 In the period from March~1 to November~8, for the Facebook Swarm NLP, overall \emph{858~unique Facebook users} accessed the extension at least 10~times, in comparison to overall \emph{86~unique Twitter users} for the Twitter Swarm NLP.
@@ -408,11 +412,11 @@ If we put these figures in contrast to the \emph{seven~day~active users} statist
 \begin{figure*}
   \centering
     \subfloat[][Twitter Swarm NLP]{
-      \includegraphics[width=0.6\textwidth, trim=3px 2px 3px 20px, clip]{./resources/twitterswarmnlpstats.png}
+      \includegraphics[width=0.47\textwidth, trim=3px 2px 3px 20px, clip]{./resources/twitterswarmnlpstats.png}
       \label{fig:twitterswarmnlpstats}}
     \quad
     \subfloat[][Facebook Swarm NLP]{
-      \includegraphics[width=0.6\textwidth, trim=3px 2px 3px 20px, clip]{./resources/facebookswarmnlpstats.png}
+      \includegraphics[width=0.47\textwidth, trim=3px 2px 3px 20px, clip]{./resources/facebookswarmnlpstats.png}
       \label{fig:facebookswarmnlpstats}}
 \caption{\textit{Seven~day~active users} development for the two browser extensions (May~1 -- November~6).}
 \label{fig:swarmnlpstats}
@@ -428,7 +432,7 @@ The experiments were conducted over more than six months, which reduces the risk
 
 \subsection{Raw Statistics} \label{sec:rawstatistics}
 First, we present some raw statistics on both social networking sites.
-Table~2 show the absolute, total, and unique number of occurrences of named entities from microposts.
+\autoref{tbl:raw} shows the absolute, total, and unique number of occurrences of named entities from microposts.
 Interesting here is especially the relation between \emph{unique} named entities and \emph{total} named entities.
 To clarify the difference between unique and total named entities, we consider the following examples.
 In a~first case, one user during one social networking session reads two different microposts that contain one common named entity (e.g., two consecutive Facebook posts that talk about cats).
@@ -467,10 +471,8 @@ Currently we have limited ourselves to one browser platform, however, the approa
 	54,331 & 316,910 	& 136,196 & 43.0\% & 01:06:07 \\ 
     \hline
   \end{tabular}
-  \label{tab:raw}
-  \\[1em]
-  \addtocounter{table}{1}
-  Table \arabic{table}: Raw statistics on absolute, total and unique number of occurrences of named entities (May~1 -- November~12).
+  \tablecaption{Raw statistics on absolute, total and unique number of occurrences of named entities (May~1 -- November~12).}
+  \label{tbl:raw}
 \end{table*}
 
 \subsection{Ranking of Named Entities}
@@ -525,7 +527,7 @@ Music plays a significant role on Facebook, reflected by the presence of disc jo
 With regards to reader interest, there is a tendency towards reading about the United States, or North America in general.
 
 \subsection{Segmentation by RDF Type}
-One of the advantages of using DBpedia URIs to represent named entities in an unambiguous way is that the Linked˜Data knowledge from DBpedia can be leveraged.
+One of the advantages of using DBpedia URIs to represent named entities in an unambiguous way is that the Linked~Data knowledge from DBpedia can be leveraged.
 Therefore, we have retrieved the RDF type (\texttt{rdf:type}) information for the top-500 named entities for both networks.
 Unlike the main DBpedia OWL type (\texttt{dbpedia-owl:type}), the \texttt{rdf:type} can have multiple values, for example a company can be both a company, and an organization.
 Type specifications can come from different namespaces, like \texttt{dbpedia-owl} (\url{http://dbpedia.org/ontology/}), \texttt{yago} (\url{http://dbpedia.org/class/yago/}), or \texttt{umbel} (\url{http://umbel.org/umbel/rc/}).
@@ -606,7 +608,7 @@ The current Norwegian Prime Minister ``Jens Stoltenberg'' follows on rank 6.
 It is interesting to note how Norwegian readers got detailed information on the attacks through local media (VG and NRK), but also through the international company CNN.
 Traditional media companies more and more harvest social networking sites for authentic coverage of events.
 For Utøya, this is documented, e.g., in the case of survivor Adrian Pracon (@AdrianPracon on Twitter) in a tweet from Sky News producer @fimackiesky\footnote{Sky News contact Utøya survivor \url{https://twitter.com/\#!/AdrianPracon/status/94573763500326912}}.
-While Facebook has terminated terrorist Anders Behring Breivik's profile, the Internet already has conserved a copy\footnote{Copy of the terrorist's Facebook profile \url{http://publicintelligence.net/mirror-of-utøya-gunman-anders-behring-breiviks-facebook-page-and-photo-gallery/}}. 
+While Facebook has terminated terrorist Anders Behring Breivik's profile, the Internet already has conserved a copy\footnote{Copy of the terrorist's Facebook profile \scriptsize\texttt{http://} \texttt{publicintelligence.net/mirror-of-utøya-gunman-anders} \texttt{-behring-breiviks-facebook-page-and-photo-gallery/}}. 
 
 \textbf{Revealed insight:}
 traditional news media still play the most important role in informing people, albeit the news item itself is shared via social networks. 
@@ -623,7 +625,7 @@ traditional news media still play the most important role in informing people, a
 	db:Jens\_Stoltenberg & 16\\
     \hline
   \end{tabular}
-  \caption{Reader perception on Facebook of the 2011 Norway attacks (July˜22).}
+  \tablecaption{Reader perception on Facebook of the 2011 Norway attacks (July~22).}
   \label{tab:norway}  
 \end{table}
 
@@ -665,7 +667,7 @@ comparing reader geolocations to distinguish geographic centers of interest can 
     \hline
   \end{tabular}
   \label{tab:facebookarabspring}}
-    \caption{Sub continent geolocations of reader interest of some of the Arab Spring key countries (May~1 -- November~12).}
+    \tablecaption{Sub continent geolocations of reader interest of some of the Arab Spring key countries (May~1 -- November~12).}
   \label{tab:arabspring}
 \end{table*}
 
@@ -685,13 +687,13 @@ City level analyses allow for fine-grained details on, e.g., brand popularity ov
 \textbf{db:Celcom} & 173 & 47 & 34 & 18 & 16 & 16\\
     \hline
   \end{tabular}
-  \caption{Popularity of the Celcom brand on city level (May~1 -- November~12).}
+  \tablecaption{Popularity of the Celcom brand on city level (May~1 -- November~12).}
   \label{tab:celcom}  
 \end{table*}
 
 \subsubsection{LOLcats vs. LOLdogs on Facebook}
 One of the more popular Internet phenomena is the sharing of cute cat and dog photos\footnote{LOLcats and LOLdogs \url{http://en.wikipedia.org/wiki/LOLcat}}.
-On November 23, the well-known link shortening service bitly published term popularity-based statistics to test the hypothesis that ``kittens really rule the Internet''˜\cite{kittens}.
+On November 23, the well-known link shortening service bitly published term popularity-based statistics to test the hypothesis that ``kittens really rule the Internet''~\cite{kittens}.
 According to their results, dogs clearly outperform cats among all \emph{produced} links on microposts.
 With our approach, we were able to confront bitly's results with the \emph{consumed} microposts around cats and dogs on Facebook.
 \autoref{tab:kittens} shows that among micropost readers, cats indeed haz rule the Internetz.
@@ -710,7 +712,7 @@ the importance of the differences between the producer and the consumer side get
 	db:Chihuahua\_(dog) & 9 & 1\\
     \hline
   \end{tabular}
-  \caption{Reader popularity of cats and dogs on Facebook (May~1 -- November~24).}
+  \tablecaption{Reader popularity of cats and dogs on Facebook (May~1 -- November~24).}
   \label{tab:kittens}  
 \end{table}
 
@@ -730,7 +732,7 @@ SMOB relies on distributed autonomous hubs that communicate with each other to e
 Hashtags, words or phrases preceded by the '\#' symbol, have been popularized on Twitter as a way for users to organize and search messages~\cite{hashtag}.
 The authors suggest the use of meaningful hashtags such as \texttt{\#dbp:Eiffel\_Tower}, or \texttt{\#geo:Paris\_France}, in the style of RDF prefixes for DBpedia and GeoNames.
 
-In the Linked Open Social Signals project (LOSS,~\cite{Mendes:LOSS}), Mendes \textit{et al.} investigate the representation of microposts as Linked Open Data and address the problem of information overload caused by the sheer amount of microposts (the authors call the opinions, observations, and suggestions contained in microposts ``social signals'', hence the project name).
+In the Linked Open Social Signals project\linebreak (LOSS,~\cite{Mendes:LOSS}), Mendes \textit{et al.} investigate the representation of microposts as Linked Open Data and address the problem of information overload caused by the sheer amount of microposts (the authors call the opinions, observations, and suggestions contained in microposts ``social signals'', hence the project name).
 While the micropost community has come up with hashtags in order to categorize microposts, these hashtags are ambiguous and have to be explicitly added to the micropost by the author and due to length constraints are sometimes left out in favor of more text.
 The main goal of LOSS is thus to enable collective analysis of social signals for sense-making by using Linked Open Data principles in combination with realtime push models.
 
@@ -739,7 +741,7 @@ As outlined before, research on trend and popularity detection has mainly focuse
 A basic overview is given by by Benhardus in~\cite{benhardus2010streaming}, where the author applies and evaluates several methodologies to large Twitter corpora such as (normalized) term frequency, TF-IDF, and entropy.
 With TwitterMonitor~\cite{Mathioudakis:2010:TTD:1807167.1807306}, Mathioudakis and Koudas present a \textit{bursty} keyword-based Twitter trend detector demonstration.
 Their algorithm is able to detect groups of bursty keywords and also enrich trends with potentially associated keywords.
-Trendsmap˜\cite{trendsmap} provides a realtime mapping of Twitter trends across the world.
+Trendsmap~\cite{trendsmap} provides a realtime mapping of Twitter trends across the world.
 The service allows for splitting up one's view in different granularity levels by current location, city, region, and world.
 
 \subsection{Commercialization of Social Data}
@@ -752,7 +754,7 @@ Therefore, the service applies algorithms that try to rank popular videos, photo
 Supported social networks include Twitter and Google+.
 Different from the social networks themselves, Topsy Labs claims to allow for going back in history up to the year 2008 with their commercial API.
 
-Twimpact˜\cite{twimpact} is a realtime Twitter data analysis company with special focus on social media communication that reports \textit{immediate events, current trends, and relevant opinion leaders} within social media conversations.
+Twimpact~\cite{twimpact} is a realtime Twitter data analysis company with special focus on social media communication that reports \textit{immediate events, current trends, and relevant opinion leaders} within social media conversations.
 Twimpact uses machine learning-based ranking techniques that do not rely on simple reader/follower counts, but rather include actual communication patterns, such as retweets. 
 
 \subsection{Comparison with Micropost Author-focused Approaches} \label{sec:comparison}
@@ -809,7 +811,13 @@ While tech-savvy Internet users can circumvent censorship barriers, the general 
 In order to help Egyptians share eyewitness statements about the happenings in their country again, a phone-based \emph{Speak-to-Tweet} service that required no Internet connection was established~\cite{egypt}.
 Our approach can help prioritize such anti-censorship efforts by analyzing where reader interest is located geographically, and what social networks people use for their information needs.
 
-In this paper, we have presented a generalizable approach towards the comparison of topics people read about on social networks.
+This paper, for the first time, was focused on the consumer point of social media.
+Although the amount of data was smaller than with similar, producer-oriented studies, we were able to confirm some interesting differences in social media consumption.
+Concretely, the most read Twitter messages are technical in nature, while the most read Facebook updates concern personal matters.
+This measuring method promises interesting new aspects for future research, for example to chose the right social medium for a~certain data mining task.
+On the economical side, business can use social media consumer behavior to develop advertising strategies, since today, they still depend on producer behavior as a second-degree estimation.
+
+We have presented a generalizable approach towards the comparison of topics people read about on social networks.
 We have shown how named entity disambiguation combined with classic Web analytics can be applied to the social networks Facebook and Twitter.
 With concrete examples, we have highlighted how the approach of traditional social media mining can be completed and enriched with our reader-focused approach.
 We have compared both approaches and worked out the limitations and advantages of both.
@@ -819,7 +827,8 @@ The approach being generalizable, future studies can cover and compare more soci
 \section*{Acknowledgments}
 We would like to thank Shaun Roach from AlchemyAPI, Andraž Tori from Zemanta, Pablo Mendes from DBpedia Spotlight, and Tom Tague from OpenCalais for their precious support and/or generous API quota allowances. 
 
-T. Steiner is partially supported by the European Commission under Grant No. 248296 FP7 I-SEARCH project
+T. Steiner is partially supported by the European Commission under Grant No. 248296 FP7 I-SEARCH project.
+The research activities as described in this paper were funded by Ghent University, the Interdisciplinary Institute for Broadband Technology (IBBT), the Institute for the Promotion of Innovation by Science and Technology in Flanders (IWT), the Fund for Scientific Research Flanders (FWO Flanders), and the European Union.
 
 %%%%%%%%%%% The bibliography starts:
 \bibliographystyle{abbrv}
