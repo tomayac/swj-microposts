@@ -527,7 +527,7 @@ Music plays a significant role on Facebook, reflected by the presence of disc jo
 With regards to reader interest, there is a tendency towards reading about the United States, or North America in general.
 
 \subsection{Segmentation by RDF Type}
-One of the advantages of using DBpedia URIs to represent named entities in an unambiguous way is that the Linked˜Data knowledge from DBpedia can be leveraged.
+One of the advantages of using DBpedia URIs to represent named entities in an unambiguous way is that the Linked~Data knowledge from DBpedia can be leveraged.
 Therefore, we have retrieved the RDF type (\texttt{rdf:type}) information for the top-500 named entities for both networks.
 Unlike the main DBpedia OWL type (\texttt{dbpedia-owl:type}), the \texttt{rdf:type} can have multiple values, for example a company can be both a company, and an organization.
 Type specifications can come from different namespaces, like \texttt{dbpedia-owl} (\url{http://dbpedia.org/ontology/}), \texttt{yago} (\url{http://dbpedia.org/class/yago/}), or \texttt{umbel} (\url{http://umbel.org/umbel/rc/}).
@@ -608,7 +608,7 @@ The current Norwegian Prime Minister ``Jens Stoltenberg'' follows on rank 6.
 It is interesting to note how Norwegian readers got detailed information on the attacks through local media (VG and NRK), but also through the international company CNN.
 Traditional media companies more and more harvest social networking sites for authentic coverage of events.
 For Utøya, this is documented, e.g., in the case of survivor Adrian Pracon (@AdrianPracon on Twitter) in a tweet from Sky News producer @fimackiesky\footnote{Sky News contact Utøya survivor \url{https://twitter.com/\#!/AdrianPracon/status/94573763500326912}}.
-While Facebook has terminated terrorist Anders Behring Breivik's profile, the Internet already has conserved a copy\footnote{Copy of the terrorist's Facebook profile \url{http://publicintelligence.net/mirror-of-utøya-gunman-anders-behring-breiviks-facebook-page-and-photo-gallery/}}. 
+While Facebook has terminated terrorist Anders Behring Breivik's profile, the Internet already has conserved a copy\footnote{Copy of the terrorist's Facebook profile \scriptsize\texttt{http://} \texttt{publicintelligence.net/mirror-of-utøya-gunman-anders} \texttt{-behring-breiviks-facebook-page-and-photo-gallery/}}. 
 
 \textbf{Revealed insight:}
 traditional news media still play the most important role in informing people, albeit the news item itself is shared via social networks. 
@@ -625,7 +625,7 @@ traditional news media still play the most important role in informing people, a
 	db:Jens\_Stoltenberg & 16\\
     \hline
   \end{tabular}
-  \caption{Reader perception on Facebook of the 2011 Norway attacks (July˜22).}
+  \caption{Reader perception on Facebook of the 2011 Norway attacks (July~22).}
   \label{tab:norway}  
 \end{table}
 
@@ -693,7 +693,7 @@ City level analyses allow for fine-grained details on, e.g., brand popularity ov
 
 \subsubsection{LOLcats vs. LOLdogs on Facebook}
 One of the more popular Internet phenomena is the sharing of cute cat and dog photos\footnote{LOLcats and LOLdogs \url{http://en.wikipedia.org/wiki/LOLcat}}.
-On November 23, the well-known link shortening service bitly published term popularity-based statistics to test the hypothesis that ``kittens really rule the Internet''˜\cite{kittens}.
+On November 23, the well-known link shortening service bitly published term popularity-based statistics to test the hypothesis that ``kittens really rule the Internet''~\cite{kittens}.
 According to their results, dogs clearly outperform cats among all \emph{produced} links on microposts.
 With our approach, we were able to confront bitly's results with the \emph{consumed} microposts around cats and dogs on Facebook.
 \autoref{tab:kittens} shows that among micropost readers, cats indeed haz rule the Internetz.
@@ -732,7 +732,7 @@ SMOB relies on distributed autonomous hubs that communicate with each other to e
 Hashtags, words or phrases preceded by the '\#' symbol, have been popularized on Twitter as a way for users to organize and search messages~\cite{hashtag}.
 The authors suggest the use of meaningful hashtags such as \texttt{\#dbp:Eiffel\_Tower}, or \texttt{\#geo:Paris\_France}, in the style of RDF prefixes for DBpedia and GeoNames.
 
-In the Linked Open Social Signals project (LOSS,~\cite{Mendes:LOSS}), Mendes \textit{et al.} investigate the representation of microposts as Linked Open Data and address the problem of information overload caused by the sheer amount of microposts (the authors call the opinions, observations, and suggestions contained in microposts ``social signals'', hence the project name).
+In the Linked Open Social Signals project\linebreak (LOSS,~\cite{Mendes:LOSS}), Mendes \textit{et al.} investigate the representation of microposts as Linked Open Data and address the problem of information overload caused by the sheer amount of microposts (the authors call the opinions, observations, and suggestions contained in microposts ``social signals'', hence the project name).
 While the micropost community has come up with hashtags in order to categorize microposts, these hashtags are ambiguous and have to be explicitly added to the micropost by the author and due to length constraints are sometimes left out in favor of more text.
 The main goal of LOSS is thus to enable collective analysis of social signals for sense-making by using Linked Open Data principles in combination with realtime push models.
 
@@ -741,7 +741,7 @@ As outlined before, research on trend and popularity detection has mainly focuse
 A basic overview is given by by Benhardus in~\cite{benhardus2010streaming}, where the author applies and evaluates several methodologies to large Twitter corpora such as (normalized) term frequency, TF-IDF, and entropy.
 With TwitterMonitor~\cite{Mathioudakis:2010:TTD:1807167.1807306}, Mathioudakis and Koudas present a \textit{bursty} keyword-based Twitter trend detector demonstration.
 Their algorithm is able to detect groups of bursty keywords and also enrich trends with potentially associated keywords.
-Trendsmap˜\cite{trendsmap} provides a realtime mapping of Twitter trends across the world.
+Trendsmap~\cite{trendsmap} provides a realtime mapping of Twitter trends across the world.
 The service allows for splitting up one's view in different granularity levels by current location, city, region, and world.
 
 \subsection{Commercialization of Social Data}
@@ -754,7 +754,7 @@ Therefore, the service applies algorithms that try to rank popular videos, photo
 Supported social networks include Twitter and Google+.
 Different from the social networks themselves, Topsy Labs claims to allow for going back in history up to the year 2008 with their commercial API.
 
-Twimpact˜\cite{twimpact} is a realtime Twitter data analysis company with special focus on social media communication that reports \textit{immediate events, current trends, and relevant opinion leaders} within social media conversations.
+Twimpact~\cite{twimpact} is a realtime Twitter data analysis company with special focus on social media communication that reports \textit{immediate events, current trends, and relevant opinion leaders} within social media conversations.
 Twimpact uses machine learning-based ranking techniques that do not rely on simple reader/follower counts, but rather include actual communication patterns, such as retweets. 
 
 \subsection{Comparison with Micropost Author-focused Approaches}
