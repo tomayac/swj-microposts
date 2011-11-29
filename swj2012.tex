@@ -277,15 +277,15 @@ These APIs take a text fragment as an input, perform named entity extraction and
 We use these APIs in parallel, and, by combining their results, aim at the emergence effect in the sense of Aristotle: \emph{``[\ldots] the totality is not, as it were, a mere heap, but the whole is something besides the parts [\ldots]''}\footnote{Aristotle, Metaphysics, Book H 1045a 8-10.}. 
 
 \subsection{Combining Results from different APIs} \label{sec:consolidation-nlp}
-We have implemented a wrapper API for the four named entity disambiguation APIs introduced in \autoref{sec:services} that returns results in \texttt{application/json} format.
+We have implemented a wrapper API for the four named entity disambiguation APIs introduced in \autoref{sec:services} that returns results in JSON format.
 While the underlying APIs return entities with their types and/or subtypes, names, relevance, and links into the LOD cloud in different formats, the wrapper API abstracts away the different output formats and returns a common JSON object structure instead.
 The JSON output for the exemplary micropost \textit{``Tom has the LaTeX, BibTeX, LaTeX, LaTeX blues...''} can be seen in \autoref{lst:nlpjson}.
-The more APIs agree on a disambiguated named entity, the higher the confidence that (i) the named entity was extracted correctly, and that (ii) the named entity was also disambiguated correctly.
-While  in the concrete example \textcircled{a}~``LaTeX'' and \textcircled{b}~``blues'' were both correctly extracted and disambiguated (\textcircled{a}~\url{http://dbpedia.org/resource/LaTeX} and \textcircled{b}~\url{http://dbpedia.org/resource/Blues}), the judgment is based on just one API result in both cases (\textcircled{a}~DBpedia Spotlight and \textcircled{b}~Zemanta),
-whereas \textcircled{c}~``BibTeX'' was correctly extracted and disambiguated (\textcircled{c}~\url{http://dbpedia.org/resource/BibTeX}) by two APIs at the same time (\textcircled{c}~Zemanta, DBpedia Spotlight).
-Hence, the confidence is higher in \textcircled{c} than in \textcircled{a} and \textcircled{b}.
+The more APIs agree on a disambiguated named entity, the higher the confidence that (i)~the named entity was extracted correctly, and (ii)~the named entity was also disambiguated correctly.
+While  in the concrete example ``LaTeX'' and ``blues'' were both correctly extracted and disambiguated (\url{http://dbpedia.org/resource/LaTeX} and \url{http://dbpedia.org/resource/Blues}), the judgment is\linebreak based on just one API result in both cases\linebreak (DBpedia Spotlight and Zemanta respectively),
+whereas ``BibTeX'' was correctly extracted and disambiguated (\url{http://dbpedia.org/resource/BibTeX}) by two APIs at the same time (both DBpedia Spotlight and Zemanta).
+Hence, the confidence is higher in the latter case.
 
-\begin{lstlisting}[caption={Named entity disambiguation wrapper API output in JSON format for the exemplary micropost \textit{``Tom has the LaTeX, BibTeX, LaTeX, LaTeX blues...''}.},label={lst:nlpjson}]
+\begin{lstlisting}[caption=Named entity disambiguation wrapper API output in JSON format for an exemplary micropost.,label={lst:nlpjson}]
 [
     {
         "name": "LaTeX",
@@ -296,8 +296,7 @@ Hence, the confidence is higher in \textcircled{c} than in \textcircled{a} and \
             }
         ],
         "source": "spotlight"
-    },
-    {
+    },{
         "name": "BibTeX",
         "uris": [
             {
@@ -306,8 +305,7 @@ Hence, the confidence is higher in \textcircled{c} than in \textcircled{a} and \
             }
         ],
         "source": "zemanta,spotlight"
-    },
-    {
+    },{
         "name": "blues",
         "uris": [
             {
