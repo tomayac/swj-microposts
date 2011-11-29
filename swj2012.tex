@@ -531,22 +531,23 @@ One of the advantages of using DBpedia URIs to represent named entities in an un
 Therefore, we have retrieved the RDF type (\texttt{rdf:type}) information for the top-500 named entities for both networks.
 Unlike the main DBpedia OWL type (\texttt{dbpedia-owl:type}), the \texttt{rdf:type} can have multiple values, for example a company can be both a company, and an organization.
 Type specifications can come from different namespaces, like \texttt{dbpedia-owl} (\url{http://dbpedia.org/ontology/}), \texttt{yago} (\url{http://dbpedia.org/class/yago/}), or \texttt{umbel} (\url{http://umbel.org/umbel/rc/}).
-\autoref{fig:unfiltered} shows an unlabeled chart of type distributions of the top-500 named entities with the main purpose of illustrating the long tail of type specifications. 
+\autoref{fig:unfiltered} shows an unlabeled chart of type distributions of the top-500 named entities with the main purpose of illustrating the long tail of type specifications.
+
+The biggest number of type specifications comes from the \texttt{dbpedia-owl} namespace and is shown in \autoref{fig:dbo} for both social networks, again covering the top-500 named entities.
+Second comes the \texttt{umbel} namespace, which is shown in \autoref{fig:umbel}.
 
 \begin{figure*}
   \centering
     \subfloat[][Twitter]{
-      \includegraphics[width=0.45\textwidth, trim=2px 2px 2px 2px, clip]{./resources/twittertypes.png}
+      \includegraphics[height=3.6cm, width=0.45\textwidth, trim=2px 2px 2px 2px, clip]{./resources/twittertypes.png}
       \label{fig:twittertypes}}
     \qquad
     \subfloat[][Facebook]{
-      \includegraphics[width=0.45\textwidth, trim=2px 2px 2px 2px, clip]{./resources/facebooktypes.png}
+      \includegraphics[height=3.6cm, width=0.45\textwidth, trim=2px 2px 2px 2px, clip]{./resources/facebooktypes.png}
       \label{fig:facebooktypes}}
 \caption{Type statistics unfiltered (May~1 -- November~12).}
 \label{fig:unfiltered}
 \end{figure*}
-
-The biggest number of type specifications comes from the \texttt{dbpedia-owl} namespace and is shown in \autoref{fig:dbo} for both social networks, again covering the top-500 named entities.
 
 \begin{figure*}
   \centering
@@ -561,8 +562,6 @@ The biggest number of type specifications comes from the \texttt{dbpedia-owl} na
 \label{fig:dbo}
 \end{figure*}
 
-Second comes the \texttt{umbel} namespace, which is shown in \autoref{fig:umbel}.
-
 \begin{figure*}
   \centering
     \subfloat[][Twitter]{
@@ -576,12 +575,6 @@ Second comes the \texttt{umbel} namespace, which is shown in \autoref{fig:umbel}
 \label{fig:umbel}
 \end{figure*}
 
-A recent addition is the \texttt{schema} namespace \url{http://schema.org/} around the common schema effort of the big search engines Google, Yahoo, and Microsoft~\cite{schemaorg}.
-Overall coverage of \texttt{schema} is still sparse on DBpedia, nevertheless the results can be seen in \autoref{fig:schema}.
-The granularity of the underlying ontologies is different.
-For example, where \texttt{schema} just has ``Place'', \texttt{umbel} differentiates between ``Location'' and ``Populated Place''.
-Applying a loose ontology mapping, the top-3 types on both social networks are Place, Organization, Person for \texttt{schema} and \texttt{dbpedia-owl}, and Place, Organization, Business for \texttt{umbel}.
-
 \begin{figure*}
   \centering
     \subfloat[][Twitter]{
@@ -594,6 +587,12 @@ Applying a loose ontology mapping, the top-3 types on both social networks are P
 \caption{Type statistics filtered by \url{http://schema.org/} (May~1 -- November~12).}
 \label{fig:schema}
 \end{figure*}
+
+A recent addition is the \texttt{schema} namespace \url{http://schema.org/} around the common schema effort of the big search engines Google, Yahoo, and Microsoft~\cite{schemaorg}.
+Overall coverage of \texttt{schema} is still sparse on DBpedia, nevertheless the results can be seen in \autoref{fig:schema}.
+The granularity of the underlying ontologies is different.
+For example, where \texttt{schema} just has ``Place'', \texttt{umbel} differentiates between ``Location'' and ``Populated Place''.
+Applying a loose ontology mapping, the top-3 types on both social networks are Place, Organization, Person for \texttt{schema} and \texttt{dbpedia-owl}, and Place, Organization, Business for \texttt{umbel}.
 
 \subsection{Events from recent History}
 In this Subsection, we present some events from recent history and show how, using our approach, new insights or trends can be revealed.
@@ -790,17 +789,17 @@ A drawback of our approach is that getting statistically significant data is dif
 The bigger the so-called panel, the more representative the results.
 At its core, this is not a new problem.
 The television viewership audience measurement system described in~\cite{patent:20100011389} is comparable to our approach:
-whenever a viewer switches channels, the system automatically reports a channel switch event back to a tracking server.
+whenever a viewer switches channels, the system automatically reports a~channel switch event back to a tracking server.
 Analogically, whenever a micropost reader reads a micropost, the detected and disambiguated named entities are automatically reported back to the Web analytics software via our browser extensions.
-For radio and television audience measurement, a Portable People Meter\footnote{Portable People Meter \url{http://www.arbitron.com/portable_people_meters/home.htm}} device  developed by a company called Arbitron is used in some parts of the United States.
+For radio and television audience measurement, a Portable People Meter\footnote{Portable People Meter \url{http://www.arbitron.com/portable_people_meters/home.htm}} device  developed by Arbitron is used in some parts of the United States.
 We imagine a similar setting for our approach where randomly selected social network users can be asked to participate in micropost audience measurement studies.
 
 In \autoref{sec:rawstatistics} we have outlined factors to be taken into account in order to improve the quality of statistical data.
-When switching to an officially disclosed micropost audience measurement setup, the two last factors, increasing the study reach and the steadiness of the experiment participants, will resolve nicely in the sense of being the same as with traditional audience measurement.
+With the proposed switch to an officially disclosed micropost audience measurement setup, the two last factors, increasing the study reach and the steadiness of the experiment participants, will resolve nicely in the sense of being the same as with traditional audience measurement.
 
 We have already covered the theoretic consequences of the paradigm shift of focusing on the micropost author side in \autoref{sec:comparison}.
-More work is needed to practically compare the differences in results with common scenarios like the one proposed in the beginning: \textit{``Is my brand~B more popular in region~R on social network~A, or social network~B?''}.
-Evidently conditions apply, which make the comparison interesting.
+More work is needed to practically compare the differences in results with common scenarios like the one proposed in the beginning: \textit{``Is my brand~X more popular in region~R on social network~A, or social network~B?''}.
+Evidently, conditions apply, which make the comparison interesting.
 The determination of the region~R has to be interpolated with traditional social media mining, whereas our approach has exact IP geolocation-based location awareness.
 Reader and author popularity of a brand can be different, and finally, the sample size of the set of examined microposts will be different.
 
