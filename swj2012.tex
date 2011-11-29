@@ -79,15 +79,12 @@
 \begin{frontmatter}
 
 \pretitle{What'chu talkin' about, Willis?}
-\title{A Comparison of Topics People read about on Facebook and on Twitter
-%crossed with Detection of Geolocations of Centers of Interest
-}
-%\title{A Consumer's Look on Facebook and Twitter -- What Do People Read and Where?}
+\title{A Consumer's Look on Facebook and Twitter -- What Do People Read and Where?}
 %\subtitle{}
 
 %\footnote{\url{http://en.wikipedia.org/wiki/Diff'rent\_Strokes\#Later\_appearances\_of\_the\_characters}}
 
-\runningtitle{A Comparison of Topics People read about on Facebook and Twitter}
+\runningtitle{A Consumer's Look on Facebook and Twitter -- What Do People Read and Where?}
 
 %\review{}{}{}
 
@@ -225,7 +222,13 @@ On the contrary, we \textbf{will not}:
 \end{itemize}
 which is why we strive for a paradigm shift that promises new insights for tasks like brand analysis, opinion research, but also sociological questions.
 
-\todo{Describe paper structure.}
+The remainder of this paper is structured as follows.
+\autoref{sec:implementation} focuses on structuring and consolidating unstructured textual micropost data, and introduces browser extensions and Web analytics software.
+\autoref{sec:userdemographics} explains our experiment setup and gives an overview of user demographics.
+\autoref{sec:discussion} starts with a presentation of raw statistic, then provides a ranking of named entities and gives a categorization of the RDF types of the named entities.
+The Section ends with some scenarios from recent history where we show how our approach can be used to reveal new insights that would not be possible with traditional social media mining.
+We report on related work in \autoref{sec:relatedwork}, and give an outlook on future work in \autoref{sec:futurework}.
+We close the paper with a conclusion in \autoref{sec:conclusion}.
 
 \section{Implementation} \label{sec:implementation}
 We have implemented two browser extensions to cover the social networking sites Facebook and Twitter.
@@ -340,10 +343,11 @@ In addition to that, the extension descriptions do not cross-reference each othe
 
 \subsection{User Demographics} 
 As the extensions insert a Web analytics tracking snippet, exact user localization is possible based on the users' current physical location, i.e., completely independent from the origin location users might have registered with Facebook or Twitter, and not to be confused with geotagged microposts.
-A graphical overview of user locations as detected via IP-based geolocation can be seen in Figures~\ref{fig:twitterlocations} and~\ref{fig:facebooklocations}.
+% A graphical overview of user locations as detected via IP-based geolocation can be seen in Figures~\ref{fig:twitterlocations} and~\ref{fig:facebooklocations}.
 Tables~\ref{tab:twitterlocations} and~\ref{tab:facebooklocations} show the distribution of the top-10 locations of extension users. 
 The complete statistics can be found online\footnote{Complete statistics \url{https://github.com/tomayac/swj-microposts/tree/master/stats}}.
 
+\begin{comment}
 \begin{figure*}
   \centering
     \subfloat[][Twitter Swarm NLP]{
@@ -356,6 +360,7 @@ The complete statistics can be found online\footnote{Complete statistics \url{ht
 \caption{Location of users of the two browser extensions (May~1 -- November~12).}
 \label{fig:location}
 \end{figure*}
+\end{comment}
 
 \begin{table*}
   \centering
@@ -779,6 +784,9 @@ With regards to specific Web browsers, for now, we have focused on the Google Ch
 Concerning desktop and mobile applications, there is definitely some, albeit unmeasurable, bias.
 However, unofficial statistics from Twitstat~\cite{twitstat} suggest that the desktop Web version of Twitter is still the means for the majority of its users to access the social network.
 For Facebook, official usage statistics~\cite{facebookstats} state that from more than 800 million active users more than 350 million currently access Facebook through their mobile devices, which still means that the majority use Facebook via the desktop Web version.
+
+\section{Future Work} \label{sec:futurework}
+
 
 \section{Conclusion} \label{sec:conclusion}
 Social networks play a crucial role for all sorts of serious and non-serious questions of life.
