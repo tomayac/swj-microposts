@@ -426,7 +426,7 @@ If in the following we present results, those are to be taken with a grain of sa
 However, common sense suggests that they are correct.
 The experiments were conducted over more than six months, which reduces the risk of short-term spikes.
 
-\subsection{Raw Statistics}
+\subsection{Raw Statistics} \label{sec:rawstatistics}
 First, we present some raw statistics on both social networking sites.
 Table~2 show the absolute, total, and unique number of occurrences of named entities from microposts.
 Interesting here is especially the relation between \emph{unique} named entities and \emph{total} named entities.
@@ -755,7 +755,7 @@ Different from the social networks themselves, Topsy Labs claims to allow for go
 Twimpact˜\cite{twimpact} is a realtime Twitter data analysis company with special focus on social media communication that reports \textit{immediate events, current trends, and relevant opinion leaders} within social media conversations.
 Twimpact uses machine learning-based ranking techniques that do not rely on simple reader/follower counts, but rather include actual communication patterns, such as retweets. 
 
-\subsection{Comparison with Micropost Author-focused Approaches}
+\subsection{Comparison with Micropost Author-focused Approaches} \label{sec:comparison}
 With our focus on micropost readers rather than on micropost authors, we strive for a paradigm shift with important consequences.
 
 The first and most important consequence is the availability of only a limited set of micropost data, as illustrated by the Venn diagram in \autoref{fig:vennreadunread}.
@@ -784,7 +784,23 @@ However, unofficial statistics from Twitstat~\cite{twitstat} suggest that the de
 For Facebook, official usage statistics~\cite{facebookstats} state that from more than 800 million active users more than 350 million currently access Facebook through their mobile devices, which still means that the majority use Facebook via the desktop Web version.
 
 \section{Future Work} \label{sec:futurework}
+A drawback of our approach is that getting statistically significant data is difficult.
+The bigger the so-called panel, the more representative the results.
+At its core, this is not a new problem.
+The television viewership audience measurement system described in~\cite{patent:20100011389} is comparable to our approach:
+whenever a viewer switches channels, the system automatically reports a channel switch event back to a tracking server.
+Analogically, whenever a micropost reader reads a micropost, the detected and disambiguated named entities are automatically reported back to the Web analytics software via our browser extensions.
+For radio and television audience measurement, a Portable People Meter\footnote{Portable People Meter \url{http://www.arbitron.com/portable_people_meters/home.htm}} device  developed by a company called Arbitron is used in some parts of the United States.
+We imagine a similar setting for our approach where randomly selected social network users can be asked to participate in micropost audience measurement studies.
 
+In \autoref{sec:rawstatistics} we have outlined factors to be taken into account in order to improve the quality of statistical data.
+When switching to an officially disclosed micropost audience measurement setup, the two last factors, increasing the study reach and the steadiness of the experiment participants, will resolve nicely in the sense of being the same as with traditional audience measurement.
+
+We have already covered the theoretic consequences of the paradigm shift of focusing on the micropost author side in \autoref{sec:comparison}.
+More work is needed to practically compare the differences in results with common scenarios like the one proposed in the beginning: \textit{``Is my brand~B more popular in region~R on social network~A, or social network~B?''}.
+Evidently conditions apply, which make the comparison interesting.
+The determination of the region~R has to be interpolated with traditional social media mining, whereas our approach has exact IP geolocation-based location awareness.
+Reader and author popularity of a brand can be different, and finally, the sample size of the set of examined microposts will be different.
 
 \section{Conclusion} \label{sec:conclusion}
 Social networks play a crucial role for all sorts of serious and non-serious questions of life.
