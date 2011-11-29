@@ -86,12 +86,8 @@
 \begin{frontmatter}
 
 \pretitle{What'chu talkin' about, Willis?}
-\title{A Consumer's Look on Facebook and Twitter -- What Do People Read and Where?}
-%\subtitle{}
-
-\runningtitle{A Consumer's Look on Facebook and Twitter -- What Do People Read and Where?}
-
-%\review{}{}{}
+\title{A consumer's look on Facebook and Twitter~-- What do people read and where?}
+\runningtitle{A consumer's look on Facebook and Twitter~-- What do people read and where?}
 
 % Two or more authors:
 \author[A]{\fnms{Thomas} \snm{Steiner}},
@@ -185,7 +181,7 @@ While at the World Wide Web Conference 2011 (WWW2011) alone, three Twitter paper
     \subfloat[][Facebook covers the majority of people in several countries~\cite{comScoreFacebook}.]{
       \includegraphics[width=0.458\textwidth, trim=18px 40px 10px 24px, clip]{./resources/facebookglobalmarkets.jpg}
       \label{fig:facebookglobalmarkets}}
-\caption{As of the beginning of 2011, Twitter has a low global market reach compared to Facebook.}
+\caption{Global markets reach by percent of the complete online population.}
 \label{fig:globalmarkets}
 \end{figure*}
 
@@ -348,7 +344,7 @@ In addition to that, the extension descriptions do not cross-reference each othe
 As the extensions insert a Web analytics tracking snippet, exact user localization is possible based on the users' current physical location, i.e., completely independent from the origin location users might have registered with Facebook or Twitter, and not to be confused with geotagged microposts.
 % A graphical overview of user locations as detected via IP-based geolocation can be seen in Figures~\ref{fig:twitterlocations} and~\ref{fig:facebooklocations}.
 Tables~\ref{tab:twitterlocations} and~\ref{tab:facebooklocations} show the distribution of the top-10 locations of extension users. 
-The complete statistics can be found online\footnote{Complete statistics \url{https://github.com/tomayac/swj-microposts/tree/master/stats}}.
+The complete statistics can be found \mbox{online}\footnote{Complete statistics \url{https://github.com/tomayac/swj-microposts/tree/master/stats}}.
 
 \begin{comment}
 \begin{figure*}
@@ -440,6 +436,7 @@ Here, we would track two total named entities, but only one unique named entity.
 In a second case, two different users during their social networking session read two different microposts that contain one common named entity. Here, we would still track two total named entities, however, also two unique named entities.
 In short, a unique named entity is a named entity that during one social networking session of one user appears only once.
 The number of absolute named entities refers to the absolute distinct number of named entities that ever occurred during the experiments, independent from users and sessions.
+
 Looking at the numbers, where we have 76.7\% unique named entities for Twitter and 43.0\% unique named entities for Facebook, we can carefully derive that the reading experience per social networking session on Twitter is more versatile than on Facebook.
 We need to note, however, that Facebook microposts are generated at a lot lower frequency than Twitter microposts, and that Twitter microposts are limited to 140 characters, which may have an impact on both precision and recall of the named entity disambiguation process.
 The average duration of a visit on Facebook according to our statistics is 66~min.\ against 28~min.\ on Twitter, which implies that Twitter users spend less than half the time than Facebook users on their social networking site.
@@ -484,11 +481,11 @@ Visually, the curves are very similar with five named entities occurring many ti
 \begin{figure*}
   \centering
     \subfloat[][Twitter Swarm NLP.]{
-      \includegraphics[width=0.95\textwidth]{./resources/twittertopentities.png}
+      \includegraphics[width=\textwidth, trim=4px 4px 4px 4px, clip]{./resources/twittertopentities.png}
       \label{fig:twittertopentities}}
     \qquad
     \subfloat[][Facebook Swarm NLP.]{
-      \includegraphics[width=0.95\textwidth]{./resources/facebooktopentities.png}
+      \includegraphics[width=\textwidth, trim=4px 4px 4px 4px, clip]{./resources/facebooktopentities.png}
       \label{fig:facebooktopentities}}
 \caption{Top entities as reported by browser extension users (May~1 -- November~12).}
 \label{fig:topentities}
@@ -598,7 +595,7 @@ Applying a loose ontology mapping, the top-3 types on both social networks are P
 In this Subsection, we present some events from recent history and show how, using our approach, new insights or trends can be revealed.
 
 \subsubsection{Facebook Reader Perception of the 2011 Norway Attacks}
-On July 22, a mass shooting took place on the island of Utøya in Norway, preceded by a car bomb explosion in Oslo\footnote{2011 Norway attacks \url{http://en.wikipedia.org/wiki/2011_Norway_attacks}}.
+On July 22, a mass shooting took place on the island of Utøya in Norway, preceded by a car bomb explosion in Oslo\footnote{2011 Norway attacks: \url{http://en.wikipedia.org/wiki/2011_Norway_attacks}}.
 We start our analysis with a deep-dive into the most read about named entities in Norway on the day of the attacks and then manually filter the list for relevance to the event.
 \autoref{tab:norway} shows the resulting top-6 ranking of named entities on July 22 on Facebook.
 The list is led by the two geographic entities of the city of ``Oslo'' and the country of ``Norway''.
@@ -629,7 +626,7 @@ traditional news media still play the most important role in informing people, a
 \end{table}
 
 \subsubsection{Comparison of Reader Geolocations for the Arab Spring}
-The Arab Spring is a revolutionary wave of demonstrations and protests occurring in the Arab world\footnote{Arab Spring \url{http://en.wikipedia.org/wiki/Arab_Spring}}.
+The Arab Spring is a revolutionary wave of demonstrations and protests occurring in the Arab world\footnote{Arab Spring: \url{http://en.wikipedia.org/wiki/Arab_Spring}}.
 We compared sub continent geolocations of readers of microposts mentioning the countries of Egypt, Libya, and Syria on both Facebook and Twitter.
 The results for both social networks can be found in \autoref{tab:arabspring}.
 First, it is interesting to note the sequence of the countries.
@@ -698,7 +695,7 @@ With our approach, we were able to confront bitly's results with the \emph{consu
 \autoref{tab:kittens} shows that among micropost readers, cats indeed haz rule the Internetz.
 
 \textbf{Revealed insight:}
-the importance of the differences between the producer and the consumer side gets evident.
+the importance of differences between producer and consumer sides becomes evident.
 
 \begin{table}
     \begin{tabular}{ | l | l | l |}
@@ -711,7 +708,7 @@ the importance of the differences between the producer and the consumer side get
 	db:Chihuahua\_(dog) & 9 & 1\\
     \hline
   \end{tabular}
-  \tablecaption{Reader popularity of cats and dogs on Facebook (May~1 -- November~24).}
+  \tablecaption{Reader popularity of cats and dogs on Facebook\\* (May~1 -- November~24).}
   \label{tab:kittens}  
 \end{table}
 
@@ -729,7 +726,7 @@ In addition to that, we also provide a \emph{comparison of our work to micropost
 Passant \textit{et al.} introduced a Semantic MicroBlogging (\textit{sic}) framework (SMOB,~\cite{Passant2008}) that enables a \textit{distributed, open, and semantic} microblogging experience based on Semantic Web and Linked~Data technologies by annotating microposts with common vocabularies such as FOAF or SIOC.
 SMOB relies on distributed autonomous hubs that communicate with each other to exchange microposts and subscriptions, which can also be cross-posted to Twitter.
 Hashtags, words or phrases preceded by the '\#' symbol, have been popularized on Twitter as a way for users to organize and search messages~\cite{hashtag}.
-The authors suggest the use of meaningful hashtags such as \texttt{\#dbp:Eiffel\_Tower}, or \texttt{\#geo:Paris\_France}, in the style of RDF prefixes for DBpedia and GeoNames.
+The authors suggest the use of meaningful hashtags such as \texttt{\#dbp:Eiffel\_Tower} or \texttt{\#geo:Paris\_France}, in the style of widely used RDF prefixes for DBpedia and GeoNames.
 
 In the Linked Open Social Signals project\linebreak (LOSS,~\cite{Mendes:LOSS}), Mendes \textit{et al.} investigate the representation of microposts as Linked Open Data and address the problem of information overload caused by the sheer amount of microposts (the authors call the opinions, observations, and suggestions contained in microposts ``social signals'', hence the project name).
 While the micropost community has come up with hashtags in order to categorize microposts, these hashtags are ambiguous and have to be explicitly added to the micropost by the author and due to length constraints are sometimes left out in favor of more text.
@@ -791,7 +788,7 @@ At its core, this is not a new problem.
 The television viewership audience measurement system described in~\cite{patent:20100011389} is comparable to our approach:
 whenever a viewer switches channels, the system automatically reports a~channel switch event back to a tracking server.
 Analogically, whenever a micropost reader reads a micropost, the detected and disambiguated named entities are automatically reported back to the Web analytics software via our browser extensions.
-For radio and television audience measurement, a Portable People Meter\footnote{Portable People Meter \url{http://www.arbitron.com/portable_people_meters/home.htm}} device  developed by Arbitron is used in some parts of the United States.
+For radio and television audience measurement, a Portable People Meter device~\cite{PortablePeopleMeter} developed by Arbitron is used in some parts of the United States.
 We imagine a similar setting for our approach where randomly selected social network users can be asked to participate in micropost audience measurement studies.
 
 In \autoref{sec:rawstatistics} we have outlined factors to be taken into account in order to improve the quality of statistical data.
