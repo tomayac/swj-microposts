@@ -591,6 +591,7 @@ For example, where \texttt{schema} just has ``Place'', \texttt{umbel} differenti
 Applying a loose ontology mapping, the top-3 types on both social networks are Place, Organization, Person for \texttt{schema} and \texttt{dbpedia-owl}, and Place, Organization, Business for \texttt{umbel}.
 
 \subsection{Events from Recent History}
+\label{subsec:RecentEvents}
 In this Subsection, we present some events from recent history and show how, using our approach, new insights or trends can be revealed.
 
 \subsubsection{Facebook Reader Perception of the 2011 Norway Attacks}
@@ -827,93 +828,98 @@ J. Gabarr\'o is partially supported by TIN-2007-66523 (FORMALISM), and SGR 2009-
 The research activities as described in this paper were funded by Ghent University, the Interdisciplinary Institute for Broadband Technology (IBBT), the Institute for the Promotion of Innovation by Science and Technology in Flanders (IWT), the Fund for Scientific Research Flanders (FWO Flanders), and the European Union.
 
 \section*{Responses to \#MSM2011 Reviewer Comments}
+\parindent = 0em
 In this Section, we address reviewer comments from the \#MSM2011 paper that the current paper is partly based upon. The comments were slightly edited in order to read fluently, as the original context of the entire review is missing.
 
+An important thing to note, however, is that this paper is a major rewrite of the original submission to MSM2011, entirely focused on the issues raised in the reviewer's comments.
+
 \subsection*{META-REVIEW}
-\textit{While the introduction states the aims of the paper, the actual presentation wavers between describing the application and analyzing the results. Unfortunately this prevents a sufficiently deep analysis/description of either.}
+\textbf{While the introduction states the aims of the paper, the actual presentation wavers between describing the application and analyzing the results. Unfortunately this prevents a sufficiently deep analysis/description of either.}
 
-We have focused on describing and interpreting the results, and only present the basics of the application.
+We have focused on describing and interpreting the results, and only present the basics of the application in the rewritten version of the paper.
 
-\textit{The comparison with existing work appears to be limited.}
+\textbf{The comparison with existing work appears to be limited.}
 
 We have separated related work in different fields, and treat each field in detail.
 
-\textit{The authors say they tackle their lack of NLP expertise by using multiple NLP services. Did they consider getting the opinion of an NLP expert on the most optimal approach to take?}
+\textbf{The authors say they tackle their lack of NLP expertise by using multiple NLP services. Did they consider getting the opinion of an NLP expert on the most optimal approach to take?}
 
 We did indeed consult some of the vendors of the named entity disambiguation services we use and got valuable feedback on how to tweak the parameters for optimal results.
 
-\textit{Considering an attempt to mask the means for collecting statistics from end users of the application could lead to claims of violating ethics. Additional options are to consider not collecting or masking user identities -- another approach that could increase uptake.}
+\textbf{Considering an attempt to mask the means for collecting statistics from end users of the application could lead to claims of violating ethics. Additional options are to consider not collecting or masking user identities -- another approach that could increase uptake.}
 
-We fully agree that privacy issues exist. We address them by stating openly in the descriptions of the extensions what data is collected. In the longterm we fully believe in the outlined disclosed approach of micropost audience measurement. We needed to collect user identities in order to count the absolute distinct number of users. We should indeed have masked the identities by means of an anonymous unique identifier, however, could not change the running system in order not to falsify the already existing collected data. 
+We fully agree that privacy issues exist. We address them by stating openly in the descriptions of the extensions what data is collected. In the longterm, we fully believe in the outlined disclosed approach of micropost audience measurement. We needed to collect user identities in order to count the absolute distinct number of users. We should indeed have masked the identities by means of an anonymous unique identifier, however, could not change the running system in order not to falsify the already existing collected data. 
+Therefore, all data has been anonimized afterwards.
 
 \subsection*{REVIEW 1}
-\textit{The problem is a very interesting one, and the methodology is reasonable. However, the evaluation is insufficient and it is not clear what potential benefits this approach may bring.}
+\textbf{The problem is a very interesting one, and the methodology is reasonable. However, the evaluation is insufficient and it is not clear what potential benefits this approach may bring.}
 
-We have evaluated the data on an abstract high level in the first part, and provide a concrete low level application of the approach to practical questions in the second part. We have outlined the \emph{revealed insights} explicitly under each practical question and discuss the main consequences of the paradigm shift of focusing on the reader side.
+We have evaluated the data on an abstract, high level in the first part, and provide a concrete low level application of the approach to practical questions in the second part. We have outlined the \emph{revealed insights} explicitly under each practical question and discuss the main conclusions of the paradigm shift of focusing on the reader side.
 
-\textit{The data collected for experiment is small. As the authors mention, it is too small to be statistically significant. Therefore, it is difficult to determine whether the findings are useful or to what extent.}
+\textbf{The data collected for experiment is small. As the authors mention, it is too small to be statistically significant. Therefore, it is difficult to determine whether the findings are useful or to what extent.}
 
-We acknowledge this issue, however, for the current version of the paper have collected six months worth of data, so that the presented results are more representative. We see our approach not as a replacement of traditional social media mining, but as a completion. We hope to establish micropost audience measurement similar to television viewership measurement.
+We acknowledge this issue, however, for the current version of the paper, we have collected six months worth of data to obtain more representative results. We see our approach not as a replacement of traditional social media mining, but as a completion. We hope to establish micropost audience measurement similar to television viewership measurement.
 
-\textit{The authors argue that ``the potential for this data to reveal new insights is promising'' -- it is unclear what this ``new insight'' is. If it refers to the potential interesting topics as reflected by statistics, compared to state-of-the-art, what is the different bits that this method brings?}
+\textbf{The authors argue that ``the potential for this data to reveal new insights is promising'' -- it is unclear what this ``new insight'' is. If it refers to the potential interesting topics as reflected by statistics, compared to state-of-the-art, what is the different bits that this method brings?}
 
-We have highlighted new insights explicitly in form of \emph{revealed insights} and dedicated a Section to the discussion of the consequences our approach brings along in contrast to state-of-the-art tradition social media mining techniques. We suggest a concrete comparison of results to concrete questions retrieved through traditional social media mining with results retrieved through our approach in future work.
+We have highlighted new insights explicitly in form of \emph{revealed insights} and dedicated \autoref{subsec:RecentEvents} to the discussion of the consequences our approach brings in contrast to state-of-the-art tradition social media mining techniques. We suggest a concrete comparison of results to concrete questions retrieved through traditional social media mining with results retrieved through our approach in \autoref{sec:futurework}.
 
-\textit{The authors argue that the key novelty of this paper is uncovering the Twitter consumers' perspective, however, it is not sufficiently justified.}
+\textbf{The authors argue that the key novelty of this paper is uncovering the Twitter consumers' perspective, however, it is not sufficiently justified.}
 
-In the current version of the paper, we have provided a collection of concrete questions that we answer with our approach and highlight \emph{revealed insights} explicitly. 
+In the current version of the paper, we have strongly emphasized the differences with traditional methods.
+We have provided a collection of concrete questions that we answer with our approach and highlight \emph{revealed insights} explicitly. 
 
-\textit{How does this compare to analysis based on producers' perspective? Can you see interesting but different patterns in the data? How does named entity frequencies make a difference from term/hashtag frequencies?} 
+\textbf{How does this compare to analysis based on producers' perspective? Can you see interesting but different patterns in the data? How does named entity frequencies make a difference from term/hashtag frequencies?} 
 
 We have worked out the consequences of our approach in comparison to traditional social media mining approaches. With regards to data patterns, we have compared two social networks with interesting different results and presented those in detail. Named entity frequencies alone do not help much, we aim for \emph{disambiguated} named entity frequencies, which, e.g., for concepts with multiple names, like the concepts of God in Islam or Christianity, facilitate the tracking process. Problems are recall, precision, and non-English and non-FIGS\footnote{FIGS: French, Italian, German, Spanish} languages. Recall and precision are, e.g., tackled in~\cite{nerd} and not focus of this paper. The language issues are shared with traditional approaches. Solutions are either automatic translation to English, or, and this is our approach, the combination of as many as possible named entity disambiguation APIs and manual post-processing of the results. 
 
 \subsection*{REVIEW 2}
 
-\textit{The proposed approach induces an important privacy issue. The Chrome plugin created by the authors collects parts of users' browsing history and sends them to Google Analytics. The important question is if the users (and how many of them) would really be comfortable with sending their data to Google Analytics. The authors should clearly state to what degree this approach exposes the users privacy to third parties (i.e., Google) more than a standard Google Analytics tracker embedded in a webpage.}
+\textbf{The proposed approach induces an important privacy issue. The Chrome plugin created by the authors collects parts of users' browsing history and sends them to Google Analytics. The important question is if the users (and how many of them) would really be comfortable with sending their data to Google Analytics. The authors should clearly state to what degree this approach exposes the users privacy to third parties (i.e., Google) more than a standard Google Analytics tracker embedded in a webpage.}
 
-We fully recognize and address the privacy issue by an open description of the collected data, and, more importantly, propose a disclosed approach of micropost audience measurement, similar to television viewership measurement. At no point in time did the browser extensions hide the fact that data is collected, and what data concretely that is.
+We fully recognize and address the privacy issue by an open description of the collected data, and, more importantly, propose a disclosed approach of micropost audience measurement, similar to television viewership measurement. At no point in time did the browser extensions hide the fact that data is collected, and what data that is concretely.
 
-\textit{It is not fully politically correct to suggest trying to be less loud about using Google Analytics might be a good strategy to get users to install he tool. Instead, it would be more honest to explain that GA is used also by Twitter and make it clear if there is any difference in terms of privacy from the use of GA that you make.}
+\textbf{It is not fully politically correct to suggest trying to be less loud about using Google Analytics might be a good strategy to get users to install he tool. Instead, it would be more honest to explain that GA is used also by Twitter and make it clear if there is any difference in terms of privacy from the use of GA that you make.}
 
 We have removed the referred to part of the paper and recognize that the suggested approach was wrong. We want to highlight, however, that we were at all times fully transparent with the collected data. In contrary, we suggest officially disclosed micropost audience measurement.
 
-\textit{Who were the users who participated in the evaluation, and in which way this user sample is representative for the population; what characteristics of the users make them a good choice?}
+\textbf{Who were the users who participated in the evaluation, and in which way this user sample is representative for the population; what characteristics of the users make them a good choice?}
 
 We have dedicated one Section to user demographics and share our statistics openly\footnote{Complete statistics: \url{https://github.com/tomayac/swj- microposts/tree/master/stats}}. 
 
-\textit{How is the consumption of tweets influenced by retweets?}
+\textbf{How is the consumption of tweets influenced by retweets?}
 
 This is not the focus of the paper. We propose a network-agnostic approach that we test on the currently two most popular social networks Facebook and Twitter.
 
-\textit{A potential source of bias is that the study takes into account only the tweet views coming from Twitter.com, however, people consume tweets through many applications, mobile devices, etc. The authors should present statistics on the percentage of tweet views that come though Twitter.com, and justify why their use of this particular medium still makes their results relevant.}
+\textbf{A potential source of bias is that the study takes into account only the tweet views coming from Twitter.com, however, people consume tweets through many applications, mobile devices, etc. The authors should present statistics on the percentage of tweet views that come though Twitter.com, and justify why their use of this particular medium still makes their results relevant.}
 
-We present independent statistics for both networks, with the result that on both networks the particular social network site itself receives the most traffic.
+We present independent statistics for both networks, with the result that on both networks, the particular social network site itself receives the most traffic.
 
-\textit{The large parts describing the technical design of the plugin are simply unnecessary.}
+\textbf{The large parts describing the technical design of the plugin are simply unnecessary.}
 
-We have limited ourselves to the necessary minimum in the current version.
+We agree and have therefore limited ourselves to the necessary minimum in the current version.
 
-\textit{If the focus was on the plugin itself, then the authors should have justified why the plugin is useful, and what are potential use cases, and motivations for the user to install it.}
+\textbf{If the focus was on the plugin itself, then the authors should have justified why the plugin is useful, and what are potential use cases, and motivations for the user to install it.}
 
 The focus was clarified and interest has shifted to a comparison of the topics people read about and where on the two major social networks Facebook and Twitter. 
 
-\textit{Potentially interesting questions to attack in future work: (i) relationship between retweets and views, (ii) relationship between the time of the tweet appearance and the views that the tweet gets (combine that with location and timezone as well)}
+\textbf{Potentially interesting questions to attack in future work: (i) relationship between retweets and views, (ii) relationship between the time of the tweet appearance and the views that the tweet gets (combine that with location and timezone as well)}
 
-Regarding (i), retweet vs. view relations are not focus of the paper. For (ii), we do not measure the number of views a tweet gets (albeit we could technically), however, focus on disambiguated named entities in microposts in general. User location and micropost consumption are indeed an interesting topic, however, also not topic of the paper.
+Regarding (i), retweet vs. view relations are not focus of this paper but might indeed be interesting for the future. For (ii), we do not measure the number of views a tweet gets (albeit we could technically), however, focus on disambiguated named entities in microposts in general. User location and micropost consumption could also indeed be interesting future topics.
 
 \subsection*{REVIEW 3}
-\textit{It would be interesting to analyze with more details the use cases of this tool even if the reader can imagine many applications.}
+\textbf{It would be interesting to analyze with more details the use cases of this tool even if the reader can imagine many applications.}
 
 We have started with a general high level presentation of use cases and results, and address concrete questions and \emph{revealed insights} explicitly. 
 
-\textit{The main problem with the paper is the weakness of the collected dataset (the consumers have to install this extension and agree to expose their Twitter activities to Google).}
+\textbf{The main problem with the paper is the weakness of the collected dataset (the consumers have to install this extension and agree to expose their Twitter activities to Google).}
 
 We recognize the dataset issue, however, for the current version of the paper, have collected six months worth of user data and propose officially disclosed micropost audience measurement where people can participate. The extensions do not ``expose Twitter activities to Google'', but named entities extracted from microposts. Twitter themselves use Google Analytics, independent from our extension.
 
 \subsection*{REVIEW 4}
-\textit{As there is a product called Google Goggles, the title usage of the word Goggles may need to be revised.}
+\textbf{As there is a product called Google Goggles, the title usage of the word Goggles may need to be revised.}
 
-We have removed the referred to term from the title.
+We have removed the reference to this term from the title.
 
 
 %%%%%%%%%%% The bibliography starts:
