@@ -190,7 +190,7 @@ However, few to no focus has been put on what people \emph{consume} -- or at lea
 This is especially true \emph{across} social networks.
 As far as we can tell, no study has compared \emph{reader} behavior on \emph{different} social networks in parallel before.
 In this work, we thus compare topics people read about on Facebook and on Twitter, and classify those topics in order to provide an overall comparison. 
-We therefore have implemented two similar browser extensions: Twitter Swarm NLP\footnote{Twitter Swarm NLP \url{http://bit.ly/twitterswarmnlp}} and Facebook Swarm NLP\footnote{Facebook Swarm NLP \url{http://bit.ly/facebookswarmnlp}}. 
+We therefore have implemented two similar browser extensions: Twitter Swarm NLP\footnote{Twitter Swarm NLP: \url{http://bit.ly/twitterswarmnlp}} and Facebook Swarm NLP\footnote{Facebook Swarm NLP: \url{http://bit.ly/facebookswarmnlp}}. 
 On the one hand, these extensions enrich the user experience on the two social networks Facebook and Twitter, and on the other hand, they determine the topics that people see and read about on their timelines by means of named entity disambiguation.
 We combine this knowledge with additional anonymous data that we obtain about social network users through Web analytics software.
 
@@ -343,7 +343,7 @@ In addition to that, the extension descriptions do not cross-reference each othe
 As the extensions insert a Web analytics tracking snippet, exact user localization is possible based on the users' current physical location, i.e., completely independent from the origin location users might have registered with Facebook or Twitter, and not to be confused with geotagged microposts.
 % A graphical overview of user locations as detected via IP-based geolocation can be seen in Figures~\ref{fig:twitterlocations} and~\ref{fig:facebooklocations}.
 Tables~\ref{tab:twitterlocations} and~\ref{tab:facebooklocations} show the distribution of the top-10 locations of extension users. 
-The complete statistics can be found \mbox{online}\footnote{Complete statistics \url{https://github.com/tomayac/swj-microposts/tree/master/stats}}.
+The complete statistics can be found \mbox{online}\footnote{Complete statistics: \url{https://github.com/tomayac/swj-microposts/tree/master/stats}}.
 
 \begin{comment}
 \begin{figure*}
@@ -602,8 +602,8 @@ Ranks 3 to 5 are held by traditional news media: the popular newspaper ``Verdens
 The current Norwegian Prime Minister ``Jens Stoltenberg'' follows on rank 6.
 It is interesting to note how Norwegian readers got detailed information on the attacks through local media (VG and NRK), but also through the international company CNN.
 Traditional media companies more and more harvest social networking sites for authentic coverage of events.
-For Utøya, this is documented, e.g., in the case of survivor Adrian Pracon (@AdrianPracon on Twitter) in a tweet from Sky News producer @fimackiesky\footnote{Sky News contact Utøya survivor \url{https://twitter.com/\#!/AdrianPracon/status/94573763500326912}}.
-While Facebook has terminated terrorist Anders Behring Breivik's profile, the Internet already has conserved a copy\footnote{Copy of the terrorist's Facebook profile \scriptsize\texttt{http://} \texttt{publicintelligence.net/mirror-of-utøya-gunman-anders} \texttt{-behring-breiviks-facebook-page-and-photo-gallery/}}. 
+For Utøya, this is documented, e.g., in the case of survivor Adrian Pracon (@AdrianPracon on Twitter) in a tweet from Sky News producer @fimackiesky\footnote{Sky News contact Utøya survivor: \url{https://twitter.com/\#!/AdrianPracon/status/94573763500326912}}.
+While Facebook has terminated terrorist Anders Behring Breivik's profile, the Internet already has conserved a copy\footnote{Copy of the terrorist's Facebook profile: \scriptsize\texttt{http://} \texttt{publicintelligence.net/mirror-of-utøya-gunman-anders} \texttt{-behring-breiviks-facebook-page-and-photo-gallery/}}. 
 
 \textbf{Revealed insight:}
 traditional news media still play the most important role in informing people, albeit the news item itself is shared via social networks. 
@@ -667,7 +667,7 @@ comparing reader geolocations to distinguish geographic centers of interest can 
 \end{table*}
 
 \subsubsection{Brand Popularity on City Level on Facebook}
-Celcom Axiata Berhad, DBA Celcom, is the oldest mobile telecommunications company in Malaysia\footnote{Celcom \url{http://en.wikipedia.org/wiki/Celcom}}.
+Celcom Axiata Berhad, DBA Celcom, is the oldest mobile telecommunications company in Malaysia\footnote{Celcom: \url{http://en.wikipedia.org/wiki/Celcom}}.
 We show the brand's popularity based on named entity occurrences pivoted by cities of readers interested in micropost mentioning the company.
 \autoref{tab:celcom} shows the top-5 cities where people read about Celcom.
 This allows for targeted brand awareness campaigns in cities where the brand has a low popularity, potentially based on additional sentiment analysis.
@@ -687,7 +687,7 @@ City level analyses allow for fine-grained details on, e.g., brand popularity ov
 \end{table*}
 
 \subsubsection{LOLcats vs. LOLdogs on Facebook}
-One of the more popular Internet phenomena is the sharing of cute cat and dog photos\footnote{LOLcats and LOLdogs \url{http://en.wikipedia.org/wiki/LOLcat}}.
+One of the more popular Internet phenomena is the sharing of cute cat and dog photos\footnote{LOLcats: \url{http://en.wikipedia.org/wiki/LOLcat}}.
 On November 23, the well-known link shortening service bitly published term popularity-based statistics to test the hypothesis that ``kittens really rule the Internet''~\cite{kittens}.
 According to their results, dogs clearly outperform cats among all \emph{produced} links on microposts.
 With our approach, we were able to confront bitly's results with the \emph{consumed} microposts around cats and dogs on Facebook.
@@ -825,6 +825,96 @@ We would like to thank Shaun Roach from AlchemyAPI, Andraž Tori from Zemanta, P
 T. Steiner is partially supported by the European Commission under Grant No. 248296 FP7 I-SEARCH project.
 J. Gabarr\'o is partially supported by TIN-2007-66523 (FORMALISM), and SGR 2009-2015 (ALBCOM).
 The research activities as described in this paper were funded by Ghent University, the Interdisciplinary Institute for Broadband Technology (IBBT), the Institute for the Promotion of Innovation by Science and Technology in Flanders (IWT), the Fund for Scientific Research Flanders (FWO Flanders), and the European Union.
+
+\section*{Responses to \#MSM2011 Reviewer Comments}
+In this Section, we address reviewer comments from the \#MSM2011 paper that the current paper is partly based upon. The comments were slightly edited in order to read fluently, as the original context of the entire review is missing.
+
+\subsection*{META-REVIEW}
+\textit{While the introduction states the aims of the paper, the actual presentation wavers between describing the application and analyzing the results. Unfortunately this prevents a sufficiently deep analysis/description of either.}
+
+We have focused on describing and interpreting the results, and only present the basics of the application.
+
+\textit{The comparison with existing work appears to be limited.}
+
+We have separated related work in different fields, and treat each field in detail.
+
+\textit{The authors say they tackle their lack of NLP expertise by using multiple NLP services. Did they consider getting the opinion of an NLP expert on the most optimal approach to take?}
+
+We did indeed consult some of the vendors of the named entity disambiguation services we use and got valuable feedback on how to tweak the parameters for optimal results.
+
+\textit{Considering an attempt to mask the means for collecting statistics from end users of the application could lead to claims of violating ethics. Additional options are to consider not collecting or masking user identities -- another approach that could increase uptake.}
+
+We fully agree that privacy issues exist. We address them by stating openly in the descriptions of the extensions what data is collected. In the longterm we fully believe in the outlined disclosed approach of micropost audience measurement. We needed to collect user identities in order to count the absolute distinct number of users. We should indeed have masked the identities by means of an anonymous unique identifier, however, could not change the running system in order not to falsify the already existing collected data. 
+
+\subsection*{REVIEW 1}
+\textit{The problem is a very interesting one, and the methodology is reasonable. However, the evaluation is insufficient and it is not clear what potential benefits this approach may bring.}
+
+We have evaluated the data on an abstract high level in the first part, and provide a concrete low level application of the approach to practical questions in the second part. We have outlined the \emph{revealed insights} explicitly under each practical question and discuss the main consequences of the paradigm shift of focusing on the reader side.
+
+\textit{The data collected for experiment is small. As the authors mention, it is too small to be statistically significant. Therefore, it is difficult to determine whether the findings are useful or to what extent.}
+
+We acknowledge this issue, however, for the current version of the paper have collected six months worth of data, so that the presented results are more representative. We see our approach not as a replacement of traditional social media mining, but as a completion. We hope to establish micropost audience measurement similar to television viewership measurement.
+
+\textit{The authors argue that ``the potential for this data to reveal new insights is promising'' -- it is unclear what this ``new insight'' is. If it refers to the potential interesting topics as reflected by statistics, compared to state-of-the-art, what is the different bits that this method brings?}
+
+We have highlighted new insights explicitly in form of \emph{revealed insights} and dedicated a Section to the discussion of the consequences our approach brings along in contrast to state-of-the-art tradition social media mining techniques. We suggest a concrete comparison of results to concrete questions retrieved through traditional social media mining with results retrieved through our approach in future work.
+
+\textit{The authors argue that the key novelty of this paper is uncovering the Twitter consumers' perspective, however, it is not sufficiently justified.}
+
+In the current version of the paper, we have provided a collection of concrete questions that we answer with our approach and highlight \emph{revealed insights} explicitly. 
+
+\textit{How does this compare to analysis based on producers' perspective? Can you see interesting but different patterns in the data? How does named entity frequencies make a difference from term/hashtag frequencies?} 
+
+We have worked out the consequences of our approach in comparison to traditional social media mining approaches. With regards to data patterns, we have compared two social networks with interesting different results and presented those in detail. Named entity frequencies alone do not help much, we aim for \emph{disambiguated} named entity frequencies, which, e.g., for concepts with multiple names, like the concepts of God in Islam or Christianity, facilitate the tracking process. Problems are recall, precision, and non-English and non-FIGS\footnote{FIGS: French, Italian, German, Spanish} languages. Recall and precision are, e.g., tackled in~\cite{nerd} and not focus of this paper. The language issues are shared with traditional approaches. Solutions are either automatic translation to English, or, and this is our approach, the combination of as many as possible named entity disambiguation APIs and manual post-processing of the results. 
+
+\subsection*{REVIEW 2}
+
+\textit{The proposed approach induces an important privacy issue. The Chrome plugin created by the authors collects parts of users' browsing history and sends them to Google Analytics. The important question is if the users (and how many of them) would really be comfortable with sending their data to Google Analytics. The authors should clearly state to what degree this approach exposes the users privacy to third parties (i.e., Google) more than a standard Google Analytics tracker embedded in a webpage.}
+
+We fully recognize and address the privacy issue by an open description of the collected data, and, more importantly, propose a disclosed approach of micropost audience measurement, similar to television viewership measurement. At no point in time did the browser extensions hide the fact that data is collected, and what data concretely that is.
+
+\textit{It is not fully politically correct to suggest trying to be less loud about using Google Analytics might be a good strategy to get users to install he tool. Instead, it would be more honest to explain that GA is used also by Twitter and make it clear if there is any difference in terms of privacy from the use of GA that you make.}
+
+We have removed the referred to part of the paper and recognize that the suggested approach was wrong. We want to highlight, however, that we were at all times fully transparent with the collected data. In contrary, we suggest officially disclosed micropost audience measurement.
+
+\textit{Who were the users who participated in the evaluation, and in which way this user sample is representative for the population; what characteristics of the users make them a good choice?}
+
+We have dedicated one Section to user demographics and share our statistics openly\footnote{Complete statistics: \url{https://github.com/tomayac/swj- microposts/tree/master/stats}}. 
+
+\textit{How is the consumption of tweets influenced by retweets?}
+
+This is not the focus of the paper. We propose a network-agnostic approach that we test on the currently two most popular social networks Facebook and Twitter.
+
+\textit{A potential source of bias is that the study takes into account only the tweet views coming from Twitter.com, however, people consume tweets through many applications, mobile devices, etc. The authors should present statistics on the percentage of tweet views that come though Twitter.com, and justify why their use of this particular medium still makes their results relevant.}
+
+We present independent statistics for both networks, with the result that on both networks the particular social network site itself receives the most traffic.
+
+\textit{The large parts describing the technical design of the plugin are simply unnecessary.}
+
+We have limited ourselves to the necessary minimum in the current version.
+
+\textit{If the focus was on the plugin itself, then the authors should have justified why the plugin is useful, and what are potential use cases, and motivations for the user to install it.}
+
+The focus was clarified and interest has shifted to a comparison of the topics people read about and where on the two major social networks Facebook and Twitter. 
+
+\textit{Potentially interesting questions to attack in future work: (i) relationship between retweets and views, (ii) relationship between the time of the tweet appearance and the views that the tweet gets (combine that with location and timezone as well)}
+
+Regarding (i), retweet vs. view relations are not focus of the paper. For (ii), we do not measure the number of views a tweet gets (albeit we could technically), however, focus on disambiguated named entities in microposts in general. User location and micropost consumption are indeed an interesting topic, however, also not topic of the paper.
+
+\subsection*{REVIEW 3}
+\textit{It would be interesting to analyze with more details the use cases of this tool even if the reader can imagine many applications.}
+
+We have started with a general high level presentation of use cases and results, and address concrete questions and \emph{revealed insights} explicitly. 
+
+\textit{The main problem with the paper is the weakness of the collected dataset (the consumers have to install this extension and agree to expose their Twitter activities to Google).}
+
+We recognize the dataset issue, however, for the current version of the paper, have collected six months worth of user data and propose officially disclosed micropost audience measurement where people can participate. The extensions do not ``expose Twitter activities to Google'', but named entities extracted from microposts. Twitter themselves use Google Analytics, independent from our extension.
+
+\subsection*{REVIEW 4}
+\textit{As there is a product called Google Goggles, the title usage of the word Goggles may need to be revised.}
+
+We have removed the referred to term from the title.
+
 
 %%%%%%%%%%% The bibliography starts:
 \bibliographystyle{abbrv}
