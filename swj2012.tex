@@ -52,6 +52,9 @@
         xleftmargin=2mm,
         captionpos=b
 }
+\usepackage{caption}
+\DeclareCaptionFormat{listing}{\footnotesize#1#2#3}
+\captionsetup[lstlisting]{format=listing}
 
 % todo macro
 \usepackage{color}
