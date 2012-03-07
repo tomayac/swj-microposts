@@ -183,7 +183,7 @@ While at the World Wide Web Conference 2011 (WWW2011) alone, three Twitter paper
     \subfloat[][Facebook covers the majority of people in several countries~\cite{comScoreFacebook}.]{
       \includegraphics[width=0.458\textwidth, trim=18px 40px 10px 24px, clip]{./resources/facebookglobalmarkets.jpg}
       \label{fig:facebookglobalmarkets}}
-\caption{Global markets reach by percent of the complete online population.}
+\caption{A~significant percentage of the online population participates in social networks.}
 \label{fig:globalmarkets}
 \end{figure*}
 
@@ -247,14 +247,14 @@ The extensions were released for the Google Chrome browser, the Web Analytics so
 
 \begin{figure*}
   \centering
-    \subfloat[][Twitter Swarm NLP.]{
+    \subfloat[][Twitter Swarm NLP]{
       \includegraphics[width=0.47\textwidth,trim=255px 50px 45px 60px,clip]{./resources/twitterswarmnlp.jpg}
       \label{fig:twitterswarmnlp}}
     \qquad
-    \subfloat[][Facebook Swarm NLP.]{
+    \subfloat[][Facebook Swarm NLP]{
       \includegraphics[width=0.45\textwidth,trim=165px 50px 70px 60px,clip]{./resources/facebookswarmnlp.jpg}
       \label{fig:facebookswarmnlp}}
-\caption{The two browser extensions in action, showing named entity extraction.}
+\caption{The two browser extensions in action, displaying the in-page named entity extraction.}
 \label{fig:screenshots}
 \end{figure*}
 
@@ -283,7 +283,7 @@ While  in the concrete example ``LaTeX'' and ``blues'' were both correctly extra
 whereas ``BibTeX'' was correctly extracted and disambiguated (\url{http://dbpedia.org/resource/BibTeX}) by two APIs at the same time (both DBpedia Spotlight and Zemanta).
 Hence, the confidence is higher in the latter case.
 
-\begin{lstlisting}[caption=Named entity disambiguation wrapper API output in JSON format for an exemplary micropost.,label={lst:nlpjson}]
+\begin{lstlisting}[caption={Example JSON output of the named entity disambiguation wrapper, showing different entities and sources.},label={lst:nlpjson}]
 [
     {
         "name": "LaTeX",
@@ -400,7 +400,7 @@ The complete statistics can be found \mbox{online}\footnote{Complete statistics:
     \hline
   \end{tabular}
   \label{tab:facebooklocations}}
-  \tablecaption{Top-10 locations of users of the two browser extensions (May~1 -- November~12).}
+  \tablecaption{An analysis of the top-10 locations of the browser extensions' users exposes a~varied geographical pattern.}
   \label{tbl:locations}
 \end{table*}
 
@@ -409,14 +409,14 @@ If we put these figures in contrast to the \emph{seven~day~active users} statist
 
 \begin{figure*}
   \centering
-    \subfloat[][Twitter Swarm NLP.]{
+    \subfloat[][Twitter Swarm NLP]{
       \includegraphics[width=0.47\textwidth, trim=3px 2px 3px 20px, clip]{./resources/twitterswarmnlpstats.png}
       \label{fig:twitterswarmnlpstats}}
     \quad
-    \subfloat[][Facebook Swarm NLP.]{
+    \subfloat[][Facebook Swarm NLP]{
       \includegraphics[width=0.47\textwidth, trim=3px 2px 3px 20px, clip]{./resources/facebookswarmnlpstats.png}
       \label{fig:facebookswarmnlpstats}}
-\caption{\textit{Seven~day~active users} development for the two browser extensions (May~1 -- November~6).}
+\caption{The seven~day~active user count for both extensions follows a~stable or slowly increasing trend.}
 \label{fig:swarmnlpstats}
 \end{figure*}
 
@@ -470,7 +470,7 @@ Currently we have limited ourselves to one browser platform, however, the approa
 	54,331 & 316,910 	& 136,196 & 43.0\% & 01:06:07 \\ 
     \hline
   \end{tabular}
-  \tablecaption{Raw statistics on absolute, total and unique number of occurrences of named entities (May~1 -- November~12).}
+  \tablecaption{Twitter users relatively consume more distinct entities than Facebook users do.\\* However, Facebook sessions take generally longer, which may account for this difference.}
   \label{tbl:raw}
 \end{table*}
 
@@ -489,7 +489,7 @@ Visually, the curves are very similar with five named entities occurring many ti
     \subfloat[][Facebook Swarm NLP.]{
       \includegraphics[width=\textwidth, trim=4px 4px 4px 4px, clip]{./resources/facebooktopentities.png}
       \label{fig:facebooktopentities}}
-\caption{Top entities as reported by browser extension users (May~1 -- November~12).}
+\caption{The top entities reported by both browser extensions follow a~Zipf distribution with a~high peak and a~long tail.}
 \label{fig:topentities}
 \end{figure*}
 
@@ -498,14 +498,14 @@ Interesting to note is the top named entity on each social network, which is the
 
 \begin{figure*}
   \centering
-    \subfloat[][Twitter Swarm NLP.]{
+    \subfloat[][Twitter users tend to consume technical stories.]{
       \includegraphics[width=0.45\textwidth, trim=2px 10px 2px 2px, clip]{./resources/twittertop10.png}
       \label{fig:twittertop10}}
     \qquad
-    \subfloat[][Facebook Swarm NLP.]{
+    \subfloat[][Facebook users tend to consume personal stories.]{
       \includegraphics[width=0.45\textwidth, trim=2px 10px 2px 2px, clip]{./resources/facebooktop10.png}
       \label{fig:facebooktop10}}
-\caption{Top-10 entities as reported by browser extension users (May~1 -- November~12).}
+\caption{The top-10 consumed entities for both networks clearly show a~subject bias.}
 \label{fig:top10}
 \end{figure*}
 
@@ -537,24 +537,24 @@ Second comes the \texttt{umbel} namespace, which is shown in \autoref{fig:umbel}
 
 \begin{figure*}
   \centering
-    \subfloat[][Twitter.]{
+    \subfloat[][Twitter]{
       \includegraphics[height=3.6cm, width=0.45\textwidth, trim=2px 2px 2px 2px, clip]{./resources/twittertypes.png}
       \label{fig:twittertypes}}
     \qquad
-    \subfloat[][Facebook.]{
+    \subfloat[][Facebook]{
       \includegraphics[height=3.6cm, width=0.45\textwidth, trim=2px 2px 2px 2px, clip]{./resources/facebooktypes.png}
       \label{fig:facebooktypes}}
-\caption{Type statistics unfiltered (May~1 -- November~12).}
+\caption{The unfiltered six-month type statistics clearly show a Zipf distribution, wherein many types have few occurrences.}
 \label{fig:unfiltered}
 \end{figure*}
 
 \begin{figure*}
   \centering
-    \subfloat[][Twitter.]{
+    \subfloat[][Twitter]{
       \includegraphics[width=0.49\textwidth, trim=10px 5px 5px 5px, clip]{./resources/twitterdbo.png}
       \label{fig:twitterdbo}}
     \quad
-    \subfloat[][Facebook.]{
+    \subfloat[][Facebook]{
       \includegraphics[width=0.423\textwidth, trim=10px 5px 5px 5px, clip]{./resources/facebookdbo.png}
       \label{fig:facebookdbo}}
 \caption{Type statistics filtered by \url{http://dbpedia.org/ontology/} (May~1 -- November~12).}
@@ -563,11 +563,11 @@ Second comes the \texttt{umbel} namespace, which is shown in \autoref{fig:umbel}
 
 \begin{figure*}
   \centering
-    \subfloat[][Twitter.]{
+    \subfloat[][Twitter]{
       \includegraphics[width=0.49\textwidth, trim=10px 5px 5px 5px, clip]{./resources/twitterumbel.png}
       \label{fig:twitterumbel}}
     \qquad
-    \subfloat[][Facebook.]{
+    \subfloat[][Facebook]{
       \includegraphics[width=0.423\textwidth, trim=10px 5px 5px 5px, clip]{./resources/facebookumbel.png}
       \label{fig:facebookumbel}}
 \caption{Type statistics filtered by \url{http://umbel.org/umbel/rc/} (May~1 -- November~12).}
@@ -576,11 +576,11 @@ Second comes the \texttt{umbel} namespace, which is shown in \autoref{fig:umbel}
 
 \begin{figure*}
   \centering
-    \subfloat[][Twitter.]{
+    \subfloat[][Twitter]{
       \includegraphics[width=0.423\textwidth, trim=10px 5px 5px 5px, clip]{./resources/twitterschema.png}
       \label{fig:twitterschema}}
     \qquad
-    \subfloat[][Facebook.]{
+    \subfloat[][Facebook]{
       \includegraphics[width=0.423\textwidth, trim=10px 5px 5px 5px, clip]{./resources/facebookschema.png}
       \label{fig:facebookschema}}
 \caption{Type statistics filtered by \url{http://schema.org/} (May~1 -- November~12).}
@@ -624,7 +624,7 @@ traditional news media still play the most important role in informing people, a
 	db:Jens\_Stoltenberg & 16\\
     \hline
   \end{tabular}
-  \tablecaption{Reader perception on Facebook of the 2011 Norway attacks (July~22).}
+  \tablecaption{The above entities where the most present in user's perception on the 2011 Norway attacks (July~22).}
   \label{tab:norway}  
 \end{table}
 
@@ -645,7 +645,7 @@ comparing reader geolocations to distinguish geographic centers of interest can 
 
 \begin{table*}
   \centering
-  \subfloat[][Twitter.]{
+  \subfloat[][Twitter]{
     \begin{tabular}{ | l | l | l | l | l | l | l |}
     \hline
     & \textbf{Total} & \textbf{Northern Africa} & \textbf{Southern Europe} & \textbf{Northern Europe} & \textbf{Northern America} & \textbf{Australia and New Zealand}\\ \hline
@@ -656,7 +656,7 @@ comparing reader geolocations to distinguish geographic centers of interest can 
     \end{tabular}
   \label{tab:twitterarabspring}}  
   \qquad
-  \subfloat[][Facebook.]{
+  \subfloat[][Facebook]{
     \begin{tabular}{ | l | l | l | l | l | l | l |}
     \hline
 	 & \textbf{Total} & \textbf{Western Europe} & \textbf{Northern Africa} & \textbf{Australia and New Zealand} & \textbf{Northern Europe} & \textbf{South-Eastern Asia}\\ \hline
@@ -768,7 +768,7 @@ For obvious reasons, there is no API from either of the networks for read microp
 \begin{figure}
 \centering
 \includegraphics[width=0.6\linewidth]{./resources/vennreadunread.png}
-\caption{Only a subset (of unknown size) of all microposts that get authored also ever get read. In turn, we can track a small subset of all read microposts with our extensions.}
+\caption{Only a subset (of unknown size) of all microposts that get authored also ever get read. In turn, we can track only a small subset of all read microposts with our extensions.}
 \label{fig:vennreadunread}
 \end{figure}
 
