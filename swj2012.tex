@@ -530,7 +530,8 @@ With regards to reader interest, there is a tendency towards reading about the U
 
 \subsection{Segmentation by RDF Type}
 One of the advantages of using DBpedia URIs to represent named entities in an unambiguous way is that the Linked~Data knowledge from DBpedia can be leveraged.
-Therefore, we have retrieved the RDF type (\texttt{rdf:type}) information for the top-500 named entities for both networks.
+Therefore, we have retrieved the RDF type (\texttt{rdf:type}) information for the top-500 named entities for both networks,
+after a~manual cleaning operation.
 Unlike the main DBpedia OWL type (\texttt{dbpedia-owl:type}), the \texttt{rdf:type} can have multiple values, for example a company can be both a company, and an organization.
 Type specifications can come from different namespaces, like \texttt{dbpedia-owl} (\url{http://dbpedia.org/ontology/}), \texttt{yago} (\url{http://dbpedia.org/class/yago/}), or \texttt{umbel} (\url{http://umbel.org/umbel/rc/}).
 
