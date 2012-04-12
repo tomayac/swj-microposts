@@ -94,19 +94,20 @@
 % Two or more authors:
 \author[A]{\fnms{Thomas} \snm{Steiner}},
 \author[B]{\fnms{Ruben} \snm{Verborgh}},
-\author[A]{\fnms{Arnaud} \snm{Brousseau}\thanks{A. Brousseau was an intern at Google Germany GmbH at the time of writing.}},
 \author[C]{\fnms{Raphaël} \snm{Troncy}},
+\author[C]{\fnms{Giuseppe} \snm{Rizzo}},
 \author[B]{\fnms{Rik} \snm{Van de Walle}},
-\author[D]{\fnms{Joaquim} \snm{Gabarró Vallés}}
+\author[D]{\fnms{Joaquim} \snm{Gabarro}},
+\author[A]{\fnms{Arnaud} \snm{Brousseau}\thanks{A. Brousseau was an intern at Google Germany GmbH at the time of writing.}}
 
-\runningauthor{T. Steiner, R. Verborgh, A. Brousseau, R. Troncy, \textit{et al.}}
+\runningauthor{T. Steiner, R. Verborgh, R. Troncy, G. Rizzo \textit{et al.}}
 
 \address[A]{Google Germany GmbH, ABC-Str. 19, 20354 Hamburg, Germany,\\
 E-mail: tomac@google.com, arnaud.brousseau@gmail.com}
 \address[B]{Ghent University -- IBBT, ELIS, Multimedia Lab, Gaston Crommenlaan 8/201, 9050 Ghent, Belgium,\\
 E-mail: ruben.verborgh@ugent.be, rik.vandewalle@ugent.be}
 \address[C]{EURECOM, Sophia Antipolis, France\\
-E-mail: raphael.troncy@eurecom.fr}
+E-mail: raphael.troncy@eurecom.fr, giuseppe.rizzo@eurecom.fr}
 \address[D]{Universitat Polit\`{e}cnica de Catalunya, Department LSI, 08034 Barcelona, Spain,\\
 E-mail: gabarro@lsi.upc.edu}
 
@@ -679,12 +680,24 @@ the importance of differences between producer and consumer sides becomes eviden
 \section{Related Work} \label{sec:relatedwork}
 We report on related work separated into different areas of research:
 \begin{itemize}
-\item \emph{semantic annotation of microposts}, which focuses on named entity detection and disambiguation;
+\item \emph{named entities}, which focuses on named entity detection and disambiguation;
+\item \emph{semantic annotation of microposts}, which focuses on named entity detection and disambiguation specifically in microposts;
 \item \emph{trend or popularity detection}, which is based on term frequencies;
 \item \emph{commercialization of social data}, which aims at monetization of gathered insights.
 \end{itemize}
 The presented examples are not to be seen as \emph{the} standard selection of relevant work, but rather as representative overview on a plethora of very similar publications and services.
 In addition to that, we also provide a \emph{comparison of our work to micropost author-focused approaches}.
+
+% TS: BEGIN: this section stolen from the WWW2012 NERD paper
+The Named Entity (NE) recognition and disambiguation task has been addressed in different research communities such as NLP, Web mining and also part of the Semantic Web community. All of them agree on the definition of a Named Entity, which was coined by Grishman \emph{et al.} as an information unit described by the name of a person or an organization, a location, a brand, a product, a numeric expression including time, date, money and percent found in a sentence~\cite{Grishman:COLING96}. One of the first research papers in the NLP field, aiming at automatically identifying named entities in texts, was proposed by Rau~\cite{Rau:CAIP91}. This work relies on heuristics and definition of patterns to recognize company names in texts. The training set is defined by the set of heuristics chosen. Rau's work evolved and was improved later on by Sekine \emph{et al.}~\cite{Sekine:LREC04}. A different approach was introduced when Supervised Learning (SL) techniques were used. The big disruptive change was the use of a large manually labeled datasets. In the SL field, a human being usually trains positive and negative examples to obtain algorithmic classification patterns. SL techniques
+exploit Hidden Markov Models (HMM)~\cite{bikel1997}, Decision Trees~\cite{sekine1998}, Maximum Entropy Models~\cite{borthwick1998}, Support Vector Machines (SVM)~\cite{asahara2003}, and Conditional Random Fields (CRF)~\cite{mccallum2003}. The common goal of these approaches is to recognize relevant key-phrases and to classify them in a fixed taxonomy. The challenges with SL approaches is the unavailability of such labeled resources and the prohibitive cost of creating examples. Semi-Supervised Learning (SSL) and Unsupervised Learning (UL) approaches attempt to solve this problem by either providing a small initial set of labeled data to train and seed the system~\cite{heng2006}, or by resolving the extraction problem as a clustering one. For instance, a user can try to gather named entities from clustered groups based on the similarity of context. Other unsupervised methods may rely on lexical resources (e.g. WordNet), lexical patterns and statistics computed on large annotated corpus~\cite{alfonseca2002}.
+
+The NER task is strongly dependent on the knowledge base used to train the NE extraction algorithm. Leveraging on the use of DBpedia, Freebase and YAGO, recent methods, coming from Semantic Web community, have been introduced to map entities to relational facts exploiting these fine-grained ontologies. In addition to detect a NE and its type, efforts have been spent to develop methods for disambiguating information unit with a URI. Disambiguation is one of the key challenges in this scenario and its foundation stands on the fact that terms taken in isolation are naturally ambiguous. Hence, a text containing the term \texttt{London} may refer to the city \texttt{London in UK} or to the city \texttt{London in Minnesota, USA}, depending on the surrounding context. Similarly, people, organizations and companies can have multiple names and nicknames. These methods generally try to find in the surrounding text some clues for contextualizing the ambiguous term and refine its intended meaning. Therefore, a NE extraction workflow consists in analyzing some input content for detecting named entities, assigning them a type weighted by a confidence score and by providing a list of URIs for disambiguation. Initially, the Web mining community has harnessed Wikipedia as the linking hub where entities were mapped~\cite{kulkarni2009,hoffart2011}. A natural evolution of this approach, mainly driven by the Semantic Web community, consists in disambiguating named entities with data from the LOD cloud. In~\cite{mendes2011}, the authors proposed an approach to avoid named entity ambiguity using the DBpedia dataset.
+
+Interlinking text resources with the Linked Open Data cloud becomes an important research question and it has been addressed by several services, such as AlchemyAPI, DBpedia Spotlight, Evri, Extractiv, OpenCalais, Yahoo! Term Extraction and Zemanta, which have opened their knowledge to online computation. Although these services expose a comparable output, they have their own strengths and weaknesses but, to the best of our knowledge, few research comparisons have been spent to evaluate them. The creators of the DBpedia Spotlight service have compared their service with a number of other NER extractors (OpenCalais, Zemanta, Ontos Semantic API\footnote{\url{http://www.ontos.com}}, The Wiki Machine\footnote{\url{http://thewikimachine.fbk.eu/}}, AlchemyAPI and M\&W's wikifier~\cite{milne2008}) according to an annotation task scenario. The experiment consisted in evaluating 35 paragraphs from 10 news articles in 8 categories selected from the \textit{The New York Times} and has been performed by 4 human raters. The final goal was to create wiki links and to provide a disambiguation benchmark (partially, re-used in this work). The experiment showed how DBpedia Spotlight overcomes the performance of other services under evaluation, but its performances are strongly affected by the configuration parameters. Authors underlined the importance to perform several set-up experiments and to figure out the best configuration set for the specific disambiguation task. Moreover, they did not take into account the precision of the NE and type.
+
+In~\cite{rizzo2011wekex}, we proposed a first comparison attempt, highlighting the precision score for each extracted field from 10 news articles coming from 2 different sources, \textit{The New York Times} and \textit{BBC}\footnote{\url{http://www.bbc.com}} and 5 different categories: business, health, science, sport, world. Due to the news articles length, we faced a very low Fleiss's kappa agreement score: many output records to evaluate affected the human rater ability to select the correct answer. Indeed, to avoid this problem, Mendes \emph{et al.} proposed a dataset composed of pieces of news articles (paragraphs). Although this approach biases the extraction results for the One Entity per Document extractor, we consider it a valid approximation for the evaluation agreement. 
+% TS: END: this section stolen from the WWW2012 NERD paper
 
 \subsection{Semantic Annotation of Microposts}
 Passant \textit{et al.} introduced a Semantic MicroBlogging (\textit{sic}) framework (SMOB,~\cite{Passant2008}) that enables a \textit{distributed, open, and semantic} microblogging experience based on Semantic Web and Linked~Data technologies by annotating microposts with common vocabularies such as FOAF or SIOC.
