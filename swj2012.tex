@@ -602,7 +602,11 @@ While Facebook has terminated terrorist Anders Behring Breivik's profile, the In
 \textbf{Revealed insight:}
 traditional news media still play the most important role in informing people, albeit the news item itself is shared via social networks. 
 
-\textbf{Traditional approach:} using the traditional approach of social media mining, there is no such option as limiting one's analysis to just people who physically were in Norway at the moment of the attacks. In contrast, one would filter by people that have geotagged their microposts with Norwegian locations (sparse), or that have a Norwegian location in the user profile (error-prone). Using our approach, we can also retrieve data from people who just happened to have been in Norway at time of the attacks and that have not geotagged their microposts (more versatile). Additionally, with our approach, only microposts that ever appeared on real users' timelines get analyzed, \emph{i.e.}, only microposts that besides being authored also have found an audience. 
+\textbf{Traditional approach:} using the traditional approach of social media mining,
+it is impossible to limit the analysis to people who physically were in Norway at the moment of the attacks.
+In contrast, one would filter by people that have geotagged their microposts with Norwegian locations (sparse), or that have a Norwegian location in the user profile (error-prone).
+Using our approach, we can also retrieve data from people who just happened to have been in Norway at time of the attacks and that have not geotagged their microposts (more versatile).
+Additionally, with our approach, only microposts that ever appeared on real users' timelines get analyzed, \emph{i.e.}, only microposts that besides being authored also have found an audience. 
 
 \begin{table}
     \begin{tabular}{ | l | l |}
@@ -636,7 +640,11 @@ Both social networks play an important role for the organization of the protests
 \textbf{Revealed insight:}
 comparing reader geolocations to distinguish geographic centers of interest can be especially useful to detect local social networking preferences.
 
-\textbf{Traditional approach:} using the traditional approach of social media mining, there is no such option as limiting one's analysis to just people who physically were in any of the Arab spring countries during that period of time. Alternatives would have been to limit to geotagged microposts, or to use user profile data, whereas our approach allows for tracking visitor data as well (for example, microposts from a foreign French journalist who has not geotagged their microposts and who has is French hometown in is user profile). Additionally, with our approach, only microposts that ever appeared on real users' timelines get analyzed, \emph{i.e.}, only microposts that besides being authored also have found an audience.  
+\textbf{Traditional approach:} using the traditional approach of social media mining, it is impossible to limit the analysis to people who physically were in any of the Arab spring countries during that period of time.
+Alternatives, such as only considering geotagged microposts or using user profile data, are insufficient:
+consider for instance a foreign journalist who does not geotag microposts and has his profile location set to his hometown.
+Additionally, with our approach, only microposts that ever appeared on real users' timelines get analyzed, \emph{i.e.}, only microposts that besides being authored also have found an audience.
+\todo{remove duplicate info}
 
 \begin{table*}
   \centering
@@ -674,7 +682,9 @@ This allows for targeted brand awareness campaigns in cities where the brand has
 \textbf{Revealed insight:}
 City level analyses allow for fine-grained details on, \emph{e.g.}, brand popularity over time.
 
-\textbf{Traditional approach:} a common occasion for mentioning one's telecommunications provider is to check whether only one's own connection is down, or also everyone else's (for example \url{https://twitter.com/#!/bigred712/status/194086376264843265}). Using traditional social media mining, spikes in authoring microposts can be detected, however, not the exact location of potentially affected consumers of such microposts. 
+\textbf{Traditional approach:} a common occasion for mentioning one's telecommunications provider is to check whether only one's own connection is down, or also everyone else's.
+Using traditional social media mining, spikes in authoring microposts can be detected.
+However, the location of consumers potentially affected by such microposts cannot be determined exactly. 
 
 \begin{table*}
     \begin{tabular}{ | l | l | l | l | l | l | l |}
@@ -697,7 +707,9 @@ With our approach, we were able to confront bitly's results with the \emph{consu
 \textbf{Revealed insight:}
 the importance of differences between producer and consumer sides becomes evident.
 
-\textbf{Traditional approach:} via traditional social media mining, exclusively the producer side of microposts can be examined. Using our approach, only microposts that ever appeared on real users' timelines get analyzed, \emph{i.e.}, only microposts that besides being authored also have found an audience, which limits the impact of spammers and/or trend riders. Such accounts typically produce seemingly popular content, however, only by adding trending terms to their spam messages. Traditional social media mining can be impacted by such microposts.
+\textbf{Traditional approach:} via traditional social media mining, exclusively the producer side of microposts can be examined.
+Using our approach, only microposts that ever appeared on real users' timelines get analyzed, limiting the impact of spammers' and/or trend riders' accounts.
+These accounts typically produce seemingly popular content, which in reality consists of spam messages disguised within trend words, impacting traditional social media mining.
 
 \begin{table}
     \begin{tabular}{ | l | l | l |}
