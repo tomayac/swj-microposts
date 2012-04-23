@@ -587,43 +587,6 @@ Applying a loose ontology mapping, the top-3 types on both social networks are P
 \label{subsec:RecentEvents}
 In this Subsection, we present some events from recent history and show how, using our approach, new insights or trends can be revealed. We explicitly highlight the revealed insights by our approach, and compare the limitations of the traditional producer-focused approach.
 
-\subsubsection{Facebook Reader Perception of the 2011 Norway Attacks}
-On July 22, a mass shooting took place on the island of Utøya in Norway, preceded by a car bomb explosion in Oslo\footnote{2011 Norway attacks: \url{http://en.wikipedia.org/wiki/2011_Norway_attacks}}.
-We start our analysis with a deep-dive into the most read about named entities in Norway on the day of the attacks and then manually filter the list for relevance to the event.
-\autoref{tab:norway} shows the resulting \mbox{top-6} ranking of named entities on July 22 on Facebook.
-The list is led by the two geographic entities of the city of ``Oslo'' and the country of ``Norway''.
-Ranks 3 to 5 are held by traditional news media: the popular newspaper ``Verdens Gang'', typically just referred to as VG, the Cable News Network ``CNN'', and the ``Norwegian Broadcasting Corporation'', known as NRK.
-The current Norwegian Prime Minister ``Jens Stoltenberg'' follows on rank 6.
-It is interesting to note how Norwegian readers got detailed information on the attacks through local media (VG and NRK), but also through the international company CNN.
-Traditional media companies more and more harvest social networking sites for authentic coverage of events.
-For Utøya, this is documented, \emph{e.g.}, in the case of survivor Adrian Pracon (@AdrianPracon on Twitter) in a tweet from Sky News producer @fimackiesky\footnote{Sky News contact Utøya survivor: \url{https://twitter.com/\#!/AdrianPracon/status/94573763500326912}}.
-While Facebook has terminated terrorist Anders Behring Breivik's profile, the Internet already has conserved a copy\footnote{Copy of the terrorist's Facebook profile: \scriptsize\texttt{http://} \texttt{publicintelligence.net/mirror-of-utøya-gunman-anders} \texttt{-behring-breiviks-facebook-page-and-photo-gallery/}}. 
-
-\textbf{Revealed insight:}
-traditional news media still play the most important role in informing people, albeit the news item itself is shared via social networks. 
-
-\textbf{Traditional approach:} using the traditional approach of social media mining,
-it is impossible to limit the analysis to people who physically were in Norway at the moment of the attacks.
-In contrast, one would filter by people that have geotagged their microposts with Norwegian locations (sparse), or that have a Norwegian location in the user profile (error-prone).
-Using our approach, we can also retrieve data from people who just happened to have been in Norway at time of the attacks and that have not geotagged their microposts (more versatile).
-Additionally, with our approach, only microposts that ever appeared on real users' timelines get analyzed, \emph{i.e.}, only microposts that besides being authored also have found an audience. 
-
-\begin{table}
-    \begin{tabular}{ | l | l |}
-    \hline
-	\textbf{Named Entity} & \textbf{Total (in Norway)}\\ \hline
-	db:Oslo & 75\\
-	db:Norway & 57\\
-	db:Verdens\_Gang & 42\\
-	db:CNN & 19\\
-	db:Norwegian\_Broadcasting\_Corporation & 18\\
-	db:Jens\_Stoltenberg & 16\\
-    \hline
-  \end{tabular}
-  \tablecaption{The above entities where the most present in user's perception on the 2011 Norway attacks (July~22).}
-  \label{tab:norway}  
-\end{table}
-
 \subsubsection{Comparison of Reader Geolocations for the Arab Spring}
 The Arab Spring is a revolutionary wave of demonstrations and protests occurring in the Arab world\footnote{Arab Spring: \url{http://en.wikipedia.org/wiki/Arab_Spring}}.
 We compared sub continent geolocations of readers of microposts mentioning the countries of Egypt, Libya, and Syria on both Facebook and Twitter.
@@ -644,7 +607,6 @@ comparing reader geolocations to distinguish geographic centers of interest can 
 Alternatives, such as only considering geotagged microposts or using user profile data, are insufficient:
 consider for instance a foreign journalist who does not geotag microposts and has his profile location set to his hometown.
 Additionally, with our approach, only microposts that ever appeared on real users' timelines get analyzed, \emph{i.e.}, only microposts that besides being authored also have found an audience.
-\todo{remove duplicate info}
 
 \begin{table*}
   \centering
@@ -672,6 +634,44 @@ Additionally, with our approach, only microposts that ever appeared on real user
     \tablecaption{Sub continent geolocations of reader interest of some of the Arab Spring key countries (May~1 -- November~12).}
   \label{tab:arabspring}
 \end{table*}
+
+\subsubsection{Facebook Reader Perception of the 2011 Norway Attacks}
+On July 22, a mass shooting took place on the island of Utøya in Norway, preceded by a car bomb explosion in Oslo\footnote{2011 Norway attacks: \url{http://en.wikipedia.org/wiki/2011_Norway_attacks}}.
+We start our analysis with a deep-dive into the most read about named entities in Norway on the day of the attacks and then manually filter the list for relevance to the event.
+\autoref{tab:norway} shows the resulting \mbox{top-6} ranking of named entities on July 22 on Facebook.
+The list is led by the two geographic entities of the city of ``Oslo'' and the country of ``Norway''.
+Ranks 3 to 5 are held by traditional news media: the popular newspaper ``Verdens Gang'', typically just referred to as VG, the Cable News Network ``CNN'', and the ``Norwegian Broadcasting Corporation'', known as NRK.
+The current Norwegian Prime Minister ``Jens Stoltenberg'' follows on rank 6.
+It is interesting to note how Norwegian readers got detailed information on the attacks through local media (VG and NRK), but also through the international company CNN.
+Traditional media companies more and more harvest social networking sites for authentic coverage of events.
+For Utøya, this is documented, \emph{e.g.}, in the case of survivor Adrian Pracon (@AdrianPracon on Twitter) in a tweet from Sky News producer @fimackiesky\footnote{Sky News contact Utøya survivor: \url{https://twitter.com/\#!/AdrianPracon/status/94573763500326912}}.
+While Facebook has terminated terrorist Anders Behring Breivik's profile, the Internet already has conserved a copy\footnote{Copy of the terrorist's Facebook profile: \scriptsize\texttt{http://} \texttt{publicintelligence.net/mirror-of-utøya-gunman-anders} \texttt{-behring-breiviks-facebook-page-and-photo-gallery/}}. 
+
+\textbf{Revealed insight:}
+traditional news media still play the most important role in informing people, albeit the news item itself is shared via social networks. 
+
+\textbf{Traditional approach:}
+analogously to the Arab Spring events,
+it is impossible to limit the analysis to people who were in Norway at the moment of the attacks.
+Since the fraction of people that geotag their micropost in Norway is sparse, and using profile location is error-prone,
+only the reader-focused approach allows to retrieve data from people were in Norway at time of the attacks.
+We can highlight the posts that affected most Norwegians, \emph{i.e.}, the microposts they have read most. 
+
+\begin{table}
+    \begin{tabular}{ | l | l |}
+    \hline
+	\textbf{Named Entity} & \textbf{Total (in Norway)}\\ \hline
+	db:Oslo & 75\\
+	db:Norway & 57\\
+	db:Verdens\_Gang & 42\\
+	db:CNN & 19\\
+	db:Norwegian\_Broadcasting\_Corporation & 18\\
+	db:Jens\_Stoltenberg & 16\\
+    \hline
+  \end{tabular}
+  \tablecaption{The above entities where the most present in user's perception on the 2011 Norway attacks (July~22).}
+  \label{tab:norway}  
+\end{table}
 
 \subsubsection{Brand Popularity on City Level on Facebook}
 Celcom Axiata Berhad, DBA Celcom, is the oldest mobile telecommunications company in Malaysia\footnote{Celcom: \url{http://en.wikipedia.org/wiki/Celcom}}.
