@@ -568,14 +568,41 @@ Type specifications can come from different namespaces, like \texttt{dbpedia-owl
 \begin{figure*}
   \centering
     \subfloat[][Twitter]{
-      \includegraphics[width=0.48\textwidth, trim=10px 5px 5px 5px, clip]{./resources/twitterschema.png}
+      \includegraphics[width=0.40\textwidth, trim=10px 5px 5px 5px, clip]{./resources/twitterschema.png}
       \label{fig:twitterschema}}
     \subfloat[][Facebook]{
-      \includegraphics[width=0.48\textwidth, trim=10px 5px 5px 5px, clip]{./resources/facebookschema.png}
+      \includegraphics[width=0.40\textwidth, trim=10px 5px 5px 5px, clip]{./resources/facebookschema.png}
       \label{fig:facebookschema}}
 \caption{The six-month entity type statistics also follow a~Zipf distribution, wherein a~few types have many occurrences, and many types have few occurrences. Displayed here are schema.org types, but the same observation can be made for all ontologies and their combinations.}
 \label{fig:schema}
 \end{figure*}
+
+\begin{table*}
+  \centering
+  \subfloat[][Twitter]{
+    \begin{tabular}{ | l | l | l | l | l | l | l |}
+    \hline
+    & \textbf{Total} & \textbf{Northern Africa} & \textbf{Southern Europe} & \textbf{Northern Europe} & \textbf{Northern America} & \textbf{Australia and New Zealand}\\ \hline
+    \textbf{db:Libya} & 104 & 1 & 38 & 33 & 16 & 9\\
+    \textbf{db:Egypt} & 86 & 47 & 22 & 0 & 5 & 10\\
+    \textbf{db:Syria} & 69 & 17 & 5 & 8 & 15 & 12\\
+    \hline
+    \end{tabular}
+  \label{tab:twitterarabspring}}  
+  \qquad
+  \subfloat[][Facebook]{
+    \begin{tabular}{ | l | l | l | l | l | l | l |}
+    \hline
+	 & \textbf{Total} & \textbf{Western Europe} & \textbf{Northern Africa} & \textbf{Australia and New Zealand} & \textbf{Northern Europe} & \textbf{South-Eastern Asia}\\ \hline
+	\textbf{db:Egypt} & 128 & 41 & 47 & 11 & 13 & 3\\
+	\textbf{db:Libya} & 68 & 20 & 20 & 12 & 0 & 5\\
+	\textbf{db:Syria} & 61 & 23 & 9 & 15 & 1 & 5\\
+    \hline
+  \end{tabular}
+  \label{tab:facebookarabspring}}
+    \tablecaption{Sub continent geolocations of reader interest of some of the Arab Spring key countries (May~1 -- November~12).}
+  \label{tab:arabspring}
+\end{table*}
 
 A recent addition is the \texttt{schema} namespace \url{http://schema.org/} around the common schema effort of the big search engines Google, Yahoo!, and Microsoft~\cite{schemaorg}.
 The difference lies in the granularity of the underlying ontologies.
@@ -607,33 +634,6 @@ comparing reader geolocations to distinguish geographic centers of interest can 
 Alternatives, such as only considering geotagged microposts or using user profile data, are insufficient:
 consider for instance a foreign journalist who does not geotag microposts and has his profile location set to his hometown.
 Additionally, with our approach, only microposts that ever appeared on real users' timelines get analyzed, \emph{i.e.}, only microposts that besides being authored also have found an audience.
-
-\begin{table*}
-  \centering
-  \subfloat[][Twitter]{
-    \begin{tabular}{ | l | l | l | l | l | l | l |}
-    \hline
-    & \textbf{Total} & \textbf{Northern Africa} & \textbf{Southern Europe} & \textbf{Northern Europe} & \textbf{Northern America} & \textbf{Australia and New Zealand}\\ \hline
-    \textbf{db:Libya} & 104 & 1 & 38 & 33 & 16 & 9\\
-    \textbf{db:Egypt} & 86 & 47 & 22 & 0 & 5 & 10\\
-    \textbf{db:Syria} & 69 & 17 & 5 & 8 & 15 & 12\\
-    \hline
-    \end{tabular}
-  \label{tab:twitterarabspring}}  
-  \qquad
-  \subfloat[][Facebook]{
-    \begin{tabular}{ | l | l | l | l | l | l | l |}
-    \hline
-	 & \textbf{Total} & \textbf{Western Europe} & \textbf{Northern Africa} & \textbf{Australia and New Zealand} & \textbf{Northern Europe} & \textbf{South-Eastern Asia}\\ \hline
-	\textbf{db:Egypt} & 128 & 41 & 47 & 11 & 13 & 3\\
-	\textbf{db:Libya} & 68 & 20 & 20 & 12 & 0 & 5\\
-	\textbf{db:Syria} & 61 & 23 & 9 & 15 & 1 & 5\\
-    \hline
-  \end{tabular}
-  \label{tab:facebookarabspring}}
-    \tablecaption{Sub continent geolocations of reader interest of some of the Arab Spring key countries (May~1 -- November~12).}
-  \label{tab:arabspring}
-\end{table*}
 
 \subsubsection{Facebook Reader Perception of the 2011 Norway Attacks}
 On July 22, a mass shooting took place on the island of Utøya in Norway, preceded by a car bomb explosion in Oslo\footnote{2011 Norway attacks: \url{http://en.wikipedia.org/wiki/2011_Norway_attacks}}.
@@ -686,16 +686,15 @@ City level analyses allow for fine-grained details on, \emph{e.g.}, brand popula
 Using traditional social media mining, spikes in authoring microposts can be detected.
 However, the location of consumers potentially affected by such microposts cannot be determined exactly. 
 
-\begin{table*}
-    \begin{tabular}{ | l | l | l | l | l | l | l |}
+\begin{table}
+    \begin{tabular}{ | l | l | l | l | l |}
     \hline
-	& \textbf{Total} & \textbf{Shah Alam} & \textbf{Kuching} & \textbf{Kuala Lumpur} & \textbf{Keningau} & \textbf{Kulim}\\ \hline
-\textbf{db:Celcom} & 173 & 47 & 34 & 18 & 16 & 16\\
+	\parbox[t]{.6cm}{\textbf{Shah Alam}} & \textbf{Kuching} & \parbox[t]{1cm}{\textbf{Kuala Lumpur}} & \textbf{Keningau} & \textbf{Kulim}\\ \hline 47 & 34 & 18 & 16 & 16\\
     \hline
   \end{tabular}
   \tablecaption{Popularity of the Celcom brand on city level (May~1 -- November~12).}
   \label{tab:celcom}  
-\end{table*}
+\end{table}
 
 \subsubsection{LOLcats vs. LOLdogs on Facebook}
 One of the more popular Internet phenomena is the sharing of cute cat and dog photos\footnote{LOLcats: \url{http://en.wikipedia.org/wiki/LOLcat}}.
