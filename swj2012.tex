@@ -585,7 +585,7 @@ Applying a loose ontology mapping, the top-3 types on both social networks are P
 
 \subsection{Events from Recent History}
 \label{subsec:RecentEvents}
-In this Subsection, we present some events from recent history and show how, using our approach, new insights or trends can be revealed.
+In this Subsection, we present some events from recent history and show how, using our approach, new insights or trends can be revealed. We explicitly highlight the revealed insights by our approach, and compare the limitations of the traditional producer-focused approach.
 
 \subsubsection{Facebook Reader Perception of the 2011 Norway Attacks}
 On July 22, a mass shooting took place on the island of Utøya in Norway, preceded by a car bomb explosion in Oslo\footnote{2011 Norway attacks: \url{http://en.wikipedia.org/wiki/2011_Norway_attacks}}.
@@ -601,6 +601,8 @@ While Facebook has terminated terrorist Anders Behring Breivik's profile, the In
 
 \textbf{Revealed insight:}
 traditional news media still play the most important role in informing people, albeit the news item itself is shared via social networks. 
+
+\textbf{Traditional approach:} using the traditional approach of social media mining, there is no such option as limiting one's analysis to just people who physically were in Norway at the moment of the attacks. In contrast, one would filter by people that have geotagged their microposts with Norwegian locations (sparse), or that have a Norwegian location in the user profile (error-prone). Using our approach, we can also retrieve data from people who just happened to have been in Norway at time of the attacks and that have not geotagged their microposts (more versatile). Additionally, with our approach, only microposts that ever appeared on real users' timelines get analyzed, \emph{i.e.}, only microposts that besides being authored also have found an audience. 
 
 \begin{table}
     \begin{tabular}{ | l | l |}
@@ -633,6 +635,8 @@ Both social networks play an important role for the organization of the protests
 
 \textbf{Revealed insight:}
 comparing reader geolocations to distinguish geographic centers of interest can be especially useful to detect local social networking preferences.
+
+\textbf{Traditional approach:} using the traditional approach of social media mining, there is no such option as limiting one's analysis to just people who physically were in any of the Arab spring countries during that period of time. Alternatives would have been to limit to geotagged microposts, or to use user profile data, whereas our approach allows for tracking visitor data as well (for example, microposts from a foreign French journalist who has not geotagged their microposts and who has is French hometown in is user profile). Additionally, with our approach, only microposts that ever appeared on real users' timelines get analyzed, \emph{i.e.}, only microposts that besides being authored also have found an audience.  
 
 \begin{table*}
   \centering
@@ -670,6 +674,8 @@ This allows for targeted brand awareness campaigns in cities where the brand has
 \textbf{Revealed insight:}
 City level analyses allow for fine-grained details on, \emph{e.g.}, brand popularity over time.
 
+\textbf{Traditional approach:} a common occasion for mentioning one's telecommunications provider is to check whether only one's own connection is down, or also everyone else's (for example \url{https://twitter.com/#!/bigred712/status/194086376264843265}). Using traditional social media mining, spikes in authoring microposts can be detected, however, not the exact location of potentially affected consumers of such microposts. 
+
 \begin{table*}
     \begin{tabular}{ | l | l | l | l | l | l | l |}
     \hline
@@ -690,6 +696,8 @@ With our approach, we were able to confront bitly's results with the \emph{consu
 
 \textbf{Revealed insight:}
 the importance of differences between producer and consumer sides becomes evident.
+
+\textbf{Traditional approach:} via traditional social media mining, exclusively the producer side of microposts can be examined. Using our approach, only microposts that ever appeared on real users' timelines get analyzed, \emph{i.e.}, only microposts that besides being authored also have found an audience, which limits the impact of spammers and/or trend riders. Such accounts typically produce seemingly popular content, however, only by adding trending terms to their spam messages. Traditional social media mining can be impacted by such microposts.
 
 \begin{table}
     \begin{tabular}{ | l | l | l |}
@@ -761,7 +769,11 @@ Twimpact uses machine learning-based ranking techniques that do not rely on simp
 \subsection{Comparison with Micropost Author-focused Approaches} \label{sec:comparison}
 With our focus on micropost readers rather than on micropost authors, we strive for a paradigm shift with important consequences.
 
-The first and most important consequence is the availability of only a limited set of micropost data, as illustrated by the Venn diagram in \autoref{fig:vennreadunread}.
+The first and most important consequence is the paradigm shift itself.
+With our approach, only microposts that ever appeared on real users' timelines get analyzed, \emph{i.e.}, only microposts that besides being authored also have found an audience.
+Where the traditional social media mining approach in the lack of geotagged microposts has to fall back on user profile data (for example applied in the BreakingNews.com website's submission page \url{http://www.breakingnews.com/submit#twitter}), with our approach, we can rely on advanced Web analytics data based on very accurate Wi-Fi network and IP-address-based location tracking. 
+
+The second consequence is the availability of only a limited set of micropost data, as illustrated by the Venn diagram in \autoref{fig:vennreadunread}.
 Only a subset (of unknown size) of all microposts that get authored also ever gets read, whereof in turn our approach covers an unknown fraction.
 Where the Twitter Streaming API offers up to 10\% coverage of all authored tweets, full access to the ``fire hose'' with 100\% coverage of all authored tweets is handled through Twitter data providers~\cite{dataproviders}.
 For Facebook, no such publicly available option exists.
@@ -776,14 +788,14 @@ For instance, significant extra functionality can be provided on top of the name
 \label{fig:vennreadunread}
 \end{figure}
 
-The second consequence has to do with privacy issues.
+The third consequence has to do with privacy issues.
 While aggregated public data made available via APIs may feel like violating privacy~\cite{nyt}, it is still public data.
 However, the approach we took in this paper goes one step further by explicitly accessing a social network user's timeline, and reporting back named entities to a Web analytics service (the same that already gets used natively by Twitter). 
 It is important to note, however, that no connection is been made between a user's individual timeline and the person behind.
 Also, no private conversations are monitored.
 We have stated all accessed data in the extension descriptions.
 
-The third consequence is the potential bias introduced by targeting specific Web browsers with the extensions and the willful neglect of desktop and mobile applications. 
+The fourth consequence is the potential bias introduced by targeting specific Web browsers with the extensions and the willful neglect of desktop and mobile applications. 
 With regards to specific Web browsers, for now, we have focused on the Google Chrome browser due to its native Chrome Web Store that guarantees optimal exposure of the extensions in a centralized way.
 Concerning desktop and mobile applications, there is definitely some, albeit unmeasurable, bias.
 However, unofficial statistics from Twitstat~\cite{twitstat} suggest that the desktop Web version of Twitter is still the means for the majority of its users to access the social network.
